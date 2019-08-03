@@ -1,16 +1,9 @@
 /*
- * CFL Playoff Calculator - CPP edition!
- * Written by Michael Macaulay in C++
- * Started March 3, 2019
- * Last updated July 11, 2019
- *
- * Objectives:		Simulate rough CFL season
- * 					Run 100 times
- * 					Note final regular season finishing order frequency
- * 					Print to output file
+  	main.cpp
+ 	
  */
 
-#include "interface.h"
+#include "league_classes.h"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -18,8 +11,6 @@
 using namespace std;
 
 int main(){
-
-	srand(time(0)); // set random number seed
 
 	TEAM riders, esks, stamps, bombers, lions, redblacks, argos, als, ticats;
 	TEAM league[] = {riders, esks, stamps, bombers, lions, redblacks, argos, als, ticats}; // creates an array of teams
