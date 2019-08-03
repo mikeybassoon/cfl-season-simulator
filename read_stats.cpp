@@ -5,7 +5,7 @@
  *      Author: michaelmacaulay
  */
 
-#include "interface.h"
+#include "league_classes.h"
 #include <iostream>
 #include <fstream>
 #include <string>
