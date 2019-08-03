@@ -16,7 +16,7 @@ Team::Team(string teamName, string div, int id){
 	name = teamName;
 	division = div;
 	teamID = id;
-	for(int i = 0; i < LEAGUE_SIZE; i++){
+	for(int i = 0; i < NUMBER_OF_TEAMS; i++){
 		winsAgainst[i] = 0;
 		lossesAgainst[i] = 0;
 		tiesAgainst[i] = 0;
