@@ -8,7 +8,7 @@
 #ifndef LEAGUE_CLASSES_H_
 #define LEAGUE_CLASSES_H_
 
-#define LEAGUE_SIZE 9
+#define NUMBER_OF_TEAMS 9
 
 #include <iostream>
 #include <string>
@@ -22,12 +22,12 @@ private:
 	int teamID;
 	// win/loss/tie records against each team
 	// sorted by team ID
-	int winsAgainst[LEAGUE_SIZE];
-	int lossesAgainst[LEAGUE_SIZE];
-	int tiesAgainst[LEAGUE_SIZE];
+	int winsAgainst[NUMBER_OF_TEAMS];
+	int lossesAgainst[NUMBER_OF_TEAMS];
+	int tiesAgainst[NUMBER_OF_TEAMS];
 	int gamesPlayed; // in whole season
-	int pointsScoredAgainst[LEAGUE_SIZE];
-	int pointsAllowedAgainst[LEAGUE_SIZE];
+	int pointsScoredAgainst[NUMBER_OF_TEAMS];
+	int pointsAllowedAgainst[NUMBER_OF_TEAMS];
 public:
 	/*	Team
 	 *
