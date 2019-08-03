@@ -22,6 +22,8 @@ Team::Team(string teamName, string div, int id){
 		tiesAgainst[i] = 0;
 	}
 	gamesPlayed = 0;
+	isRanked = false;
+	firstPlaceFinishes = secondPlaceFinishes = thirdPlaceFinishes = crossovers = timesMissedPlayoffs = 0;
 }
 
 string Team::get_name(){
