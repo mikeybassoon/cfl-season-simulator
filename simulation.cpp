@@ -8,7 +8,7 @@
  */
 
 
-#include "interface.h"
+#include "league_classes.h"
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
