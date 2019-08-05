@@ -6,6 +6,7 @@
  */
 
 #include "league_classes.h"
+#include "read_stats.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -13,29 +14,8 @@
 using namespace std;
 
 
-void assignTeamNames(TEAM league[]){
-	league[0].teamName = "Saskatchewan Roughriders";
-	league[1].teamName = "Edmonton Eskimos";
-	league[2].teamName = "Calgary Stampeders";
-	league[3].teamName = "Winnipeg Blue Bombers";
-	league[4].teamName = "BC Lions";
-	league[5].teamName = "Ottawa REDBLACKS";
-	league[6].teamName = "Toronto Argonauts";
-	league[7].teamName = "Montreal Alouettes";
-	league[8].teamName = "Hamilton Tiger Cats";
-}
 
-void assignNicknames(TEAM league[]){
-	league[0].nickname = "riders";
-	league[1].nickname = "esks";
-	league[2].nickname = "stamps";
-	league[3].nickname = "bombers";
-	league[4].nickname = "lions";
-	league[5].nickname = "redblacks";
-	league[6].nickname = "argos";
-	league[7].nickname = "als";
-	league[8].nickname = "ticats";
-}
+
 /* void getTeamId
  *
  * Purpose:	Takes a string shorthand for a team's name
@@ -64,15 +44,12 @@ int getTeamId(string teamName){
  * Purpose:
  *		Read information from seasonSchedule.txt to the array of teams and the future schedule array
  */
-void readSeasonSchedule(TEAM league[], GAME seasonSchedule[NUMBER_OF_WEEKS][MAX_GAMES_PER_WEEK]){
+void readSeasonSchedule(Team league[], GAME seasonSchedule[NUMBER_OF_WEEKS][MAX_GAMES_PER_WEEK]){
 	ifstream inputFile;
 	string lastStringRead;
 
 	inputFile.open("seasonSchedule.txt");
 		assert(inputFile);
-
-	assignTeamNames(league); // assigns formal name of each team to their respective record
-	assignNicknames(league); // assigns nickname strings to each team
 
 	// read detail of all games into schedule, whether or not those games have been played yet
 	for(int i = 0; i < NUMBER_OF_WEEKS; i++){

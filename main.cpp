@@ -4,6 +4,8 @@
  */
 
 #include "league_classes.h"
+#include "initialize.h"
+#include "read_stats.h"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -12,20 +14,23 @@ using namespace std;
 
 int main(){
 
-	TEAM riders, esks, stamps, bombers, lions, redblacks, argos, als, ticats;
-	TEAM league[] = {riders, esks, stamps, bombers, lions, redblacks, argos, als, ticats}; // creates an array of teams
-	// note that the west division is indices 0-4, east division is indices 5-8
+	Team riders, esks, stamps, bombers, lions, redblacks, argos, als, ticats;
+	Team league[] = {riders, esks, stamps, bombers, lions, redblacks, argos, als, ticats};
 
-	GAME seasonSchedule[NUMBER_OF_WEEKS][MAX_GAMES_PER_WEEK];
-	readSeasonSchedule(league, seasonSchedule); // read all season statistics and schedule into memory
+	assignTeamNames(league); // declare formal names for all teams
 
-	// call the earliest clinch week function
-	//	- idea: generate a two-dimensional array of remaining games to be played
-	//		- work out a logic to which games you assign wins and losses first
-	// call the earliest playoff miss function
+	Game seasonSchedule[NUMBER_OF_WEEKS][MAX_GAMES_PER_WEEK]; // declare array to hold season schedule
+
+	// read the season schedule file and initialize game values accordingly
+
+	for(int i = 0; i < NUMBER_OF_SIMULATIONS; i++){
+		// copy season schedule to a new array
+		// simulate season
+		// record results
+	}
 
 
-	simulateSeason(league, seasonSchedule); // call season simulation function
+	// print report
 
 	return 0;
 }

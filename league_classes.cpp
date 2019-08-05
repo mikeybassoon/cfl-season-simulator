@@ -42,6 +42,21 @@ int Team::get_teamID(){
 	return teamID;
 }
 
+bool Team::is_ranked(){
+	if(isRanked == true)
+		return true;
+	else return false;
+}
+
+void Team::set_name(string& teamName){
+	name = teamName;
+}
+
+void Team::set_ranked(bool newValue){
+	assert(newValue == true or newValue == false);
+	isRanked = newValue;
+}
+
 int Team::get_ties() const{
 	int totalTies = 0;
 	for(auto i:tiesAgainst)
@@ -81,7 +96,7 @@ int Team::get_winPercentage(string& division) const{
 			divisionTies += tiesAgainst[x];
 		}
 	}
-
+	else cerr << "ERROR: invalid division input in get_winPercentage" << endl;
 	int divisionPct = (divisionWins * 1000) /
 			(divisionLosses + divisionTies);
 	return divisionPct;
@@ -152,3 +167,6 @@ double Team::get_netQuotient(string& division) const{
 	}
 	return pointsFor/pointsAgainst;
 }
+
+
+
