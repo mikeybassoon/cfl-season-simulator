@@ -20,7 +20,7 @@
 using namespace std;
 
 class Team{
-private:
+protected:
 	string name;
 	string division; // "west" or "east"
 	int teamID;
@@ -34,22 +34,29 @@ private:
 		crossovers, timesMissedPlayoffs; // how many times has team had each final ranking result?
 	bool isRanked; // has team been assigned a final ranking for the season?
 public:
-	/*	Team constructor
-	 * 	Parameters:
-	 * 		<1> string - team name
-	 * 		<2> string - division
-	 * 		<3> int - team id
-	 *	Preconditions: division is either "west" or "east"
-	 *		team id between 0 and LEAGUE_SIZE
-	 */
-	Team(string, string, int); // constructor
+	Team(); // default constructor
 	~Team(); // destructor
 	string get_name();
 	string get_division();
 	int get_teamID();
 	bool is_ranked(); // true if ranked, false if not yet ranked
-	void set_name(string&);
+	void set_name(const string&);
+	void set_division(const string&); // parameter must be "east" or "west"
+	void set_teamID(int);
 	void set_ranked(bool);
+
+	// functions to adjust statistics
+	void add_winAgainst(int); // parameter: teamID of opponent
+	void add_lossAgainst(int); // parameter: opponent ID
+	void add_tieAgainst(int); // parameter: opponent ID
+	void add_gamePlayed(); // increment gamesPlayed
+	void add_pointsScoredAgainst(int, int); // parameters: opponent ID, # of points
+	void add_pointsAllowedAgainst(int, int); // parameters: opponent ID, # of points
+	void add_firstPlace();
+	void add_secondPlace();
+	void add_thirdPlace();
+	void add_crossover();
+	void add_missedPlayoffs();
 
 	// playoff tiebreaker criteria
 	int get_playoffPoints() const;
@@ -63,53 +70,51 @@ public:
 	double get_netQuotient() const; // returns net quotient of points against league
 	double get_netQuotient(int) const; // returns net quotient  of points against (teamID)
 	double get_netQuotient(string&) const; // returns net quotient of points against ("division") <division must be "west" or "east">
-	
-	// require get functions for season ranking results, isRanked
-	// require set functions for everything
 };
 
 class Game{
-private:
+protected:
 	int homeTeamID;
 	int awayTeamID;
 	bool scheduled; // game scheduled at this time?
 	bool completed; // game played already in simulation?
-
+	int homeTeamScore;
+	int awayTeamScore;
 public:
-	Game(); // default constructor (no actual game scheduled)
-	Game(int, int); // schedules unplayed game between two teams
-	Game(int, int, bool); // schedules game between two teams - completed if bool is true
+	Game(); // default constructor - game unscheduled, not completed, no score
 	~Game(); // destructor
 	bool is_scheduled(); // return true if game scheduled in this time slot
-	bool hasBeenPlayed(); // return true if game already played
+	bool was_played(); // return true if game already played
 	int homeTeam(); // return home team ID
 	int awayTeam(); // return home team ID
-	bool set_homeTeam(int); // return true if successful
-	bool set_awayTeam(int); // return true if successful
-	bool set_scheduled(bool); // return true if successful
-	bool set_hasBeenPlayed(bool); // return true if successful
+	void set_homeTeam(int); // parameter: home team ID
+	void set_awayTeam(int); // parameter: away team ID
+	void set_scheduled(bool);
+	void set_hasBeenPlayed(bool);
+	void set_homeTeamScore(int);
+	void set_awayTeamScore(int);
+	void simulate_game(); // generates scores for both teams [0, 66] and updates statistics
 };
 
-
-// function prototypes to be moved to other files
-
-void crunchGameStats(Team[], Game&);
-void crunchSeasonStats(Team[], Game[NUMBER_OF_WEEKS][MAX_GAMES_PER_WEEK]);
-void readSeasonSchedule(Team[], Game[NUMBER_OF_WEEKS][MAX_GAMES_PER_WEEK]);
-void simulateGame(Game&);
-void simulateSeason(Team[], Game[][MAX_GAMES_PER_WEEK]);
-void simulateWeek(Team[], Game[]);
-int getTeamId(string& const);
-void CalculateWinPercentage(Team[]);
-void CalculateTotals(Team[]);
-void CalculateNetAggregate(Team[]);
-void CalculateNetQuotient(Team[]);
-void sortDivision(Team[], Team[], Team[]);
-Team breakTie(Team, Team);
-
-
-
-
+/*	Order of teams in the league array:
+ *
+ * 	WEST DIVISION
+ * 	<0> Saskatchewan Roughriders
+ * 	<1> Edmonton Eskimos
+ * 	<2> Calgary Stampeders
+ * 	<3> Winnipeg Blue Bombers
+ * 	<4> BC Lions
+ *
+ * 	EAST DIVISION
+ * 	<5> Ottawa Redblacks
+ * 	<6> Toronto Argonauts
+ * 	<7> Montreal Alouettes
+ * 	<8> Hamilton Tiger Cats
+ */
+extern Team league[]; // array of teams in the league
+extern Team sim_league[]; // copy of league for simulations
+extern Game seasonSchedule[NUMBER_OF_WEEKS][MAX_GAMES_PER_WEEK]; // season schedule
+extern Game sim_seasonSchedule[NUMBER_OF_WEEKS][MAX_GAMES_PER_WEEK]; // copy of schedule for simulations
 
 #endif /* LEAGUE_CLASSES_H_ */
 

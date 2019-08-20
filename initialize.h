@@ -24,7 +24,7 @@ using namespace std;
  * 		<1> for each instance of Team in array or vector, name set to appropriate team name
  *
  */
-void assignTeamNames(Team[]);
+void assignTeamNames(Team*);
 
 
 #endif /* INITIALIZE_H_ */

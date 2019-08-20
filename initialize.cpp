@@ -12,7 +12,7 @@
 
 using namespace std;
 
-void assignTeamNames(Team league[]){
+void assignTeamNames(Team* league){
 	string teamName = "Saskatchewan Roughriders";
 	league[0].set_name(teamName);
 	teamName = "Edmonton Eskimos";

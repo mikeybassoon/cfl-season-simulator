@@ -8,23 +8,24 @@
 #include <iostream>
 #include "league_classes.h"
 #include <cassert>
+#include <cctype>
 
 using namespace std;
 
 
-Team::Team(string teamName, string div, int id){
-	name = teamName;
-	division = div;
-	teamID = id;
-	for(int i = 0; i < NUMBER_OF_TEAMS; i++){
-		winsAgainst[i] = 0;
-		lossesAgainst[i] = 0;
-		tiesAgainst[i] = 0;
-	}
+Team::Team(){
+	// initialize all season statistics to zero
+	for(auto i : winsAgainst) i = 0;
+	for(auto i : lossesAgainst) i = 0;
+	for(auto i : tiesAgainst) i = 0;
 	gamesPlayed = 0;
-	isRanked = false;
+	for(auto i : pointsScoredAgainst) i = 0;
+	for(auto i : pointsAllowedAgainst) i = 0;
 	firstPlaceFinishes = secondPlaceFinishes = thirdPlaceFinishes = crossovers = timesMissedPlayoffs = 0;
+	isRanked = false;
 }
+
+Team::~Team(){}
 
 string Team::get_name(){
 	return name;
@@ -48,13 +49,71 @@ bool Team::is_ranked(){
 	else return false;
 }
 
-void Team::set_name(string& teamName){
+void Team::set_name(const string& teamName){
 	name = teamName;
+}
+
+void Team::set_division(const string& divisionName){
+	string lowercaseName;
+	for(int i = 0; i < divisionName.size(); i++) // for each char in name
+		lowercaseName[i] = tolower(divisionName[i]); // convert to lowercase
+	if(lowercaseName != "west" and lowercaseName != "east"){ // invalid division name?
+		cerr << "ERROR: invalid division name for team: " << name << endl;
+	}
+	division = lowercaseName; // set division name
+}
+
+void Team::set_teamID(int id){
+	teamID = id;
 }
 
 void Team::set_ranked(bool newValue){
 	assert(newValue == true or newValue == false);
 	isRanked = newValue;
+}
+
+void Team::add_winAgainst(int opponentID){
+	winsAgainst[opponentID]++;
+}
+
+void Team::add_lossAgainst(int opponentID){
+	lossesAgainst[opponentID]++;
+}
+
+void Team::add_tieAgainst(int opponentID){
+	tiesAgainst[opponentID]++;
+}
+
+void Team::add_gamePlayed(){
+	gamesPlayed++;
+}
+
+void Team::add_pointsScoredAgainst(int opponentID, int points){
+	pointsScoredAgainst[opponentID] += points;
+}
+
+void Team::add_pointsAllowedAgainst(int opponentID, int points){
+	pointsAllowedAgainst[opponentID] += points;
+}
+
+void Team::add_firstPlace(){
+	firstPlaceFinishes++;
+}
+
+void Team::add_secondPlace(){
+	secondPlaceFinishes++;
+}
+
+void Team::add_thirdPlace(){
+	thirdPlaceFinishes++;
+}
+
+void Team::add_crossover(){
+	crossovers++;
+}
+
+void Team::add_missedPlayoffs(){
+	timesMissedPlayoffs++;
 }
 
 int Team::get_ties() const{
@@ -135,8 +194,8 @@ int Team::get_netAggregate(string& division) const{
 }
 
 double Team::get_netQuotient() const{
-	double pointsFor;
-	double pointsAgainst;
+	double pointsFor = 0;
+	double pointsAgainst = 0;
 	for(auto i:pointsScoredAgainst) // points scored against all opponents
 		pointsFor += i;
 	for(auto j:pointsAllowedAgainst) // points allowed against all opponents
@@ -150,9 +209,8 @@ double Team::get_netQuotient(int opponent) const{
 }
 
 double Team::get_netQuotient(string& division) const{
-	assert(division == "east" || division == "west");
-	double pointsFor;
-	double pointsAgainst;
+	double pointsFor = 0;
+	double pointsAgainst = 0;
 	if(division == "east"){
 		for(int i = 5; i <= 8; i++){ // for all teams in east division
 			pointsFor += pointsScoredAgainst[i];
@@ -168,5 +226,90 @@ double Team::get_netQuotient(string& division) const{
 	return pointsFor/pointsAgainst;
 }
 
+Game::Game(){
+	scheduled = false;
+	completed = false;
+	homeTeamScore = 0;
+	awayTeamScore = 0;
+}
+
+Game::~Game(){
+
+}
+
+bool Game::is_scheduled(){
+	return scheduled;
+}
+
+bool Game::was_played(){
+	return completed;
+}
+
+int Game::homeTeam(){
+	return homeTeamID;
+}
+
+int Game::awayTeam(){
+	return awayTeamID;
+}
+
+void Game::set_homeTeam(int homeID){
+	homeTeamID = homeID;
+}
+
+void Game::set_awayTeam(int awayID){
+	awayTeamID = awayID;
+}
+
+void Game::set_scheduled(bool status){
+	scheduled = status;
+}
+
+void Game::set_hasBeenPlayed(bool status){
+	completed = status;
+}
+
+void Game::set_homeTeamScore(int score){
+	homeTeamScore = score;
+}
+
+void Game::set_awayTeamScore(int score){
+	awayTeamScore = score;
+}
+
+void Game::simulate_game(){
+	homeTeamScore = rand() % 67; // generate score in [0, 66]
+	awayTeamScore = rand() % 67; // generate score in [0, 66]
+	completed = true;
+
+	// increment games played counters
+	sim_league[homeTeamID].add_gamePlayed();
+	sim_league[awayTeamID].add_gamePlayed();
+
+	// update win/loss/tie statistics
+	if(homeTeamScore > awayTeamScore){ // home team wins?
+		sim_league[homeTeamID].add_winAgainst(awayTeamID);
+		sim_league[awayTeamID].add_lossAgainst(homeTeamID);
+	}
+	else if(awayTeamScore > homeTeamScore){ // away team wins?
+		sim_league[awayTeamID].add_winAgainst(homeTeamID);
+		sim_league[homeTeamID].add_lossAgainst(awayTeamID);
+	}
+	else{ // tie?
+		sim_league[homeTeamID].add_tieAgainst(awayTeamID);
+		sim_league[awayTeamID].add_tieAgainst(homeTeamID);
+	}
+
+	// update point statistics
+	sim_league[homeTeamID].add_pointsScoredAgainst(awayTeamID, homeTeamScore);
+	sim_league[homeTeamID].add_pointsAllowedAgainst(awayTeamID, awayTeamScore);
+	sim_league[awayTeamID].add_pointsScoredAgainst(homeTeamID, awayTeamScore);
+	sim_league[awayTeamID].add_pointsAllowedAgainst(homeTeamID, homeTeamScore);
+
+}
 
 
+Team league[9]; // array of teams in the league
+Team sim_league[9]; // copy of league array for simulations
+Game seasonSchedule[NUMBER_OF_WEEKS][MAX_GAMES_PER_WEEK]; // schedule array
+Game sim_seasonSchedule[NUMBER_OF_WEEKS][MAX_GAMES_PER_WEEK]; // copy of schedule for simulations
