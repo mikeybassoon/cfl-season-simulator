@@ -14,6 +14,7 @@ using namespace std;
 
 
 Team::Team(){
+	teamID = -1;
 	// initialize all season statistics to zero
 	for(auto i : winsAgainst) i = 0;
 	for(auto i : lossesAgainst) i = 0;
@@ -130,6 +131,22 @@ int Team::get_wins() const{
 	return totalWins;
 }
 
+int Team::get_winsAgainst(int team) const{
+	return winsAgainst[team];
+}
+
+int Team::get_lossesAgainst(int team) const{
+	return lossesAgainst[team];
+}
+
+int Team::get_pointsScoredAgainst(int team) const{
+	return pointsScoredAgainst[team];
+}
+
+int Team::get_pointsAllowedAgainst(int team) const{
+	return pointsAllowedAgainst[team];
+}
+
 int Team::get_winPercentage(int opponentID) const{
 	int winPct = (winsAgainst[opponentID] * 1000) /
 			(lossesAgainst[opponentID] + tiesAgainst[opponentID]);
@@ -193,24 +210,24 @@ int Team::get_netAggregate(string& division) const{
 	return netAgg;
 }
 
-double Team::get_netQuotient() const{
-	double pointsFor = 0;
-	double pointsAgainst = 0;
+int Team::get_netQuotient() const{
+	int pointsFor = 0;
+	int pointsAgainst = 0;
 	for(auto i:pointsScoredAgainst) // points scored against all opponents
 		pointsFor += i;
 	for(auto j:pointsAllowedAgainst) // points allowed against all opponents
 		pointsAgainst += j;
-	return pointsFor / pointsAgainst;
+	return (1000 * pointsFor) / pointsAgainst;
 }
 
-double Team::get_netQuotient(int opponent) const{
-	return (double)pointsScoredAgainst[opponent] /
-			(double)pointsAllowedAgainst[opponent];
+int Team::get_netQuotient(int opponent) const{
+	return (1000 * pointsScoredAgainst[opponent]) /
+			pointsAllowedAgainst[opponent];
 }
 
-double Team::get_netQuotient(string& division) const{
-	double pointsFor = 0;
-	double pointsAgainst = 0;
+int Team::get_netQuotient(string& division) const{
+	int pointsFor = 0;
+	int pointsAgainst = 0;
 	if(division == "east"){
 		for(int i = 5; i <= 8; i++){ // for all teams in east division
 			pointsFor += pointsScoredAgainst[i];
@@ -223,7 +240,27 @@ double Team::get_netQuotient(string& division) const{
 			pointsAgainst += pointsAllowedAgainst[i];
 		}
 	}
-	return pointsFor/pointsAgainst;
+	return (1000 * pointsFor) / pointsAgainst;
+}
+
+void Team::operator=(const Team& original){
+	name = original.name;
+	division = original.division;
+	teamID = original.teamID;
+	for(int i = 0; i < NUMBER_OF_TEAMS; i++){
+		winsAgainst[i] = original.winsAgainst[i];
+		lossesAgainst[i] = original.lossesAgainst[i];
+		tiesAgainst[i] = original.tiesAgainst[i];
+		pointsScoredAgainst[i] = original.pointsScoredAgainst[i];
+		pointsAllowedAgainst[i] = original.pointsAllowedAgainst[i];
+	}
+	gamesPlayed = original.gamesPlayed;
+	firstPlaceFinishes = original.firstPlaceFinishes;
+	secondPlaceFinishes = original.secondPlaceFinishes;
+	thirdPlaceFinishes = original.thirdPlaceFinishes;
+	crossovers = original.crossovers;
+	timesMissedPlayoffs = original.timesMissedPlayoffs;
+	isRanked = original.isRanked;
 }
 
 Game::Game(){
@@ -231,6 +268,9 @@ Game::Game(){
 	completed = false;
 	homeTeamScore = 0;
 	awayTeamScore = 0;
+	homeTeamID = -1;
+	awayTeamID = -1;
+	week = -1;
 }
 
 Game::~Game(){
@@ -277,6 +317,10 @@ void Game::set_awayTeamScore(int score){
 	awayTeamScore = score;
 }
 
+void Game::set_week(int gameWeek){
+	week = gameWeek;
+}
+
 void Game::simulate_game(){
 	homeTeamScore = rand() % 67; // generate score in [0, 66]
 	awayTeamScore = rand() % 67; // generate score in [0, 66]
@@ -306,6 +350,16 @@ void Game::simulate_game(){
 	sim_league[awayTeamID].add_pointsScoredAgainst(homeTeamID, awayTeamScore);
 	sim_league[awayTeamID].add_pointsAllowedAgainst(homeTeamID, homeTeamScore);
 
+}
+
+void Game::operator= (const Game& original){
+	homeTeamID = original.homeTeamID;
+	awayTeamID = original.awayTeamID;
+	scheduled = original.scheduled;
+	completed = original.completed;
+	homeTeamScore = original.homeTeamScore;
+	awayTeamScore = original.awayTeamScore;
+	week = original.week;
 }
 
 

@@ -62,14 +62,27 @@ public:
 	int get_playoffPoints() const;
 	int get_ties() const; // ties against all teams
 	int get_wins() const; // wins against all teams
+	int get_winsAgainst(int) const; // wins against teamID
+	int get_lossesAgainst(int) const; // losses against teamID
+	int get_pointsScoredAgainst(int) const; // points scored against teamID
+	int get_pointsAllowedAgainst(int) const; // points allowed against teamID
 	int get_winPercentage(int) const; // returns win percentage against(teamID)
 	int get_winPercentage(string&) const; // returns win percentage against ("division") <division must be "west" or "east">
 	int get_netAggregate() const; // returns net aggregate of points against league
 	int get_netAggregate(int) const; // returns net aggregate of points against (teamID)
 	int get_netAggregate(string&) const; // returns net aggregate of points against ("division) <division must be "west" or "east">
-	double get_netQuotient() const; // returns net quotient of points against league
-	double get_netQuotient(int) const; // returns net quotient  of points against (teamID)
-	double get_netQuotient(string&) const; // returns net quotient of points against ("division") <division must be "west" or "east">
+	int get_netQuotient() const; // returns net quotient of points against league
+	int get_netQuotient(int) const; // returns net quotient  of points against (teamID)
+	int get_netQuotient(string&) const; // returns net quotient of points against ("division") <division must be "west" or "east">
+
+	/* void operator= ()
+	 *
+	 * Purpose: copies all member variables from parameter Team to this Team
+	 *
+	 * Parameters:
+	 * 	<1> Team - the original team to be copied
+	 */
+	void operator= (const Team&);
 };
 
 class Game{
@@ -80,6 +93,7 @@ protected:
 	bool completed; // game played already in simulation?
 	int homeTeamScore;
 	int awayTeamScore;
+	int week;
 public:
 	Game(); // default constructor - game unscheduled, not completed, no score
 	~Game(); // destructor
@@ -93,7 +107,15 @@ public:
 	void set_hasBeenPlayed(bool);
 	void set_homeTeamScore(int);
 	void set_awayTeamScore(int);
+	void set_week(int);
 	void simulate_game(); // generates scores for both teams [0, 66] and updates statistics
+	/* void operator=()
+	 *
+	 * Purpose: copies all member variable contents of parameter Game to this Game
+	 * Parameters:
+	 * 	<1> Game& - the original game to be copied
+	 */
+	void operator= (const Game&);
 };
 
 /*	Order of teams in the league array:

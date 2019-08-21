@@ -5,6 +5,7 @@
 
 #include "league_classes.h"
 #include "initialize.h"
+#include "simulation.h"
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
@@ -15,15 +16,15 @@ int main(){
 
 	srand(time(0)); // set random number seed
 
-	assignTeamNames(league); // declare formal names for all teams
+	assignTeamNames(); // set names for all teams in league array
 
-	// read the season schedule file and initialize game values accordingly
-		// simultaneously update team statistic values from schedule
+	readSchedule(); // read all game details into schedule array, update team statistics
 
 	for(int i = 0; i < NUMBER_OF_SIMULATIONS; i++){
-		// copy season schedule to a new array
-		// simulate season
-		// record results
+		copySchedule(); // copy season schedule to a new array
+		copyLeague(); // copy league array to new array
+		simulateSeason(); // simulate all unplayed games in season
+		crunchSeasonResults();// record results
 	}
 
 
