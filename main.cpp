@@ -1,19 +1,14 @@
 /*
- * CFL Playoff Calculator - CPP edition!
- * Written by Michael Macaulay in C++
- * Started March 3, 2019
- * Last updated July 11, 2019
- *
- * Objectives:		Simulate rough CFL season
- * 					Run 100 times
- * 					Note final regular season finishing order frequency
- * 					Print to output file
+  	main.cpp
+ 	
  */
 
-#include "interface.h"
+#include "league_classes.h"
+#include "initialize.h"
+#include "simulation.h"
 #include <iostream>
-#include <cstdlib>
 #include <ctime>
+#include <cstdlib>
 
 using namespace std;
 
@@ -21,20 +16,19 @@ int main(){
 
 	srand(time(0)); // set random number seed
 
-	TEAM riders, esks, stamps, bombers, lions, redblacks, argos, als, ticats;
-	TEAM league[] = {riders, esks, stamps, bombers, lions, redblacks, argos, als, ticats}; // creates an array of teams
-	// note that the west division is indices 0-4, east division is indices 5-8
+	assignTeamNames(); // set names for all teams in league array
 
-	GAME seasonSchedule[NUMBER_OF_WEEKS][MAX_GAMES_PER_WEEK];
-	readSeasonSchedule(league, seasonSchedule); // read all season statistics and schedule into memory
+	readSchedule(); // read all game details into schedule array, update team statistics
 
-	// call the earliest clinch week function
-	//	- idea: generate a two-dimensional array of remaining games to be played
-	//		- work out a logic to which games you assign wins and losses first
-	// call the earliest playoff miss function
+	for(int i = 0; i < NUMBER_OF_SIMULATIONS; i++){
+		copySchedule(); // copy season schedule to a new array
+		copyLeague(); // copy league array to new array
+		simulateSeason(); // simulate all unplayed games in season
+		crunchSeasonResults();// record results
+	}
 
 
-	simulateSeason(league, seasonSchedule); // call season simulation function
+	// print report
 
 	return 0;
 }

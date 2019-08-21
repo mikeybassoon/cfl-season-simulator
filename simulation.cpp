@@ -1,357 +1,323 @@
 /*
  * simulation.cpp
  *
- * Contains functions to simulate CFL season at various levels of abstraction
- *
- *  Created on: Jul 9, 2019
+ *  Created on: Aug. 20, 2019
  *      Author: michaelmacaulay
  */
 
-
-#include "interface.h"
+#include "simulation.h"
+#include "league_classes.h"
 #include <iostream>
-#include <ctime>
-#include <cstdlib>
-#include <fstream>
-#include <cassert>
-/* void copySchedule
- *
- * Purpose:	Copies the season schedule to a new identically sized array so that season simulations
- * 			can be run without modifying the original schedule array
- */
-void copySchedule(GAME destination[NUMBER_OF_WEEKS][MAX_GAMES_PER_WEEK], const GAME source[NUMBER_OF_WEEKS][MAX_GAMES_PER_WEEK]){
-	for(int i = 0; i < NUMBER_OF_WEEKS; i++){
-		for(int j = 0; j < MAX_GAMES_PER_WEEK; j++){
-			destination[i][j] = source[i][j];
+#include <vector>
+
+using namespace std;
+
+void copySchedule(){
+	for(int x = 0; x < NUMBER_OF_WEEKS; x++){ // for each week of season
+		for(int y =0; y < MAX_GAMES_PER_WEEK; y++){ // for each game in week
+			sim_seasonSchedule[x][y] = seasonSchedule[x][y]; // copy all game details to sim_seasonSchedule
 		}
 	}
 }
-/* void createOutputFile
- *
- * Purpose:	Creates a file "readout.txt" and prints each team's result breakdown to it
- */
-void createOutputFile(){
-	ofstream outputFile;
-	outputFile.open("readout.txt");
-		assert(outputFile); // error check output file stream
 
-		// print out team records!
-
-	outputFile.close();
-}
-/* void crunchSeasonStats
- *
- * Purpose:	Processes a full simulated season and returns all necessary stats to break ties
- *
- * Stats that need to be captured for each team:
- *			*Number of playoff points
- *			*Number of games won against all clubs
- *		Winning percentage against each individual club
- *			*Wins against each individual club
- *			*Games played against each individual club
- *			(*)Percentage against each club
- *		Net aggregate of points (points scored - points against) against each individual club
- *			*Points scored vs each individual club
- *			*Points against by each individual club
- *			(*)Net aggregate against each club
- *		Net quotient of points (points scored / points against) against each individual club
- *			(*)Net quotient against each club
- *		Winning percentage against entire division
- *			(*)Wins against division
- *			(*)Games played against division
- *			(*)Percentage against division
- *		Net aggregate against division
- *			(*)Points scored against division
- *			(*)Points against within division
- *			(*)Net aggregate against division
- *		Net quotient against division
- *			(*)Net quotient against division
- *		Net aggregate points against whole league
- *			(*)Points scored against league
- *			(*)Points against within league
- *			(*)Net aggregate within league
- *		Net quotient points against whole league
- *			(*)Net quotient within league
- *			(coin toss if all of above have failed)
- *
- */
-void crunchSeasonStats(TEAM league[], GAME schedule[NUMBER_OF_WEEKS][MAX_GAMES_PER_WEEK]){
-	// initialize all ranking statistics to 0
-	for(int i = 0; i < NUMBER_OF_TEAMS; i++){
-		league[i].playoffPoints = 0;
-		league[i].totalWins = 0;
-		league[i].winsInDivision = 0;
-		league[i].gamesAgainstDivision = 0;
-		league[i].pctWinsAgainstDivision = 0;
-		league[i].pointsForInDivision = 0;
-		league[i].pointsAgainstInDivision = 0;
-		league[i].netAggregateAgainstDivision = 0;
-		league[i].netQuotientAgainstDivision = 0;
-		league[i].totalPointsFor = 0;
-		league[i].totalPointsAgainst = 0;
-		league[i].netAggregateAgainstLeague = 0;
-		league[i].netQuotientAgainstLeague = 0;
-		for(int j = 0; j < NUMBER_OF_TEAMS; j++){
-			league[i].pointsForCertainTeam[j] = 0;
-			league[i].pointsAgainstCertainTeam[j] = 0;
-			league[i].winsAgainstCertainTeam[j] = 0;
-			league[i].gamesAgainstCertainTeam[j] = 0;
-			league[i].pctWinsAgainstCertainTeam[j] = 0;
-			league[i].netAggregateAgainstCertainTeam[j] = 0;
-			league[i].netQuotientAgainstCertainTeam[j] = 0;
-		}
+void copyLeague(){
+	for(int x = 0; x < NUMBER_OF_TEAMS; x++){ // for each team in league
+		sim_league[x] = league[x]; // copy all team details to sim_league
 	}
-	// read every game in the completed season schedule and update all relevant statistics
-	for(int i = 0; i < NUMBER_OF_WEEKS; i++){ // loop through each week
-		for(int j = 0; j < MAX_GAMES_PER_WEEK; j++){ // loop through each game
-			crunchGameStats(league, schedule[i][j]); // process the game stats for that game
-		}
-	}
-
-	// calculate each team's wins against division
-	// calculate each team's total games against division
-	// calculate points for in division
-	// calculate points against in division
-	// calculate total points scored in league
-	// calculate total points scored against in league
-	CalculateTotals(league);
-
-	// calculate each team's win percentage against each opponent
-	// calculate each team's percentage wins against division
-	CalculateWinPercentage(league);
-
-	// calculate each team's net aggregate points against each opponent
-	// calculate net aggregate for division
-	// calculate league net aggregate points
-	CalculateNetAggregate(league);
-
-	// calculate each team's net quotient against each opponent
-	// calculate net quotient for division
-	// calculate league net quotient points
-	CalculateNetQuotient(league);
-
-	// rank division playoff standings
-	TEAM westDivisionRanking[5], eastDivisionRanking[4];
-	// sort west division
-	sortDivision(league, westDivisionRanking, eastDivisionRanking);
-
-	// increment all non-crossover counters
-	// check crossover
-	// final counter increment
 }
 
-void sortDivision(TEAM league[], TEAM westDivision[], TEAM eastDivision[]){
-	int winnerArrayIndex;
-	int divisionIndex = 0;
-	int winningValue;
-	int numberWinners;
-
-	// check west division
-	// step 1: check playoff points
-	for(int i = 0; i < 5; i++){ // loop until division array full
-		for(int j = 0; j < 5; j++){
-			winningValue = 0; // highest value observed so far
-			numberWinners = 0; // holds all instances of winning value
-
-			if(league[j].playoffPoints > winningValue && league[j].ranked == false){
-				numberWinners = 1;
-				winningValue = league[j].playoffPoints; // set new winning value
-				winnerArrayIndex = j;
-			}
-			else if(league[j].playoffPoints == winningValue && league[j].ranked == false){
-				numberWinners++;
+void simulateSeason(){
+	for(int x = 0; x < NUMBER_OF_WEEKS; x++){ // for each week of season
+		for(int y =0; y < MAX_GAMES_PER_WEEK; y++){ // for each game in week
+			if(sim_seasonSchedule[x][y].is_scheduled() // game scheduled?
+					and !sim_seasonSchedule[x][y].was_played()){ // game not yet played?
+				sim_seasonSchedule[x][y].simulate_game(); // simulate the game
 			}
 		}
+	}
+}
 
-		// once loop has run through entire division
-		assert(numberWinners != 0); // error check - there should be at least one winner
-		while(numberWinners > 1){ // run tiebreakers until only one winner
-			int nextIndex = 0; // next index to be stored in winning array
-			int stillInRunning[5] = {-1}; // create array to store all current winners
-			for(int x = 0; x < 5; x++){ // find all winners and put their index in array
-				if(league[x].playoffPoints == winningValue){
-					stillInRunning[nextIndex] = x;
-					nextIndex++;
-				}
+void crunchSeasonResults(){
+	bool eastCrossesOver;
+	bool westCrossesOver;
+	int westDivision[5], eastDivision[4]; // create arrays to hold teamIDs of rankings in each division
+
+	// find the top four teams in each division
+	for(int i = 0; i < 5; i ++){
+		westDivision[i] = findWinner(0, 4);
+		eastDivision[i] = findWinner(5, 8);
+	}
+
+	// set fifth-place west team
+	westDivision[4] = findWinner(0, 4);
+
+	// update results for first, second, fifth-place teams
+	league[westDivision[0]].add_firstPlace();
+	league[eastDivision[0]].add_firstPlace();
+	league[westDivision[1]].add_secondPlace();
+	league[eastDivision[1]].add_secondPlace();
+	league[westDivision[4]].add_missedPlayoffs();
+
+	// test if crossover in effect
+
+	// update third and fourth place team results according to crossover status
+	if(eastCrossesOver){
+		league[westDivision[2]].add_missedPlayoffs();
+		league[westDivision[3]].add_missedPlayoffs();
+		league[eastDivision[2]].add_thirdPlace();
+		league[eastDivision[3]].add_crossover();
+	}
+	else if(westCrossesOver){
+		league[westDivision[2]].add_thirdPlace();
+		league[westDivision[3]].add_crossover();
+		league[eastDivision[2]].add_missedPlayoffs();
+		league[eastDivision[3]].add_missedPlayoffs();
+	}
+	else{
+		league[westDivision[2]].add_thirdPlace();
+		league[westDivision[3]].add_missedPlayoffs();
+		league[eastDivision[2]].add_thirdPlace();
+		league[eastDivision[3]].add_missedPlayoffs();
+	}
+}
+
+int findWinner(const int minIndex, const int maxIndex){
+	string division;
+	if(minIndex == 0) division = "west";
+	else if(minIndex ==5) division = "east";
+
+
+	vector<int> winners; // holds league array indices of all currently tied winners
+
+	// check playoff points
+	int winningValue = 0;
+	for(int x = minIndex; x <= maxIndex; x++){
+		if(!sim_league[x].is_ranked()){ // not yet ranked?
+			if(sim_league[x].get_playoffPoints() > winningValue){ // new winner?
+				winningValue = sim_league[x].get_playoffPoints(); // set new winning value
+				winners.resize(1); // set winners vector size to 1
+				winners[0] = x; // place new winner in winners vector
+			}
+			else if(sim_league[x].get_playoffPoints() == winningValue){ // tied with winner?
+				winners.push_back(x); // add x to end of vector
 			}
 		}
-		westDivision[divisionIndex] = league[winnerArrayIndex];
-		league[winnerArrayIndex].ranked = true;
-		divisionIndex++; // increment the winner array index
 	}
-}
+	if(winners.size() == 1){ // only one winner?
+		sim_league[winners[0]].set_ranked(true); // set winner to ranked
+		return winners[0]; // return winning index
+	}
 
-TEAM breakTie(TEAM, TEAM){
-	TEAM winningTeam;
-
-	return winningTeam;
-}
-
-void CalculateNetQuotient(TEAM league[]){
-	for(int i = 0; i < NUMBER_OF_TEAMS; i++){
-		for(int j = 0; j < NUMBER_OF_TEAMS; j++){
-			league[i].netQuotientAgainstCertainTeam[j] = (1000 * league[i].pointsForCertainTeam[j]) /
-					(1000 * league[i].pointsAgainstCertainTeam[j]);
+	// if no winner, check highest number of games won against whole league
+	winningValue = 0; // reset winning value
+	vector<int> gamesWinners; // vector to hold winners of second stage
+	for(int i = 0; i < winners.size(); i++){ // for all teams in winners vector
+		if(sim_league[winners[i]].get_wins() > winningValue){ // new winner?
+			winningValue = sim_league[winners[i]].get_wins(); // set new winning value
+			gamesWinners.resize(1); // set winners vector size to 1
+			gamesWinners[0] = winners[i]; // place new winner in winners vector
 		}
-		league[i].netQuotientAgainstDivision = (1000 * league[i].pointsForInDivision) /
-				(1000 * league[i].pointsAgainstInDivision);
-		league[i].netQuotientAgainstLeague = (1000 * league[i].totalPointsFor) /
-				(1000 * league[i].totalPointsAgainst);
-	}
-}
-
-void CalculateNetAggregate(TEAM league[]){
-	// calculate each team's net aggregate against each opponent
-	// calculate each team's net aggregate against division
-	// calculate each team's net aggregate against league
-	for(int i = 0; i < NUMBER_OF_TEAMS; i++){
-		for(int j = 0; j < NUMBER_OF_TEAMS; j++){
-			league[i].netAggregateAgainstCertainTeam[j] = league[i].pointsForCertainTeam[j] -
-					league[i].pointsAgainstCertainTeam[j];
-		}
-		league[i].netAggregateAgainstDivision = league[i].pointsForInDivision -
-				league[i].pointsAgainstInDivision;
-		league[i].netAggregateAgainstLeague = league[i].totalPointsFor - league[i].totalPointsAgainst;
-	}
-}
-void CalculateTotals(TEAM league[]){
-	// calculate west division wins against division, total games against division
-		// points for in division, points against in division
-	for(int i = 0; i < 5; i++){ // for teams in the west division
-		for(int j = 0; j < 5; j++){ // against each west div opponent
-			league[i].pointsForInDivision += league[i].pointsForCertainTeam[j];
-			league[i].pointsAgainstInDivision += league[i].pointsAgainstCertainTeam[j];
-			league[i].winsInDivision += league[i].winsAgainstCertainTeam[j];
-			league[i].gamesAgainstDivision += league[i].gamesAgainstCertainTeam[j];
+		else if(sim_league[winners[i]].get_wins() == winningValue){ // tie?
+			gamesWinners.push_back(winners[i]); // add tied entry to winners vector
 		}
 	}
+	if(gamesWinners.size() == 1){ // only one winner?
+		sim_league[gamesWinners[0]].set_ranked(true); // set winner ranked to true
+		return gamesWinners[0];
+	}
+	winners.resize(0); // erase winners vector (no longer needed)
 
-	// calculate east division wins against division, total games against division
-		// points for in division, points against in division
-	for(int i = 5; i < 9; i++){ // for teams in the east division
-		for(int j = 5; j < 9; j++){ // against each east div opponent
-			league[i].pointsForInDivision += league[i].pointsForCertainTeam[j];
-			league[i].pointsAgainstInDivision += league[i].pointsAgainstCertainTeam[j];
-			league[i].winsInDivision += league[i].winsAgainstCertainTeam[j];
-			league[i].gamesAgainstDivision += league[i].gamesAgainstCertainTeam[j];
+	// if no single winner, check winning percentages against tied clubs
+	winningValue = 0; // reset winning value
+	vector<int> pctWinners; // vector to hold winners of third stage
+
+	for(int i = 0; i < gamesWinners.size(); i++){ // for every team in the winner vector
+		int wins = 0; // wins against all other teams in the vector
+		int losses = 0; // losses against all other teams in the vector
+		int winPercentage; // cowmbined win percentage against all other teams in the vector
+		for(int j = 0; j < gamesWinners.size(); j++){ // for every team in the winner vector
+			if(i != j){ // team not compared against itself?
+				wins += sim_league[gamesWinners[i]].get_winsAgainst(gamesWinners[j]); // add wins against this team
+				losses += sim_league[gamesWinners[i]].get_lossesAgainst(gamesWinners[j]); // add losses against this team
+			}
+		}
+		winPercentage = (wins * 1000) / losses;
+		if(winPercentage > winningValue){ // new winner?
+			winningValue = winPercentage; // set new winning value
+			pctWinners.resize(1); // set pctWinners vector size to 1
+			pctWinners[0] = gamesWinners[i]; // place new winner in pctWinners vector
+		}
+		else if(winPercentage == winningValue){ // tie?
+			pctWinners.push_back(gamesWinners[i]); // add tied index to pctWinners vector
 		}
 	}
+	if(pctWinners.size() == 1){ // only one winner?
+		sim_league[pctWinners[0]].set_ranked(true); // set winner to ranked
+		return pctWinners[0]; // return winner
+	}
 
-	// calculate points scored in league, points scored against in league
-	for(int i = 0; i < NUMBER_OF_TEAMS; i++){ // for all teams in league
-		for(int j = 0; j < NUMBER_OF_TEAMS; j++){
-			league[i].totalPointsFor += league[i].pointsForCertainTeam[j];
-			league[i].totalPointsAgainst += league[i].pointsAgainstCertainTeam[j];
+	gamesWinners.resize(0); // erase gamesWinners vector, no longer needed
+
+	// if no winner compare combined net aggregate points against all tied clubs
+	winningValue = 0; // reset winningValue
+	vector<int> netAggWinners; // vector to hold winners of next stage
+
+	for(int i = 0; i < pctWinners.size(); i++){ // for all teams in pctWinners
+		int pointsScored = 0;
+		int pointsAllowed = 0;
+		int netAggregate;
+		for(int j = 0; j < pctWinners.size(); j++){ // for all teams in pctWinners
+			if(i != j){ // team not being compared to itself?
+				pointsScored += sim_league[pctWinners[i]].get_pointsScoredAgainst(pctWinners[j]);
+				pointsAllowed += sim_league[pctWinners[i]].get_pointsAllowedAgainst(pctWinners[j]);
+			}
+		}
+		netAggregate = pointsScored - pointsAllowed;
+		if(netAggregate > winningValue){ // new winner?
+			winningValue = netAggregate; // set new winning value
+			netAggWinners.resize(1); // resize winner array
+			netAggWinners[0] = pctWinners[i]; // place new winner in winner vector
+		}
+		else if(netAggregate == winningValue){ // tie?
+			netAggWinners.push_back(pctWinners[i]); // add to winner vector
 		}
 	}
-}
+	if(netAggWinners.size() == 1){ // only 1 winner?
+		sim_league[netAggWinners[0]].set_ranked(true); // winner set to ranked
+		return netAggWinners[0]; // return winning value
+	}
 
-void CalculateWinPercentage(TEAM league[]){
-	for(int i = 0; i < NUMBER_OF_TEAMS; i++){ // for each team in league
-		for(int j = 0; j < NUMBER_OF_TEAMS; j++){
-			// determine win percentage against each opponent
-			league[i].pctWinsAgainstCertainTeam[j] = (1000 * league[i].winsAgainstCertainTeam[j]) /
-					(1000 * league[i].gamesAgainstCertainTeam[j]);
-			// determine win percentage against league
-			league[i].pctWinsAgainstDivision = (1000 * league[i].winsInDivision) /
-					(1000 * league[i].gamesAgainstDivision);
+	pctWinners.resize(0); // erase pctWinners vector
+
+	// if no winner compare combined net quotient points against all tied clubs
+	winningValue = 0; // reset winning value
+	vector<int> netQuotWinners; // vector to hold winners
+
+	for(int i = 0; i < netAggWinners.size(); i++){ // for all teams in vector
+		int pointsScored = 0;
+		int pointsAllowed = 0;
+		int netQuotient;
+		for(int j = 0; j < netAggWinners.size(); j++){ // for all teams in pctWinners
+			if(i != j){ // team not being compared to itself?
+				pointsScored += sim_league[netAggWinners[i]].get_pointsScoredAgainst(netAggWinners[j]);
+				pointsAllowed += sim_league[netAggWinners[i]].get_pointsAllowedAgainst(netAggWinners[j]);
+			}
+		}
+		netQuotient = (1000 * pointsScored) / pointsAllowed;
+		if(netQuotient > winningValue){ // new winner?
+			winningValue = netQuotient; // set new winning value
+			netQuotWinners.resize(1); // resize winner array
+			netQuotWinners[0] = netAggWinners[i]; // place new winner in winner vector
+		}
+		else if(netQuotient == winningValue){ // tie?
+			netQuotWinners.push_back(netAggWinners[i]); // add to winner vector
 		}
 	}
-}
-void crunchGameStats(TEAM league[], GAME& game){
-	int homeTeamId = getTeamId(game.homeTeam.nickname);
-	int awayTeamId = getTeamId(game.awayTeam.nickname);
-
-	// increment games played against particular club
-	game.homeTeam.gamesAgainstCertainTeam[awayTeamId]++;
-	game.awayTeam.gamesAgainstCertainTeam[homeTeamId]++;
-
-	// update points for, points against totals
-	game.homeTeam.pointsForCertainTeam[awayTeamId] += game.homeScore;
-	game.homeTeam.pointsAgainstCertainTeam[awayTeamId] += game.awayScore;
-	game.awayTeam.pointsForCertainTeam[homeTeamId] += game.awayScore;
-	game.awayTeam.pointsAgainstCertainTeam[homeTeamId] += game.homeScore;
-
-	// assign playoff points
-	if(game.homeScore == game.awayScore){ // if game tied
-		game.homeTeam.playoffPoints++;
-		game.awayTeam.playoffPoints++;
+	if(netQuotWinners.size() == 1){ // only 1 winner?
+		sim_league[netQuotWinners[0]].set_ranked(true); // winner set to ranked
+		return netQuotWinners[0]; // return winning value
 	}
-	else if(game.homeScore > game.awayScore){ // if home team wins
-		game.homeTeam.playoffPoints += 2;
-		game.homeTeam.totalWins++;
-		game.homeTeam.winsAgainstCertainTeam[awayTeamId]++;
-	}
-	else if(game.homeScore < game.awayScore){ // if away team wins
-		game.awayTeam.playoffPoints += 2;
-		game.awayTeam.totalWins++;
-		game.awayTeam.winsAgainstCertainTeam[homeTeamId]++;
-	}
-}
+	netAggWinners.resize(0); // erase net agg winners vector
 
-/* void simulateGame
- *
- * Purpose:	Simulates results (score and winner) for a single game
- */
-void simulateGame(GAME& game){
-	srand(time(0)); // seed random variable
-	game.homeScore = rand() % 65; // generate random score for home team
-	game.awayScore = rand() % 65; // generate random score for away team
-}
+	// if no winner compare division win percentages
+	winningValue = 0;
+	vector<int> divPctWinners;
 
-/* void simulateSeason
- *
- */
-void simulateSeason(TEAM leagueStats[], GAME seasonSchedule[][MAX_GAMES_PER_WEEK]){
-	// initialize full season record stats to zero for all teams
-	for(int i = 0; i < NUMBER_OF_TEAMS; i++){
-		leagueStats[i].firstPlaceFinishes = 0;
-		leagueStats[i].secondPlaceFinishes = 0;
-		leagueStats[i].thirdPlaceFinishes = 0;
-		leagueStats[i].crossovers = 0;
-		leagueStats[i].timesMissedPlayoffs = 0;
-	}
-
-	cout << "Simulating season . . . " << endl;
-	for(int i = 0; i < NUMBER_OF_SIMULATIONS; i++){ // run full season simulation n times
-		// copy the season schedule to a new array
-		GAME seasonSchedule_copy[NUMBER_OF_WEEKS][MAX_GAMES_PER_WEEK];
-		copySchedule(seasonSchedule_copy, seasonSchedule);
-		// initialize all teams to not ranked (will be used to determine finishing order at end of season)
-		for(int x = 0; x < NUMBER_OF_TEAMS; x++) leagueStats[x].ranked = false;
-		for(int j = 0; j < NUMBER_OF_WEEKS; j++){ // simulate each week
-			simulateWeek(leagueStats, seasonSchedule_copy[j]);
+	for(int i = 0; i < netQuotWinners.size(); i++){
+		if(sim_league[netQuotWinners[i]].get_winPercentage(division) > winningValue){ // new winner?
+			winningValue = sim_league[netQuotWinners[i]].get_winPercentage(division);
+			divPctWinners.resize(1);
+			divPctWinners[0] = netQuotWinners[i];
 		}
-
-		// calculate final division rankings
-		crunchSeasonStats(leagueStats, seasonSchedule_copy);
-		// update each team's stats
-
-		// update user on number of procedures incompleted
-		int percentageComplete = ( (i + 1) / NUMBER_OF_SIMULATIONS)* 100;
-		if(percentageComplete == 20) cout << "20% . . ." << endl;
-		else if(percentageComplete == 40) cout << "40% . . ." << endl;
-		else if(percentageComplete == 60) cout << "60% . . ." << endl;
-		else if(percentageComplete == 80) cout << "80% . . ." << endl;
+		else if(sim_league[netQuotWinners[i]].get_winPercentage(division) == winningValue){ // tie?
+			divPctWinners.push_back(netQuotWinners[i]); // add to winner vector
+		}
 	}
-	cout << "Season simulation complete!" << endl;
-
-	createOutputFile(); // generate output file of season results
-
-	cout << "Simulation results output as readout.txt" << endl;
-}
-
-/* void simulateWeek
- *
- * Purpose:
- * 		Simulates a single week in the CFL schedule
- *
- */
-void simulateWeek(TEAM league[], GAME weekSchedule[]){
-	for(int i = 0; i < MAX_GAMES_PER_WEEK; i++){ // loop through all 4 possible games per week
-		if(weekSchedule[i].scheduled == true) // check if game scheduled
-			if(weekSchedule[i].completed == false) // check if game already played
-				simulateGame(weekSchedule[i]); // simulate the game if scheduled and not already played
+	if(divPctWinners.size() == 1){ // only 1 winner?
+		sim_league[divPctWinners[0]].set_ranked(true); // set winner to ranked
+		return divPctWinners[0];
 	}
-}
+	netQuotWinners.resize(0); // erase net quotient winners vector
 
+	// if no winner compare net aggregate points against division
+	winningValue = 0;
+
+	for(int i = 0; i < divPctWinners.size(); i++){
+		if(sim_league[divPctWinners[i]].get_netAggregate(division) > winningValue){ // new winner?
+			winningValue = sim_league[divPctWinners[i]].get_netAggregate(division);
+			netAggWinners.resize(1);
+			netAggWinners[0] = divPctWinners[i];
+		}
+		else if(sim_league[divPctWinners[i]].get_netAggregate(division) == winningValue){ // tie?
+			netAggWinners.push_back(divPctWinners[i]); // add to winner vector
+		}
+	}
+	if(netAggWinners.size() == 1){ // only 1 winner?
+		sim_league[netAggWinners[0]].set_ranked(true); // set winner to ranked
+		return netAggWinners[0];
+	}
+	divPctWinners.resize(0); // erase division percentage winner vector
+
+	// if no winner compare net quotient points against division
+	winningValue = 0;
+
+	for(int i = 0; i < netAggWinners.size(); i++){
+		if(sim_league[netAggWinners[i]].get_netQuotient(division) > winningValue){ // new winner?
+			winningValue = sim_league[netAggWinners[i]].get_netQuotient(division);
+			netQuotWinners.resize(1);
+			netQuotWinners[0] = netAggWinners[i];
+		}
+		else if(sim_league[netAggWinners[i]].get_netQuotient(division) == winningValue){ // tie?
+			netQuotWinners.push_back(netAggWinners[i]); // add to winner vector
+		}
+	}
+	if(netQuotWinners.size() == 1){ // only 1 winner?
+		sim_league[netQuotWinners[0]].set_ranked(true); // set winner to ranked
+		return netQuotWinners[0];
+	}
+	netAggWinners.resize(0); // erase old winner vector
+
+	// if no winner compare net aggregate points against league
+	winningValue = 0;
+
+	for(int i = 0; i < netQuotWinners.size(); i++){
+		if(sim_league[netQuotWinners[i]].get_netAggregate() > winningValue){ // new winner?
+			winningValue = sim_league[netQuotWinners[i]].get_netAggregate();
+			netAggWinners.resize(1);
+			netAggWinners[0] = netQuotWinners[i];
+		}
+		else if(sim_league[netQuotWinners[i]].get_netAggregate() == winningValue){ // tie?
+			netAggWinners.push_back(netQuotWinners[i]); // add to winner vector
+		}
+	}
+	if(netAggWinners.size() == 1){ // only 1 winner?
+		sim_league[netAggWinners[0]].set_ranked(true); // set winner to ranked
+		return netAggWinners[0];
+	}
+	netQuotWinners.resize(0); // erase old winner vector
+
+	// if no winner compare net quotient points against league
+	winningValue = 0;
+
+	for(int i = 0; i < netAggWinners.size(); i++){
+		if(sim_league[netAggWinners[i]].get_netQuotient() > winningValue){ // new winner?
+			winningValue = sim_league[netAggWinners[i]].get_netQuotient();
+			netQuotWinners.resize(1);
+			netQuotWinners[0] = netQuotWinners[i];
+		}
+		else if(sim_league[netAggWinners[i]].get_netQuotient() == winningValue){ // tie?
+			netQuotWinners.push_back(netAggWinners[i]); // add to winner vector
+		}
+	}
+	if(netQuotWinners.size() == 1){ // only 1 winner?
+		sim_league[netQuotWinners[0]].set_ranked(true); // set winner to ranked
+		return netQuotWinners[0];
+	}
+	netAggWinners.resize(0);
+
+	// if no winner, determine winner by random coin flip
+	while(netQuotWinners.size() > 1){ // while more than one winner remains
+		netQuotWinners.erase(netQuotWinners.begin() + (rand() % 2) ); // randomly erase one of the first two elements of the vector
+	}
+	return netQuotWinners[0]; // return the final winner
+}
