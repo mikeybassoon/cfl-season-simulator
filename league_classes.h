@@ -11,7 +11,7 @@
 #define NUMBER_OF_TEAMS 9
 #define MAX_GAMES_PER_WEEK 4 // maximum number of games possible in any one week
 #define NUMBER_OF_WEEKS 21 // weeks in season
-#define NUMBER_OF_SIMULATIONS 100 // number of simulations to run
+#define NUMBER_OF_SIMULATIONS 1 // number of simulations to run
 #define GAMES_PLAYED 18
 
 #include <iostream>
@@ -64,16 +64,32 @@ public:
 	int get_wins() const; // wins against all teams
 	int get_winsAgainst(int) const; // wins against teamID
 	int get_lossesAgainst(int) const; // losses against teamID
+	int get_tiesAgainst(int) const; // ties against teamID
 	int get_pointsScoredAgainst(int) const; // points scored against teamID
 	int get_pointsAllowedAgainst(int) const; // points allowed against teamID
 	int get_winPercentage(int) const; // returns win percentage against(teamID)
-	int get_winPercentage(string&) const; // returns win percentage against ("division") <division must be "west" or "east">
+	int get_winPercentage(const string&) const; // returns win percentage against ("division") <division must be "west" or "east">
 	int get_netAggregate() const; // returns net aggregate of points against league
 	int get_netAggregate(int) const; // returns net aggregate of points against (teamID)
-	int get_netAggregate(string&) const; // returns net aggregate of points against ("division) <division must be "west" or "east">
+	int get_netAggregate(const string&) const; // returns net aggregate of points against ("division) <division must be "west" or "east">
 	int get_netQuotient() const; // returns net quotient of points against league
 	int get_netQuotient(int) const; // returns net quotient  of points against (teamID)
-	int get_netQuotient(string&) const; // returns net quotient of points against ("division") <division must be "west" or "east">
+	int get_netQuotient(const string&) const; // returns net quotient of points against ("division") <division must be "west" or "east">
+
+	int get_firstPlace() const; // total first place finishes
+	int get_secondPlace() const; // total second place finishes
+	int get_thirdPlace() const; // total third place finishes
+	int get_crossovers() const; // total crossovers
+	int get_missedPlayoffs() const; // total times missed playoffs
+
+	// get functions - returns probability in percent (to one decimal place) of each result as a string
+	double get_firstPlaceOdds() const;
+	double get_secondPlaceOdds() const;
+	double get_thirdPlaceOdds() const;
+	double get_crossoverOdds() const;
+	double get_missedPlayoffsOdds() const;
+	double get_playoffOdds() const; // odds that the team made the playoffs in some way
+
 
 	/* void operator= ()
 	 *
@@ -83,6 +99,15 @@ public:
 	 * 	<1> Team - the original team to be copied
 	 */
 	void operator= (const Team&);
+
+	/* bool operator== ()
+	 *
+	 * Purpose: compares team IDs to see if they are the same team
+	 * Parameters:
+	 * 	<1> Team - the team being compared against
+	 * Returns true if team IDs match, false if they do not
+	 */
+	bool operator== (const Team&);
 };
 
 class Game{

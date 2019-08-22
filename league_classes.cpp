@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include "league_classes.h"
+#include "simulation.h"
 #include <cassert>
 #include <cctype>
 
@@ -139,6 +140,10 @@ int Team::get_lossesAgainst(int team) const{
 	return lossesAgainst[team];
 }
 
+int Team::get_tiesAgainst(int team) const{
+	return tiesAgainst[team];
+}
+
 int Team::get_pointsScoredAgainst(int team) const{
 	return pointsScoredAgainst[team];
 }
@@ -153,7 +158,7 @@ int Team::get_winPercentage(int opponentID) const{
 	return winPct;
 }
 
-int Team::get_winPercentage(string& division) const{
+int Team::get_winPercentage(const string& division) const{
 	assert(division == "east" || division == "west");
 	int divisionWins = 0;
 	int divisionLosses = 0;
@@ -192,7 +197,7 @@ int Team::get_netAggregate(int opponentID) const{
 	return netAgg;
 }
 
-int Team::get_netAggregate(string& division) const{
+int Team::get_netAggregate(const string& division) const{
 	assert(division == "east" || division == "west");
 	int netAgg = 0;
 	if(division == "east"){
@@ -225,7 +230,7 @@ int Team::get_netQuotient(int opponent) const{
 			pointsAllowedAgainst[opponent];
 }
 
-int Team::get_netQuotient(string& division) const{
+int Team::get_netQuotient(const string& division) const{
 	int pointsFor = 0;
 	int pointsAgainst = 0;
 	if(division == "east"){
@@ -241,6 +246,50 @@ int Team::get_netQuotient(string& division) const{
 		}
 	}
 	return (1000 * pointsFor) / pointsAgainst;
+}
+
+int Team::get_firstPlace() const{
+	return firstPlaceFinishes;
+}
+
+int Team::get_secondPlace() const{
+	return secondPlaceFinishes;
+}
+
+int Team::get_thirdPlace() const{
+	return thirdPlaceFinishes;
+}
+
+int Team::get_crossovers() const{
+	return crossovers;
+}
+
+int Team::get_missedPlayoffs() const{
+	return timesMissedPlayoffs;
+}
+
+double Team::get_firstPlaceOdds() const{
+	return firstPlaceFinishes / NUMBER_OF_SIMULATIONS;
+}
+
+double Team::get_secondPlaceOdds() const{
+	return secondPlaceFinishes / NUMBER_OF_SIMULATIONS;
+}
+
+double Team::get_thirdPlaceOdds() const{
+	return thirdPlaceFinishes / NUMBER_OF_SIMULATIONS;
+}
+
+double Team::get_crossoverOdds() const{
+	return crossovers / NUMBER_OF_SIMULATIONS;
+}
+
+double Team::get_missedPlayoffsOdds() const{
+	return timesMissedPlayoffs / NUMBER_OF_SIMULATIONS;
+}
+
+double Team::get_playoffOdds() const{
+	return (NUMBER_OF_SIMULATIONS - timesMissedPlayoffs) / NUMBER_OF_SIMULATIONS;
 }
 
 void Team::operator=(const Team& original){
@@ -261,6 +310,12 @@ void Team::operator=(const Team& original){
 	crossovers = original.crossovers;
 	timesMissedPlayoffs = original.timesMissedPlayoffs;
 	isRanked = original.isRanked;
+}
+
+bool Team::operator==(const Team& otherTeam){
+	if(this->teamID == otherTeam.teamID)
+		return true;
+	else return false;
 }
 
 Game::Game(){

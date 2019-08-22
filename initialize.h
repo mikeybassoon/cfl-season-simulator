@@ -9,6 +9,7 @@
 #define INITIALIZE_H_
 
 #include "league_classes.h"
+#include <fstream>
 
 using namespace std;
 

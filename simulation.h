@@ -8,29 +8,79 @@
 #ifndef SIMULATION_H_
 #define SIMULATION_H_
 
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
 void copySchedule(); // copies 2-D season scheduled array so simulation will not modify original data
 void copyLeague(); // copies league array so simulation will not modify original data
 void simulateSeason(); // simulates all unplayed games in season
-void crunchSeasonResults(); // determines final season ranking, updates team stats in original league array
-/* int findWinner()
- * Purpose: finds highest-ranked team (that has not yet been ranked) in a specific division
- * Parameters:
- * 	<1> int - lower bound of indices to be searched
- * 	<2> int - upper bound of indices to be searched
- * Returns: int - index in league array of winner
- * Side effect: ranked set to true for winner
+/* void crunchSeasonResults()
+ * Purpose: determines final season rankings for a simulated season
+ * Preconditions:
+ * 	<1> All teams "ranked" status must be set to false
+ * No parameters
+ * No return
+ * Side effect: team stats (number of times each final ranking received) updated in ORIGINAL league array
  */
-int findWinner(const int, const int);
+void crunchSeasonResults();
 
 /* int findWinner()
- * Purpose: finds highest-ranked team in an array or vector
+ * Purpose: finds highest ranked out of a set of team
  * Parameters:
- * 	<1> int - pointer to an array
+ * 	<1> vector<int> - vector containing all teams being compared
  * Returns: int - index in league array of winner
- * Side effect: ranked set to true for winner
+ * Side effect: none
  */
-int findWinner(const int*);
+int findWinner(vector<int>&);
 
+/* Tiebreaker functions
+ * The following applies to all of the following functions:
+ *
+ * Parameters:
+ * 	<1> vector<int> containing all teams being compared
+ * 		each team represented by an int (the team's index in league array)
+ * Returns vector<int> containing winning team(s)
+ */
 
+// returns team(s) with most playoff points
+vector<int> checkPlayoffPoints(vector<int>&);
+
+// returns team(s) with highest win total against entire league
+vector<int> checkTotalWins(vector<int>&);
+
+// returns team(s) with highest win percentage against other teams in the vector
+vector<int> checkWinPctAgainstTied(vector<int>&);
+
+// returns team(s) with highest net aggregate points against other teams in the vector
+vector<int> checkNetAggAgainstTied(vector<int>&);
+
+// returns team(s) with highest net quotient points against other teams in vector
+vector<int> checkNetQuotAgainstTied(vector<int>&);
+
+// returns team(s) with highest win percentage against their division
+vector<int> checkWinPctAgainstDiv(vector<int>&);
+
+// returns team(s) with highest net aggregate points against their division
+vector<int> checkNetAggAgainstDiv(vector<int>&);
+
+// returns team(s) with highest net quotient points against their division
+vector<int> checkNetQuotAgainstDiv(vector<int>&);
+
+// returns team(s) with highest net aggregate points against entire league
+vector<int> checkNetAggTotal(vector<int>&);
+
+// returns team(s) with highest net quotient points against entire league
+vector<int> checkNetQuotTotal(vector<int>&);
+
+// returns randomly selected winner
+int coinFlip(vector<int>&);
+
+/* void print_report()
+ * Purpose: prints final report following a season simulation
+ * Side effect: generates output file "report.txt" with summaries of each team's performance
+ */
+void print_report();
 
 #endif /* SIMULATION_H_ */
