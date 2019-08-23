@@ -63,9 +63,12 @@ public:
 	int get_ties() const; // ties against all teams
 	int get_wins() const; // wins against all teams
 	int get_winsAgainst(int) const; // wins against teamID
+	int get_losses() const; // losses against all teams
 	int get_lossesAgainst(int) const; // losses against teamID
 	int get_tiesAgainst(int) const; // ties against teamID
+	int get_pointsScored() const; // total points scored
 	int get_pointsScoredAgainst(int) const; // points scored against teamID
+	int get_pointsAllowed() const; // total points allowed
 	int get_pointsAllowedAgainst(int) const; // points allowed against teamID
 	int get_winPercentage(int) const; // returns win percentage against(teamID)
 	int get_winPercentage(const string&) const; // returns win percentage against ("division") <division must be "west" or "east">
@@ -133,6 +136,10 @@ public:
 	void set_homeTeamScore(int);
 	void set_awayTeamScore(int);
 	void set_week(int);
+
+	int get_homeScore();
+	int get_awayScore();
+
 	void simulate_game(); // generates scores for both teams [0, 66] and updates statistics
 	/* void operator=()
 	 *

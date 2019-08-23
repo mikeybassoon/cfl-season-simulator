@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include <vector>
+#include <fstream>
 
 using namespace std;
 
@@ -82,5 +83,7 @@ int coinFlip(vector<int>&);
  * Side effect: generates output file "report.txt" with summaries of each team's performance
  */
 void print_report();
+
+extern ofstream log; // text file log of program runs
 
 #endif /* SIMULATION_H_ */

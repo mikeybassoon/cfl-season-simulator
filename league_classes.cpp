@@ -132,6 +132,13 @@ int Team::get_wins() const{
 	return totalWins;
 }
 
+int Team::get_losses() const{
+	int totalLosses = 0;
+	for(auto i:lossesAgainst)
+		totalLosses += i;
+	return totalLosses;
+}
+
 int Team::get_winsAgainst(int team) const{
 	return winsAgainst[team];
 }
@@ -144,8 +151,22 @@ int Team::get_tiesAgainst(int team) const{
 	return tiesAgainst[team];
 }
 
+int Team::get_pointsScored() const{
+	int totalPoints = 0;
+	for(auto i:pointsScoredAgainst)
+		totalPoints += i;
+	return totalPoints;
+}
+
 int Team::get_pointsScoredAgainst(int team) const{
 	return pointsScoredAgainst[team];
+}
+
+int Team::get_pointsAllowed() const{
+	int totalPoints = 0;
+	for(auto i:pointsAllowedAgainst)
+		totalPoints += i;
+	return totalPoints;
 }
 
 int Team::get_pointsAllowedAgainst(int team) const{
@@ -374,6 +395,14 @@ void Game::set_awayTeamScore(int score){
 
 void Game::set_week(int gameWeek){
 	week = gameWeek;
+}
+
+int Game::get_homeScore(){
+	return homeTeamScore;
+}
+
+int Game::get_awayScore(){
+	return awayTeamScore;
 }
 
 void Game::simulate_game(){
