@@ -11,7 +11,7 @@
 #define NUMBER_OF_TEAMS 9
 #define MAX_GAMES_PER_WEEK 4 // maximum number of games possible in any one week
 #define NUMBER_OF_WEEKS 21 // weeks in season
-#define NUMBER_OF_SIMULATIONS 10 // number of simulations to run
+#define NUMBER_OF_SIMULATIONS 750 // number of simulations to run
 #define GAMES_PLAYED 18
 
 #include <iostream>
@@ -41,7 +41,6 @@ public:
 	int get_teamID();
 	bool is_ranked(); // true if ranked, false if not yet ranked
 	void set_name(const string&);
-	void set_division(const string&); // parameter must be "east" or "west"
 	void set_teamID(int);
 	void set_ranked(bool);
 
