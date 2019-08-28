@@ -290,27 +290,27 @@ int Team::get_missedPlayoffs() const{
 }
 
 double Team::get_firstPlaceOdds() const{
-	return firstPlaceFinishes / NUMBER_OF_SIMULATIONS;
+	return double(firstPlaceFinishes) / NUMBER_OF_SIMULATIONS;
 }
 
 double Team::get_secondPlaceOdds() const{
-	return secondPlaceFinishes / NUMBER_OF_SIMULATIONS;
+	return double(secondPlaceFinishes) / NUMBER_OF_SIMULATIONS;
 }
 
 double Team::get_thirdPlaceOdds() const{
-	return thirdPlaceFinishes / NUMBER_OF_SIMULATIONS;
+	return double(thirdPlaceFinishes) / NUMBER_OF_SIMULATIONS;
 }
 
 double Team::get_crossoverOdds() const{
-	return crossovers / NUMBER_OF_SIMULATIONS;
+	return double(crossovers) / NUMBER_OF_SIMULATIONS;
 }
 
 double Team::get_missedPlayoffsOdds() const{
-	return timesMissedPlayoffs / NUMBER_OF_SIMULATIONS;
+	return double(timesMissedPlayoffs) / NUMBER_OF_SIMULATIONS;
 }
 
 double Team::get_playoffOdds() const{
-	return (NUMBER_OF_SIMULATIONS - timesMissedPlayoffs) / NUMBER_OF_SIMULATIONS;
+	return double(NUMBER_OF_SIMULATIONS - timesMissedPlayoffs) / NUMBER_OF_SIMULATIONS;
 }
 
 void Team::operator=(const Team& original){

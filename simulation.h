@@ -34,7 +34,7 @@ void crunchSeasonResults();
  * Returns: int - index in league array of winner
  * Side effect: none
  */
-int findWinner(vector<int>&);
+int findWinner(const vector<int>&);
 
 /* Tiebreaker functions
  * The following applies to all of the following functions:
@@ -46,37 +46,37 @@ int findWinner(vector<int>&);
  */
 
 // returns team(s) with most playoff points
-vector<int> checkPlayoffPoints(vector<int>&);
+vector<int> checkPlayoffPoints(const vector<int>&);
 
 // returns team(s) with highest win total against entire league
-vector<int> checkTotalWins(vector<int>&);
+vector<int> checkTotalWins(const vector<int>&);
 
 // returns team(s) with highest win percentage against other teams in the vector
-vector<int> checkWinPctAgainstTied(vector<int>&);
+vector<int> checkWinPctAgainstTied(const vector<int>&);
 
 // returns team(s) with highest net aggregate points against other teams in the vector
-vector<int> checkNetAggAgainstTied(vector<int>&);
+vector<int> checkNetAggAgainstTied(const vector<int>&);
 
 // returns team(s) with highest net quotient points against other teams in vector
-vector<int> checkNetQuotAgainstTied(vector<int>&);
+vector<int> checkNetQuotAgainstTied(const vector<int>&);
 
 // returns team(s) with highest win percentage against their division
-vector<int> checkWinPctAgainstDiv(vector<int>&);
+vector<int> checkWinPctAgainstDiv(const vector<int>&);
 
 // returns team(s) with highest net aggregate points against their division
-vector<int> checkNetAggAgainstDiv(vector<int>&);
+vector<int> checkNetAggAgainstDiv(const vector<int>&);
 
 // returns team(s) with highest net quotient points against their division
-vector<int> checkNetQuotAgainstDiv(vector<int>&);
+vector<int> checkNetQuotAgainstDiv(const vector<int>&);
 
 // returns team(s) with highest net aggregate points against entire league
-vector<int> checkNetAggTotal(vector<int>&);
+vector<int> checkNetAggTotal(const vector<int>&);
 
 // returns team(s) with highest net quotient points against entire league
-vector<int> checkNetQuotTotal(vector<int>&);
+vector<int> checkNetQuotTotal(const vector<int>&);
 
 // returns randomly selected winner
-int coinFlip(vector<int>&);
+int coinFlip(const vector<int>&);
 
 /* void print_report()
  * Purpose: prints final report following a season simulation

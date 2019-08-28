@@ -1,6 +1,6 @@
 CFL Playoff Calculator Run Log
-Number of simulations run: 1
-Random number seed set to 1566598583
+Number of simulations run: 10
+Random number seed set to 1566953591
 Calling assignTeamNames() from main()
 assignTeamNames() completed, returning to main()
 calling readSchedule() from main()
@@ -66,24 +66,24 @@ Game 4: Team 1 18 @ Team 2 24
 
 Week 9
 
-Game 1 (not yet played): Team 2 @ Team 3
-Game 2 (not yet played): Team 0 @ Team 7
-Game 3 (not yet played): Team 5 @ Team 1
-Game 4 (not yet played): Team 4 @ Team 8
+Game 1: Team 2 24 @ Team 3 26
+Game 2: Team 0 17 @ Team 7 10
+Game 3: Team 5 12 @ Team 1 16
+Game 4: Team 4 34 @ Team 8 35
 
 Week 10
 
-Game 1 (not yet played): Team 4 @ Team 3
-Game 2 (not yet played): Team 1 @ Team 6
-Game 3 (not yet played): Team 8 @ Team 5
-Game 4 (not yet played): Team 7 @ Team 2
+Game 1: Team 4 16 @ Team 3 32
+Game 2: Team 1 41 @ Team 6 26
+Game 3: Team 8 21 @ Team 5 7
+Game 4: Team 7 40 @ Team 2 34
 
 Week 11
 
-Game 1 (not yet played): Team 3 @ Team 1
-Game 2 (not yet played): Team 5 @ Team 0
-Game 3 (not yet played): Team 8 @ Team 4
-Game 4 (not yet played): Team 7 @ Team 6
+Game 1: Team 3 34 @ Team 1 28
+Game 2: Team 5 18 @ Team 0 40
+Game 3: Team 8 13 @ Team 4 10
+Game 4: Team 7 28 @ Team 6 22
 
 Week 12
 
@@ -159,15 +159,15 @@ readSchedule() completed, returning to main()
 TEAM STATISTICS PRIOR TO SIMULATION
 Name/Wins/Losses/Ties/Games Played/Points Scored/Points Allowed/ID
 
-Saskatchewan Roughriders	4	3	0	207	173	0
-Edmonton Eskimos	4	3	0	179	126	1
-Calgary Stampeders	5	2	0	191	154	2
-Winnipeg Blue Bombers	5	2	0	211	131	3
-BC Lions	1	6	0	145	241	4
-Ottawa REDBLACKS	3	4	0	156	209	5
-Toronto Argonauts	1	6	0	103	241	6
-Montreal Alouettes	3	3	0	154	161	7
-Hamilton Tiger Cats	5	2	0	229	139	8
+Saskatchewan Roughriders	6	3	0	264	201	0
+Edmonton Eskimos	6	4	0	264	198	1
+Calgary Stampeders	5	4	0	249	220	2
+Winnipeg Blue Bombers	8	2	0	303	199	3
+BC Lions	1	9	0	205	321	4
+Ottawa REDBLACKS	3	7	0	193	286	5
+Toronto Argonauts	1	8	0	151	310	6
+Montreal Alouettes	5	4	0	232	234	7
+Hamilton Tiger Cats	8	2	0	298	190	8
 
 Beginning simulation process
 Calling copySchedule() from main()
@@ -215,20 +215,20 @@ Game 2: Team 8 19 @ Team 0 24
 Game 3: Team 5 30 @ Team 7 27
 Game 4: Team 1 18 @ Team 2 24
 Week 9
-Game 1 (not yet played): Team 2 @ 3
-Game 2 (not yet played): Team 0 @ 7
-Game 3 (not yet played): Team 5 @ 1
-Game 4 (not yet played): Team 4 @ 8
+Game 1: Team 2 24 @ Team 3 26
+Game 2: Team 0 17 @ Team 7 10
+Game 3: Team 5 12 @ Team 1 16
+Game 4: Team 4 34 @ Team 8 35
 Week 10
-Game 1 (not yet played): Team 4 @ 3
-Game 2 (not yet played): Team 1 @ 6
-Game 3 (not yet played): Team 8 @ 5
-Game 4 (not yet played): Team 7 @ 2
+Game 1: Team 4 16 @ Team 3 32
+Game 2: Team 1 41 @ Team 6 26
+Game 3: Team 8 21 @ Team 5 7
+Game 4: Team 7 40 @ Team 2 34
 Week 11
-Game 1 (not yet played): Team 3 @ 1
-Game 2 (not yet played): Team 5 @ 0
-Game 3 (not yet played): Team 8 @ 4
-Game 4 (not yet played): Team 7 @ 6
+Game 1: Team 3 34 @ Team 1 28
+Game 2: Team 5 18 @ Team 0 40
+Game 3: Team 8 13 @ Team 4 10
+Game 4: Team 7 28 @ Team 6 22
 Week 12
 Game 1 (not yet played): Team 3 @ 0
 Game 2 (not yet played): Team 6 @ 8
@@ -286,15 +286,15 @@ Calling copyLeague() from main()
 Now in copyLeague()
 Copied team statistics:
 
-Saskatchewan Roughriders	4	3	0	207	173
-Edmonton Eskimos	4	3	0	179	126
-Calgary Stampeders	5	2	0	191	154
-Winnipeg Blue Bombers	5	2	0	211	131
-BC Lions	1	6	0	145	241
-Ottawa REDBLACKS	3	4	0	156	209
-Toronto Argonauts	1	6	0	103	241
-Montreal Alouettes	3	3	0	154	161
-Hamilton Tiger Cats	5	2	0	229	139
+Saskatchewan Roughriders	6	3	0	264	201
+Edmonton Eskimos	6	4	0	264	198
+Calgary Stampeders	5	4	0	249	220
+Winnipeg Blue Bombers	8	2	0	303	199
+BC Lions	1	9	0	205	321
+Ottawa REDBLACKS	3	7	0	193	286
+Toronto Argonauts	1	8	0	151	310
+Montreal Alouettes	5	4	0	232	234
+Hamilton Tiger Cats	8	2	0	298	190
 copyLeague() completed, returning to calling function
 copyLeague() executed successfully, returning to main()
 Calling simulateSeason() from main()
@@ -372,106 +372,107 @@ Game 4: Team 1 18 @ Team 2 24
 
 Week 9
 
-Game 1: Team 2 16 @ Team 3 47
-Game 2: Team 0 64 @ Team 7 45
-Game 3: Team 5 42 @ Team 1 18
-Game 4: Team 4 11 @ Team 8 10
+Game 1: Team 2 24 @ Team 3 26
+Game 2: Team 0 17 @ Team 7 10
+Game 3: Team 5 12 @ Team 1 16
+Game 4: Team 4 34 @ Team 8 35
 
 Week 10
 
-Game 1: Team 4 66 @ Team 3 29
-Game 2: Team 1 39 @ Team 6 55
-Game 3: Team 8 59 @ Team 5 8
-Game 4: Team 7 30 @ Team 2 64
+Game 1: Team 4 16 @ Team 3 32
+Game 2: Team 1 41 @ Team 6 26
+Game 3: Team 8 21 @ Team 5 7
+Game 4: Team 7 40 @ Team 2 34
 
 Week 11
 
-Game 1: Team 3 12 @ Team 1 41
-Game 2: Team 5 61 @ Team 0 50
-Game 3: Team 8 23 @ Team 4 58
-Game 4: Team 7 42 @ Team 6 36
+Game 1: Team 3 34 @ Team 1 28
+Game 2: Team 5 18 @ Team 0 40
+Game 3: Team 8 13 @ Team 4 10
+Game 4: Team 7 28 @ Team 6 22
 
 Week 12
 
-Game 1: Team 3 52 @ Team 0 15
-Game 2: Team 6 50 @ Team 8 46
-Game 3: Team 1 16 @ Team 2 33
+Game 1: Team 3 26 @ Team 0 16
+Game 2: Team 6 46 @ Team 8 23
+Game 3: Team 1 46 @ Team 2 51
 Game 4 not scheduled
 
 Week 13
 
-Game 1: Team 4 18 @ Team 7 10
-Game 2: Team 6 9 @ Team 5 16
-Game 3: Team 0 46 @ Team 3 0
-Game 4: Team 2 32 @ Team 1 3
+Game 1: Team 4 51 @ Team 7 14
+Game 2: Team 6 4 @ Team 5 6
+Game 3: Team 0 37 @ Team 3 12
+Game 4: Team 2 33 @ Team 1 31
 
 Week 14
 
-Game 1: Team 5 0 @ Team 4 18
-Game 2: Team 8 8 @ Team 2 51
-Game 3: Team 7 45 @ Team 0 4
+Game 1: Team 5 44 @ Team 4 63
+Game 2: Team 8 55 @ Team 2 34
+Game 3: Team 7 1 @ Team 0 34
 Game 4 not scheduled
 
 Week 15
 
-Game 1: Team 2 41 @ Team 6 56
-Game 2: Team 8 35 @ Team 1 64
-Game 3: Team 3 62 @ Team 7 60
-Game 4: Team 4 61 @ Team 5 24
+Game 1: Team 2 21 @ Team 6 9
+Game 2: Team 8 33 @ Team 1 60
+Game 3: Team 3 47 @ Team 7 48
+Game 4: Team 4 16 @ Team 5 63
 
 Week 16
 
-Game 1: Team 8 53 @ Team 3 17
-Game 2: Team 1 1 @ Team 5 46
-Game 3: Team 0 45 @ Team 6 1
-Game 4: Team 7 0 @ Team 4 62
+Game 1: Team 8 30 @ Team 3 63
+Game 2: Team 1 32 @ Team 5 43
+Game 3: Team 0 46 @ Team 6 36
+Game 4: Team 7 1 @ Team 4 58
 
 Week 17
 
-Game 1: Team 1 14 @ Team 8 42
-Game 2: Team 2 56 @ Team 7 4
-Game 3: Team 3 7 @ Team 0 9
-Game 4: Team 6 46 @ Team 4 23
+Game 1: Team 1 43 @ Team 8 54
+Game 2: Team 2 52 @ Team 7 31
+Game 3: Team 3 10 @ Team 0 31
+Game 4: Team 6 51 @ Team 4 17
 
 Week 18
 
-Game 1: Team 5 39 @ Team 6 37
-Game 2: Team 0 19 @ Team 2 7
-Game 3: Team 7 15 @ Team 3 42
-Game 4: Team 4 29 @ Team 1 25
+Game 1: Team 5 40 @ Team 6 26
+Game 2: Team 0 24 @ Team 2 52
+Game 3: Team 7 3 @ Team 3 12
+Game 4: Team 4 12 @ Team 1 35
 
 Week 19
 
-Game 1: Team 6 58 @ Team 7 44
-Game 2: Team 0 0 @ Team 4 29
-Game 3: Team 5 43 @ Team 8 21
-Game 4: Team 3 31 @ Team 2 66
+Game 1: Team 6 10 @ Team 7 48
+Game 2: Team 0 55 @ Team 4 7
+Game 3: Team 5 45 @ Team 8 63
+Game 4: Team 3 47 @ Team 2 52
 
 Week 20
 
-Game 1: Team 2 2 @ Team 3 5
-Game 2: Team 8 7 @ Team 7 52
-Game 3: Team 5 28 @ Team 6 49
-Game 4: Team 0 23 @ Team 1 10
+Game 1: Team 2 14 @ Team 3 28
+Game 2: Team 8 60 @ Team 7 10
+Game 3: Team 5 50 @ Team 6 3
+Game 4: Team 0 45 @ Team 1 35
 
 Week 21
 
-Game 1: Team 7 34 @ Team 5 30
-Game 2: Team 1 22 @ Team 0 30
-Game 3: Team 6 42 @ Team 8 16
-Game 4: Team 2 30 @ Team 4 14
+Game 1: Team 7 20 @ Team 5 63
+Game 2: Team 1 31 @ Team 0 5
+Game 3: Team 6 4 @ Team 8 16
+Game 4: Team 2 49 @ Team 4 16
 
 Team statistics following simulation:
+Key: wins/losses/ties/points for/points against/team ID number)
 
-Saskatchewan Roughriders	11	7	0	512	452	0
-Edmonton Eskimos	6	12	0	432	505	1
-Calgary Stampeders	12	6	0	589	387	2
-Winnipeg Blue Bombers	10	8	0	515	520	3
-BC Lions	10	8	0	534	438	4
-Ottawa REDBLACKS	9	9	0	493	566	5
-Toronto Argonauts	8	10	0	542	620	6
-Montreal Alouettes	7	11	0	535	664	7
-Hamilton Tiger Cats	8	10	0	549	549	8
+Saskatchewan Roughriders	12	6	0	557	411	0
+Edmonton Eskimos	9	9	0	577	474	1
+Calgary Stampeders	12	6	0	607	507	2
+Winnipeg Blue Bombers	12	6	0	548	430	3
+BC Lions	4	14	0	445	633	4
+Ottawa REDBLACKS	9	9	0	547	513	5
+Toronto Argonauts	3	15	0	340	577	6
+Montreal Alouettes	7	11	0	408	621	7
+Hamilton Tiger Cats	13	5	0	632	495	8
 simulateSeason() completed, returning to calling function
 simulateSeason() executed successfully, returning to main()
 Calling crunchSeasonResults() from main()
@@ -491,73 +492,5504 @@ East division:
 9. Winnipeg Blue Bombers
 
 Determining top four teams in each division
+
+West Division team 1
+
+Number of teams in West Division vector: 5
 Calling findWinner() from crunchSeasonResults()
+
 starting findWinner() first stage
+
 Now inside checkPlayoffPoints()
 Number of teams being compared: 5
-Team 1 number of playoff points: 22 Ranked: 0 ID: 0
-Team 2 number of playoff points: 12 Ranked: 0 ID: 1
+Team 1 number of playoff points: 24 Ranked: 0 ID: 0
+Team 2 number of playoff points: 18 Ranked: 0 ID: 1
 Team 3 number of playoff points: 24 Ranked: 0 ID: 2
-Team 4 number of playoff points: 20 Ranked: 0 ID: 3
-Team 5 number of playoff points: 20 Ranked: 0 ID: 4
+Team 4 number of playoff points: 24 Ranked: 0 ID: 3
+Team 5 number of playoff points: 8 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 3
+
+starting findWinner() second stage
+
+Number of tied teams remaining: 3
+Now inside checkTotalWins()
+Number of teams being compared: 3
+Team 1 number of wins: 12 Ranked: 0 ID: 0
+Team 2 number of wins: 12 Ranked: 0 ID: 2
+Team 3 number of wins: 12 Ranked: 0 ID: 3
+Number of teams being compared after checkTotalWins: 3
+
+starting findWinner() third stage
+
+Number of tied teams remaining: 3
+Now inside checkWinPctAgainstTied()
+Number of teams being compared: 3
+Team 1 win percentage: 400 Ranked: 0 ID: 0
+Team 2 win percentage: 600 Ranked: 0 ID: 2
+Team 3 win percentage: 500 Ranked: 0 ID: 3
+Number of teams being compared after checkWinPctAgainstTied(): 1
+
+East Division team 1
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
 starting findWinner() first stage
+
 Now inside checkPlayoffPoints()
 Number of teams being compared: 4
 Team 1 number of playoff points: 18 Ranked: 0 ID: 5
-Team 2 number of playoff points: 16 Ranked: 0 ID: 6
+Team 2 number of playoff points: 6 Ranked: 0 ID: 6
 Team 3 number of playoff points: 14 Ranked: 0 ID: 7
-Team 4 number of playoff points: 16 Ranked: 0 ID: 8
+Team 4 number of playoff points: 26 Ranked: 0 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+West Division team 2
+
+Number of teams in West Division vector: 5
 Calling findWinner() from crunchSeasonResults()
+
 starting findWinner() first stage
+
 Now inside checkPlayoffPoints()
 Number of teams being compared: 5
-Team 1 number of playoff points: 22 Ranked: 0 ID: 0
-Team 2 number of playoff points: 12 Ranked: 0 ID: 1
+Team 1 number of playoff points: 24 Ranked: 0 ID: 0
+Team 2 number of playoff points: 18 Ranked: 0 ID: 1
 Team 3 number of playoff points: 24 Ranked: 1 ID: 2
-Team 4 number of playoff points: 20 Ranked: 0 ID: 3
-Team 5 number of playoff points: 20 Ranked: 0 ID: 4
+Team 4 number of playoff points: 24 Ranked: 0 ID: 3
+Team 5 number of playoff points: 8 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 2
+
+starting findWinner() second stage
+
+Number of tied teams remaining: 2
+Now inside checkTotalWins()
+Number of teams being compared: 2
+Team 1 number of wins: 12 Ranked: 0 ID: 0
+Team 2 number of wins: 12 Ranked: 0 ID: 3
+Number of teams being compared after checkTotalWins: 2
+
+starting findWinner() third stage
+
+Number of tied teams remaining: 2
+Now inside checkWinPctAgainstTied()
+Number of teams being compared: 2
+Team 1 win percentage: 666 Ranked: 0 ID: 0
+Team 2 win percentage: 333 Ranked: 0 ID: 3
+Number of teams being compared after checkWinPctAgainstTied(): 1
+
+East Division team 2
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
 starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 18 Ranked: 0 ID: 5
+Team 2 number of playoff points: 6 Ranked: 0 ID: 6
+Team 3 number of playoff points: 14 Ranked: 0 ID: 7
+Team 4 number of playoff points: 26 Ranked: 1 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+West Division team 3
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 24 Ranked: 1 ID: 0
+Team 2 number of playoff points: 18 Ranked: 0 ID: 1
+Team 3 number of playoff points: 24 Ranked: 1 ID: 2
+Team 4 number of playoff points: 24 Ranked: 0 ID: 3
+Team 5 number of playoff points: 8 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 3
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
 Now inside checkPlayoffPoints()
 Number of teams being compared: 4
 Team 1 number of playoff points: 18 Ranked: 1 ID: 5
-Team 2 number of playoff points: 16 Ranked: 0 ID: 6
+Team 2 number of playoff points: 6 Ranked: 0 ID: 6
 Team 3 number of playoff points: 14 Ranked: 0 ID: 7
-Team 4 number of playoff points: 16 Ranked: 0 ID: 8
+Team 4 number of playoff points: 26 Ranked: 1 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+West Division team 4
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 24 Ranked: 1 ID: 0
+Team 2 number of playoff points: 18 Ranked: 0 ID: 1
+Team 3 number of playoff points: 24 Ranked: 1 ID: 2
+Team 4 number of playoff points: 24 Ranked: 1 ID: 3
+Team 5 number of playoff points: 8 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 4
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 18 Ranked: 1 ID: 5
+Team 2 number of playoff points: 6 Ranked: 0 ID: 6
+Team 3 number of playoff points: 14 Ranked: 1 ID: 7
+Team 4 number of playoff points: 26 Ranked: 1 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+Determining fifth-place west team - calling findWinner from crunchSeasonResults()
+
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 24 Ranked: 1 ID: 0
+Team 2 number of playoff points: 18 Ranked: 1 ID: 1
+Team 3 number of playoff points: 24 Ranked: 1 ID: 2
+Team 4 number of playoff points: 24 Ranked: 1 ID: 3
+Team 5 number of playoff points: 8 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+WEST DIVISION RANKINGS
+1. Calgary Stampeders
+2. Saskatchewan Roughriders
+3. Winnipeg Blue Bombers
+4. Edmonton Eskimos
+5. BC Lions
+EAST DIVISION RANKINGS
+1. Hamilton Tiger Cats
+2. Ottawa REDBLACKS
+3. Montreal Alouettes
+4. Toronto Argonauts
+
+Updating final ranking totals for first, second, and fifth-place teams.
+Rankings updated.
+Testing if crossover in effect...
+Checking for East-to-West crossover
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 2
+Team 1 number of playoff points: 6 Ranked: 0 ID: 6
+Team 2 number of playoff points: 24 Ranked: 0 ID: 3
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 2
+Team 1 number of playoff points: 18 Ranked: 0 ID: 1
+Team 2 number of playoff points: 14 Ranked: 0 ID: 7
+Number of teams remaining at end of checkPlayoffPoints(): 1
+Checking for West-to-East crossover
+
+West-to-East crossover in effect
+Updating season ranking totals for third and fourth place teams
+
+New season ranking totals by team:
+
+Saskatchewan Roughriders
+First place finishes: 0
+Second place finishes: 1
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 0
+
+Edmonton Eskimos
+First place finishes: 0
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 1
+Times missed playoffs: 0
+
+Calgary Stampeders
+First place finishes: 1
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 0
+
+Winnipeg Blue Bombers
+First place finishes: 0
+Second place finishes: 0
+Third place (made playoffs): 1
+Crossovers: 0
+Times missed playoffs: 0
+
+BC Lions
+First place finishes: 0
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 1
+
+Ottawa REDBLACKS
+First place finishes: 0
+Second place finishes: 1
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 0
+
+Toronto Argonauts
+First place finishes: 0
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 1
+
+Montreal Alouettes
+First place finishes: 0
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 1
+
+Hamilton Tiger Cats
+First place finishes: 1
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 0
+Reached end of crunchSeasonResults(), returning to calling function
+crunchSeasonResults() executed successfully, returning to main()
+Calling copySchedule() from main()
+Copying season schedule
+Copied schedule details:
+
+Week 1
+Game 1: Team 0 17 @ Team 8 23
+Game 2: Team 7 25 @ Team 1 32
+Game 3: Team 5 32 @ Team 2 28
+Game 4: Team 3 33 @ Team 4 23
+Week 2
+Game 1: Team 0 41 @ Team 5 44
+Game 2: Team 4 23 @ Team 1 39
+Game 3: Team 8 64 @ Team 6 14
+Game 4 not scheduled
+Week 3
+Game 1: Team 1 21 @ Team 3 28
+Game 2: Team 7 10 @ Team 8 41
+Game 3: Team 4 32 @ Team 2 36
+Game 4: Team 6 7 @ Team 0 32
+Week 4
+Game 1: Team 8 29 @ Team 7 36
+Game 2: Team 3 29 @ Team 5 14
+Game 3: Team 4 18 @ Team 6 17
+Game 4: Team 2 37 @ Team 0 10
+Week 5
+Game 1: Team 1 33 @ Team 4 6
+Game 2: Team 6 21 @ Team 3 48
+Game 3: Team 7 36 @ Team 5 19
+Game 4: Team 2 23 @ Team 8 30
+Week 6
+Game 1: Team 6 16 @ Team 2 26
+Game 2: Team 5 1 @ Team 3 31
+Game 3: Team 1 10 @ Team 7 20
+Game 4: Team 4 25 @ Team 0 38
+Week 7
+Game 1: Team 2 17 @ Team 5 16
+Game 2: Team 6 0 @ Team 1 26
+Game 3: Team 3 15 @ Team 8 23
+Game 4: Team 0 45 @ Team 4 18
+Week 8
+Game 1: Team 3 27 @ Team 6 28
+Game 2: Team 8 19 @ Team 0 24
+Game 3: Team 5 30 @ Team 7 27
+Game 4: Team 1 18 @ Team 2 24
+Week 9
+Game 1: Team 2 24 @ Team 3 26
+Game 2: Team 0 17 @ Team 7 10
+Game 3: Team 5 12 @ Team 1 16
+Game 4: Team 4 34 @ Team 8 35
+Week 10
+Game 1: Team 4 16 @ Team 3 32
+Game 2: Team 1 41 @ Team 6 26
+Game 3: Team 8 21 @ Team 5 7
+Game 4: Team 7 40 @ Team 2 34
+Week 11
+Game 1: Team 3 34 @ Team 1 28
+Game 2: Team 5 18 @ Team 0 40
+Game 3: Team 8 13 @ Team 4 10
+Game 4: Team 7 28 @ Team 6 22
+Week 12
+Game 1 (not yet played): Team 3 @ 0
+Game 2 (not yet played): Team 6 @ 8
+Game 3 (not yet played): Team 1 @ 2
+Game 4 not scheduled
+Week 13
+Game 1 (not yet played): Team 4 @ 7
+Game 2 (not yet played): Team 6 @ 5
+Game 3 (not yet played): Team 0 @ 3
+Game 4 (not yet played): Team 2 @ 1
+Week 14
+Game 1 (not yet played): Team 5 @ 4
+Game 2 (not yet played): Team 8 @ 2
+Game 3 (not yet played): Team 7 @ 0
+Game 4 not scheduled
+Week 15
+Game 1 (not yet played): Team 2 @ 6
+Game 2 (not yet played): Team 8 @ 1
+Game 3 (not yet played): Team 3 @ 7
+Game 4 (not yet played): Team 4 @ 5
+Week 16
+Game 1 (not yet played): Team 8 @ 3
+Game 2 (not yet played): Team 1 @ 5
+Game 3 (not yet played): Team 0 @ 6
+Game 4 (not yet played): Team 7 @ 4
+Week 17
+Game 1 (not yet played): Team 1 @ 8
+Game 2 (not yet played): Team 2 @ 7
+Game 3 (not yet played): Team 3 @ 0
+Game 4 (not yet played): Team 6 @ 4
+Week 18
+Game 1 (not yet played): Team 5 @ 6
+Game 2 (not yet played): Team 0 @ 2
+Game 3 (not yet played): Team 7 @ 3
+Game 4 (not yet played): Team 4 @ 1
+Week 19
+Game 1 (not yet played): Team 6 @ 7
+Game 2 (not yet played): Team 0 @ 4
+Game 3 (not yet played): Team 5 @ 8
+Game 4 (not yet played): Team 3 @ 2
+Week 20
+Game 1 (not yet played): Team 2 @ 3
+Game 2 (not yet played): Team 8 @ 7
+Game 3 (not yet played): Team 5 @ 6
+Game 4 (not yet played): Team 0 @ 1
+Week 21
+Game 1 (not yet played): Team 7 @ 5
+Game 2 (not yet played): Team 1 @ 0
+Game 3 (not yet played): Team 6 @ 8
+Game 4 (not yet played): Team 2 @ 4
+
+copySchedule() completed, returning to calling function
+copySchedule() executed successfully, returning to main()
+Calling copyLeague() from main()
+Now in copyLeague()
+Copied team statistics:
+
+Saskatchewan Roughriders	6	3	0	264	201
+Edmonton Eskimos	6	4	0	264	198
+Calgary Stampeders	5	4	0	249	220
+Winnipeg Blue Bombers	8	2	0	303	199
+BC Lions	1	9	0	205	321
+Ottawa REDBLACKS	3	7	0	193	286
+Toronto Argonauts	1	8	0	151	310
+Montreal Alouettes	5	4	0	232	234
+Hamilton Tiger Cats	8	2	0	298	190
+copyLeague() completed, returning to calling function
+copyLeague() executed successfully, returning to main()
+Calling simulateSeason() from main()
+Now in simulateSeason()
+Setting team ranked status to false
+Value of "ranked":
+Saskatchewan Roughriders: 0
+Edmonton Eskimos: 0
+Calgary Stampeders: 0
+Winnipeg Blue Bombers: 0
+BC Lions: 0
+Ottawa REDBLACKS: 0
+Toronto Argonauts: 0
+Montreal Alouettes: 0
+Hamilton Tiger Cats: 0
+Simulating unplayed games in season
+Season results following simulation:
+
+
+Week 1
+
+Game 1: Team 0 17 @ Team 8 23
+Game 2: Team 7 25 @ Team 1 32
+Game 3: Team 5 32 @ Team 2 28
+Game 4: Team 3 33 @ Team 4 23
+
+Week 2
+
+Game 1: Team 0 41 @ Team 5 44
+Game 2: Team 4 23 @ Team 1 39
+Game 3: Team 8 64 @ Team 6 14
+Game 4 not scheduled
+
+Week 3
+
+Game 1: Team 1 21 @ Team 3 28
+Game 2: Team 7 10 @ Team 8 41
+Game 3: Team 4 32 @ Team 2 36
+Game 4: Team 6 7 @ Team 0 32
+
+Week 4
+
+Game 1: Team 8 29 @ Team 7 36
+Game 2: Team 3 29 @ Team 5 14
+Game 3: Team 4 18 @ Team 6 17
+Game 4: Team 2 37 @ Team 0 10
+
+Week 5
+
+Game 1: Team 1 33 @ Team 4 6
+Game 2: Team 6 21 @ Team 3 48
+Game 3: Team 7 36 @ Team 5 19
+Game 4: Team 2 23 @ Team 8 30
+
+Week 6
+
+Game 1: Team 6 16 @ Team 2 26
+Game 2: Team 5 1 @ Team 3 31
+Game 3: Team 1 10 @ Team 7 20
+Game 4: Team 4 25 @ Team 0 38
+
+Week 7
+
+Game 1: Team 2 17 @ Team 5 16
+Game 2: Team 6 0 @ Team 1 26
+Game 3: Team 3 15 @ Team 8 23
+Game 4: Team 0 45 @ Team 4 18
+
+Week 8
+
+Game 1: Team 3 27 @ Team 6 28
+Game 2: Team 8 19 @ Team 0 24
+Game 3: Team 5 30 @ Team 7 27
+Game 4: Team 1 18 @ Team 2 24
+
+Week 9
+
+Game 1: Team 2 24 @ Team 3 26
+Game 2: Team 0 17 @ Team 7 10
+Game 3: Team 5 12 @ Team 1 16
+Game 4: Team 4 34 @ Team 8 35
+
+Week 10
+
+Game 1: Team 4 16 @ Team 3 32
+Game 2: Team 1 41 @ Team 6 26
+Game 3: Team 8 21 @ Team 5 7
+Game 4: Team 7 40 @ Team 2 34
+
+Week 11
+
+Game 1: Team 3 34 @ Team 1 28
+Game 2: Team 5 18 @ Team 0 40
+Game 3: Team 8 13 @ Team 4 10
+Game 4: Team 7 28 @ Team 6 22
+
+Week 12
+
+Game 1: Team 3 20 @ Team 0 48
+Game 2: Team 6 45 @ Team 8 61
+Game 3: Team 1 35 @ Team 2 2
+Game 4 not scheduled
+
+Week 13
+
+Game 1: Team 4 59 @ Team 7 26
+Game 2: Team 6 6 @ Team 5 60
+Game 3: Team 0 44 @ Team 3 11
+Game 4: Team 2 46 @ Team 1 43
+
+Week 14
+
+Game 1: Team 5 3 @ Team 4 53
+Game 2: Team 8 4 @ Team 2 37
+Game 3: Team 7 21 @ Team 0 16
+Game 4 not scheduled
+
+Week 15
+
+Game 1: Team 2 26 @ Team 6 27
+Game 2: Team 8 65 @ Team 1 29
+Game 3: Team 3 6 @ Team 7 15
+Game 4: Team 4 39 @ Team 5 17
+
+Week 16
+
+Game 1: Team 8 37 @ Team 3 13
+Game 2: Team 1 42 @ Team 5 38
+Game 3: Team 0 11 @ Team 6 31
+Game 4: Team 7 53 @ Team 4 17
+
+Week 17
+
+Game 1: Team 1 25 @ Team 8 11
+Game 2: Team 2 52 @ Team 7 1
+Game 3: Team 3 38 @ Team 0 63
+Game 4: Team 6 8 @ Team 4 10
+
+Week 18
+
+Game 1: Team 5 65 @ Team 6 38
+Game 2: Team 0 49 @ Team 2 6
+Game 3: Team 7 59 @ Team 3 37
+Game 4: Team 4 34 @ Team 1 21
+
+Week 19
+
+Game 1: Team 6 31 @ Team 7 29
+Game 2: Team 0 43 @ Team 4 1
+Game 3: Team 5 65 @ Team 8 56
+Game 4: Team 3 42 @ Team 2 3
+
+Week 20
+
+Game 1: Team 2 64 @ Team 3 54
+Game 2: Team 8 36 @ Team 7 12
+Game 3: Team 5 13 @ Team 6 45
+Game 4: Team 0 25 @ Team 1 53
+
+Week 21
+
+Game 1: Team 7 12 @ Team 5 5
+Game 2: Team 1 3 @ Team 0 63
+Game 3: Team 6 40 @ Team 8 1
+Game 4: Team 2 19 @ Team 4 15
+
+Team statistics following simulation:
+Key: wins/losses/ties/points for/points against/team ID number)
+
+Saskatchewan Roughriders	12	6	0	626	385	0
+Edmonton Eskimos	10	8	0	515	482	1
+Calgary Stampeders	10	8	0	504	490	2
+Winnipeg Blue Bombers	9	9	0	524	532	3
+BC Lions	6	12	0	433	511	4
+Ottawa REDBLACKS	6	12	0	459	577	5
+Toronto Argonauts	6	12	0	422	586	6
+Montreal Alouettes	10	8	0	460	493	7
+Hamilton Tiger Cats	12	6	0	569	456	8
+simulateSeason() completed, returning to calling function
+simulateSeason() executed successfully, returning to main()
+Calling crunchSeasonResults() from main()
+Now in crunchSeasonResults
+Sorting teams into division vectors
+West division:
+1. Saskatchewan Roughriders
+2. Edmonton Eskimos
+3. Calgary Stampeders
+4. Winnipeg Blue Bombers
+5. BC Lions
+
+East division:
+6. Saskatchewan Roughriders
+7. Edmonton Eskimos
+8. Calgary Stampeders
+9. Winnipeg Blue Bombers
+
+Determining top four teams in each division
+
+West Division team 1
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 24 Ranked: 0 ID: 0
+Team 2 number of playoff points: 20 Ranked: 0 ID: 1
+Team 3 number of playoff points: 20 Ranked: 0 ID: 2
+Team 4 number of playoff points: 18 Ranked: 0 ID: 3
+Team 5 number of playoff points: 12 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 1
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 12 Ranked: 0 ID: 5
+Team 2 number of playoff points: 12 Ranked: 0 ID: 6
+Team 3 number of playoff points: 20 Ranked: 0 ID: 7
+Team 4 number of playoff points: 24 Ranked: 0 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+West Division team 2
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 24 Ranked: 1 ID: 0
+Team 2 number of playoff points: 20 Ranked: 0 ID: 1
+Team 3 number of playoff points: 20 Ranked: 0 ID: 2
+Team 4 number of playoff points: 18 Ranked: 0 ID: 3
+Team 5 number of playoff points: 12 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 2
+
 starting findWinner() second stage
+
 Number of tied teams remaining: 2
 Now inside checkTotalWins()
 Number of teams being compared: 2
-Team 1 number of wins: 8 Ranked: 0 ID: 6
-Team 2 number of wins: 8 Ranked: 0 ID: 8
+Team 1 number of wins: 10 Ranked: 0 ID: 1
+Team 2 number of wins: 10 Ranked: 0 ID: 2
 Number of teams being compared after checkTotalWins: 2
+
 starting findWinner() third stage
+
 Number of tied teams remaining: 2
 Now inside checkWinPctAgainstTied()
 Number of teams being compared: 2
+Team 1 win percentage: 333 Ranked: 0 ID: 1
+Team 2 win percentage: 666 Ranked: 0 ID: 2
+Number of teams being compared after checkWinPctAgainstTied(): 1
+
+East Division team 2
+
+Number of teams in East Division vector: 4
 Calling findWinner() from crunchSeasonResults()
+
 starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 12 Ranked: 0 ID: 5
+Team 2 number of playoff points: 12 Ranked: 0 ID: 6
+Team 3 number of playoff points: 20 Ranked: 0 ID: 7
+Team 4 number of playoff points: 24 Ranked: 1 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+West Division team 3
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 24 Ranked: 1 ID: 0
+Team 2 number of playoff points: 20 Ranked: 0 ID: 1
+Team 3 number of playoff points: 20 Ranked: 1 ID: 2
+Team 4 number of playoff points: 18 Ranked: 0 ID: 3
+Team 5 number of playoff points: 12 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 3
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 12 Ranked: 0 ID: 5
+Team 2 number of playoff points: 12 Ranked: 0 ID: 6
+Team 3 number of playoff points: 20 Ranked: 1 ID: 7
+Team 4 number of playoff points: 24 Ranked: 1 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 2
+
+starting findWinner() second stage
+
+Number of tied teams remaining: 2
+Now inside checkTotalWins()
+Number of teams being compared: 2
+Team 1 number of wins: 6 Ranked: 0 ID: 5
+Team 2 number of wins: 6 Ranked: 0 ID: 6
+Number of teams being compared after checkTotalWins: 2
+
+starting findWinner() third stage
+
+Number of tied teams remaining: 2
+Now inside checkWinPctAgainstTied()
+Number of teams being compared: 2
+Team 1 win percentage: 666 Ranked: 0 ID: 5
+Team 2 win percentage: 333 Ranked: 0 ID: 6
+Number of teams being compared after checkWinPctAgainstTied(): 1
+
+West Division team 4
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 24 Ranked: 1 ID: 0
+Team 2 number of playoff points: 20 Ranked: 1 ID: 1
+Team 3 number of playoff points: 20 Ranked: 1 ID: 2
+Team 4 number of playoff points: 18 Ranked: 0 ID: 3
+Team 5 number of playoff points: 12 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 4
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 12 Ranked: 1 ID: 5
+Team 2 number of playoff points: 12 Ranked: 0 ID: 6
+Team 3 number of playoff points: 20 Ranked: 1 ID: 7
+Team 4 number of playoff points: 24 Ranked: 1 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+Determining fifth-place west team - calling findWinner from crunchSeasonResults()
+
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 24 Ranked: 1 ID: 0
+Team 2 number of playoff points: 20 Ranked: 1 ID: 1
+Team 3 number of playoff points: 20 Ranked: 1 ID: 2
+Team 4 number of playoff points: 18 Ranked: 1 ID: 3
+Team 5 number of playoff points: 12 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+WEST DIVISION RANKINGS
+1. Saskatchewan Roughriders
+2. Calgary Stampeders
+3. Edmonton Eskimos
+4. Winnipeg Blue Bombers
+5. BC Lions
+EAST DIVISION RANKINGS
+1. Hamilton Tiger Cats
+2. Montreal Alouettes
+3. Ottawa REDBLACKS
+4. Toronto Argonauts
+
+Updating final ranking totals for first, second, and fifth-place teams.
+Rankings updated.
+Testing if crossover in effect...
+Checking for East-to-West crossover
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 2
+Team 1 number of playoff points: 12 Ranked: 0 ID: 6
+Team 2 number of playoff points: 20 Ranked: 0 ID: 1
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 2
+Team 1 number of playoff points: 18 Ranked: 0 ID: 3
+Team 2 number of playoff points: 12 Ranked: 0 ID: 5
+Number of teams remaining at end of checkPlayoffPoints(): 1
+Checking for West-to-East crossover
+
+West-to-East crossover in effect
+Updating season ranking totals for third and fourth place teams
+
+New season ranking totals by team:
+
+Saskatchewan Roughriders
+First place finishes: 1
+Second place finishes: 1
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 0
+
+Edmonton Eskimos
+First place finishes: 0
+Second place finishes: 0
+Third place (made playoffs): 1
+Crossovers: 1
+Times missed playoffs: 0
+
+Calgary Stampeders
+First place finishes: 1
+Second place finishes: 1
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 0
+
+Winnipeg Blue Bombers
+First place finishes: 0
+Second place finishes: 0
+Third place (made playoffs): 1
+Crossovers: 1
+Times missed playoffs: 0
+
+BC Lions
+First place finishes: 0
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 2
+
+Ottawa REDBLACKS
+First place finishes: 0
+Second place finishes: 1
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 1
+
+Toronto Argonauts
+First place finishes: 0
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 2
+
+Montreal Alouettes
+First place finishes: 0
+Second place finishes: 1
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 1
+
+Hamilton Tiger Cats
+First place finishes: 2
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 0
+Reached end of crunchSeasonResults(), returning to calling function
+crunchSeasonResults() executed successfully, returning to main()
+Calling copySchedule() from main()
+Copying season schedule
+Copied schedule details:
+
+Week 1
+Game 1: Team 0 17 @ Team 8 23
+Game 2: Team 7 25 @ Team 1 32
+Game 3: Team 5 32 @ Team 2 28
+Game 4: Team 3 33 @ Team 4 23
+Week 2
+Game 1: Team 0 41 @ Team 5 44
+Game 2: Team 4 23 @ Team 1 39
+Game 3: Team 8 64 @ Team 6 14
+Game 4 not scheduled
+Week 3
+Game 1: Team 1 21 @ Team 3 28
+Game 2: Team 7 10 @ Team 8 41
+Game 3: Team 4 32 @ Team 2 36
+Game 4: Team 6 7 @ Team 0 32
+Week 4
+Game 1: Team 8 29 @ Team 7 36
+Game 2: Team 3 29 @ Team 5 14
+Game 3: Team 4 18 @ Team 6 17
+Game 4: Team 2 37 @ Team 0 10
+Week 5
+Game 1: Team 1 33 @ Team 4 6
+Game 2: Team 6 21 @ Team 3 48
+Game 3: Team 7 36 @ Team 5 19
+Game 4: Team 2 23 @ Team 8 30
+Week 6
+Game 1: Team 6 16 @ Team 2 26
+Game 2: Team 5 1 @ Team 3 31
+Game 3: Team 1 10 @ Team 7 20
+Game 4: Team 4 25 @ Team 0 38
+Week 7
+Game 1: Team 2 17 @ Team 5 16
+Game 2: Team 6 0 @ Team 1 26
+Game 3: Team 3 15 @ Team 8 23
+Game 4: Team 0 45 @ Team 4 18
+Week 8
+Game 1: Team 3 27 @ Team 6 28
+Game 2: Team 8 19 @ Team 0 24
+Game 3: Team 5 30 @ Team 7 27
+Game 4: Team 1 18 @ Team 2 24
+Week 9
+Game 1: Team 2 24 @ Team 3 26
+Game 2: Team 0 17 @ Team 7 10
+Game 3: Team 5 12 @ Team 1 16
+Game 4: Team 4 34 @ Team 8 35
+Week 10
+Game 1: Team 4 16 @ Team 3 32
+Game 2: Team 1 41 @ Team 6 26
+Game 3: Team 8 21 @ Team 5 7
+Game 4: Team 7 40 @ Team 2 34
+Week 11
+Game 1: Team 3 34 @ Team 1 28
+Game 2: Team 5 18 @ Team 0 40
+Game 3: Team 8 13 @ Team 4 10
+Game 4: Team 7 28 @ Team 6 22
+Week 12
+Game 1 (not yet played): Team 3 @ 0
+Game 2 (not yet played): Team 6 @ 8
+Game 3 (not yet played): Team 1 @ 2
+Game 4 not scheduled
+Week 13
+Game 1 (not yet played): Team 4 @ 7
+Game 2 (not yet played): Team 6 @ 5
+Game 3 (not yet played): Team 0 @ 3
+Game 4 (not yet played): Team 2 @ 1
+Week 14
+Game 1 (not yet played): Team 5 @ 4
+Game 2 (not yet played): Team 8 @ 2
+Game 3 (not yet played): Team 7 @ 0
+Game 4 not scheduled
+Week 15
+Game 1 (not yet played): Team 2 @ 6
+Game 2 (not yet played): Team 8 @ 1
+Game 3 (not yet played): Team 3 @ 7
+Game 4 (not yet played): Team 4 @ 5
+Week 16
+Game 1 (not yet played): Team 8 @ 3
+Game 2 (not yet played): Team 1 @ 5
+Game 3 (not yet played): Team 0 @ 6
+Game 4 (not yet played): Team 7 @ 4
+Week 17
+Game 1 (not yet played): Team 1 @ 8
+Game 2 (not yet played): Team 2 @ 7
+Game 3 (not yet played): Team 3 @ 0
+Game 4 (not yet played): Team 6 @ 4
+Week 18
+Game 1 (not yet played): Team 5 @ 6
+Game 2 (not yet played): Team 0 @ 2
+Game 3 (not yet played): Team 7 @ 3
+Game 4 (not yet played): Team 4 @ 1
+Week 19
+Game 1 (not yet played): Team 6 @ 7
+Game 2 (not yet played): Team 0 @ 4
+Game 3 (not yet played): Team 5 @ 8
+Game 4 (not yet played): Team 3 @ 2
+Week 20
+Game 1 (not yet played): Team 2 @ 3
+Game 2 (not yet played): Team 8 @ 7
+Game 3 (not yet played): Team 5 @ 6
+Game 4 (not yet played): Team 0 @ 1
+Week 21
+Game 1 (not yet played): Team 7 @ 5
+Game 2 (not yet played): Team 1 @ 0
+Game 3 (not yet played): Team 6 @ 8
+Game 4 (not yet played): Team 2 @ 4
+
+copySchedule() completed, returning to calling function
+copySchedule() executed successfully, returning to main()
+Calling copyLeague() from main()
+Now in copyLeague()
+Copied team statistics:
+
+Saskatchewan Roughriders	6	3	0	264	201
+Edmonton Eskimos	6	4	0	264	198
+Calgary Stampeders	5	4	0	249	220
+Winnipeg Blue Bombers	8	2	0	303	199
+BC Lions	1	9	0	205	321
+Ottawa REDBLACKS	3	7	0	193	286
+Toronto Argonauts	1	8	0	151	310
+Montreal Alouettes	5	4	0	232	234
+Hamilton Tiger Cats	8	2	0	298	190
+copyLeague() completed, returning to calling function
+copyLeague() executed successfully, returning to main()
+Calling simulateSeason() from main()
+Now in simulateSeason()
+Setting team ranked status to false
+Value of "ranked":
+Saskatchewan Roughriders: 0
+Edmonton Eskimos: 0
+Calgary Stampeders: 0
+Winnipeg Blue Bombers: 0
+BC Lions: 0
+Ottawa REDBLACKS: 0
+Toronto Argonauts: 0
+Montreal Alouettes: 0
+Hamilton Tiger Cats: 0
+Simulating unplayed games in season
+Season results following simulation:
+
+
+Week 1
+
+Game 1: Team 0 17 @ Team 8 23
+Game 2: Team 7 25 @ Team 1 32
+Game 3: Team 5 32 @ Team 2 28
+Game 4: Team 3 33 @ Team 4 23
+
+Week 2
+
+Game 1: Team 0 41 @ Team 5 44
+Game 2: Team 4 23 @ Team 1 39
+Game 3: Team 8 64 @ Team 6 14
+Game 4 not scheduled
+
+Week 3
+
+Game 1: Team 1 21 @ Team 3 28
+Game 2: Team 7 10 @ Team 8 41
+Game 3: Team 4 32 @ Team 2 36
+Game 4: Team 6 7 @ Team 0 32
+
+Week 4
+
+Game 1: Team 8 29 @ Team 7 36
+Game 2: Team 3 29 @ Team 5 14
+Game 3: Team 4 18 @ Team 6 17
+Game 4: Team 2 37 @ Team 0 10
+
+Week 5
+
+Game 1: Team 1 33 @ Team 4 6
+Game 2: Team 6 21 @ Team 3 48
+Game 3: Team 7 36 @ Team 5 19
+Game 4: Team 2 23 @ Team 8 30
+
+Week 6
+
+Game 1: Team 6 16 @ Team 2 26
+Game 2: Team 5 1 @ Team 3 31
+Game 3: Team 1 10 @ Team 7 20
+Game 4: Team 4 25 @ Team 0 38
+
+Week 7
+
+Game 1: Team 2 17 @ Team 5 16
+Game 2: Team 6 0 @ Team 1 26
+Game 3: Team 3 15 @ Team 8 23
+Game 4: Team 0 45 @ Team 4 18
+
+Week 8
+
+Game 1: Team 3 27 @ Team 6 28
+Game 2: Team 8 19 @ Team 0 24
+Game 3: Team 5 30 @ Team 7 27
+Game 4: Team 1 18 @ Team 2 24
+
+Week 9
+
+Game 1: Team 2 24 @ Team 3 26
+Game 2: Team 0 17 @ Team 7 10
+Game 3: Team 5 12 @ Team 1 16
+Game 4: Team 4 34 @ Team 8 35
+
+Week 10
+
+Game 1: Team 4 16 @ Team 3 32
+Game 2: Team 1 41 @ Team 6 26
+Game 3: Team 8 21 @ Team 5 7
+Game 4: Team 7 40 @ Team 2 34
+
+Week 11
+
+Game 1: Team 3 34 @ Team 1 28
+Game 2: Team 5 18 @ Team 0 40
+Game 3: Team 8 13 @ Team 4 10
+Game 4: Team 7 28 @ Team 6 22
+
+Week 12
+
+Game 1: Team 3 4 @ Team 0 24
+Game 2: Team 6 18 @ Team 8 56
+Game 3: Team 1 55 @ Team 2 40
+Game 4 not scheduled
+
+Week 13
+
+Game 1: Team 4 66 @ Team 7 13
+Game 2: Team 6 5 @ Team 5 28
+Game 3: Team 0 18 @ Team 3 10
+Game 4: Team 2 37 @ Team 1 20
+
+Week 14
+
+Game 1: Team 5 50 @ Team 4 5
+Game 2: Team 8 30 @ Team 2 61
+Game 3: Team 7 66 @ Team 0 10
+Game 4 not scheduled
+
+Week 15
+
+Game 1: Team 2 23 @ Team 6 36
+Game 2: Team 8 30 @ Team 1 8
+Game 3: Team 3 16 @ Team 7 24
+Game 4: Team 4 19 @ Team 5 15
+
+Week 16
+
+Game 1: Team 8 24 @ Team 3 10
+Game 2: Team 1 42 @ Team 5 32
+Game 3: Team 0 23 @ Team 6 12
+Game 4: Team 7 8 @ Team 4 8
+
+Week 17
+
+Game 1: Team 1 52 @ Team 8 35
+Game 2: Team 2 35 @ Team 7 10
+Game 3: Team 3 1 @ Team 0 52
+Game 4: Team 6 1 @ Team 4 29
+
+Week 18
+
+Game 1: Team 5 48 @ Team 6 12
+Game 2: Team 0 62 @ Team 2 20
+Game 3: Team 7 42 @ Team 3 53
+Game 4: Team 4 10 @ Team 1 40
+
+Week 19
+
+Game 1: Team 6 58 @ Team 7 54
+Game 2: Team 0 40 @ Team 4 9
+Game 3: Team 5 9 @ Team 8 31
+Game 4: Team 3 7 @ Team 2 20
+
+Week 20
+
+Game 1: Team 2 44 @ Team 3 58
+Game 2: Team 8 41 @ Team 7 56
+Game 3: Team 5 44 @ Team 6 24
+Game 4: Team 0 4 @ Team 1 50
+
+Week 21
+
+Game 1: Team 7 35 @ Team 5 4
+Game 2: Team 1 59 @ Team 0 48
+Game 3: Team 6 19 @ Team 8 50
+Game 4: Team 2 13 @ Team 4 63
+
+Team statistics following simulation:
+Key: wins/losses/ties/points for/points against/team ID number)
+
+Saskatchewan Roughriders	12	6	0	545	432	0
+Edmonton Eskimos	12	6	0	590	434	1
+Calgary Stampeders	9	9	0	542	561	2
+Winnipeg Blue Bombers	10	8	0	462	447	3
+BC Lions	5	12	1	414	501	4
+Ottawa REDBLACKS	7	11	0	423	459	5
+Toronto Argonauts	3	15	0	336	665	6
+Montreal Alouettes	9	8	1	540	525	7
+Hamilton Tiger Cats	13	5	0	595	423	8
+simulateSeason() completed, returning to calling function
+simulateSeason() executed successfully, returning to main()
+Calling crunchSeasonResults() from main()
+Now in crunchSeasonResults
+Sorting teams into division vectors
+West division:
+1. Saskatchewan Roughriders
+2. Edmonton Eskimos
+3. Calgary Stampeders
+4. Winnipeg Blue Bombers
+5. BC Lions
+
+East division:
+6. Saskatchewan Roughriders
+7. Edmonton Eskimos
+8. Calgary Stampeders
+9. Winnipeg Blue Bombers
+
+Determining top four teams in each division
+
+West Division team 1
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 24 Ranked: 0 ID: 0
+Team 2 number of playoff points: 24 Ranked: 0 ID: 1
+Team 3 number of playoff points: 18 Ranked: 0 ID: 2
+Team 4 number of playoff points: 20 Ranked: 0 ID: 3
+Team 5 number of playoff points: 11 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 2
+
+starting findWinner() second stage
+
+Number of tied teams remaining: 2
+Now inside checkTotalWins()
+Number of teams being compared: 2
+Team 1 number of wins: 12 Ranked: 0 ID: 0
+Team 2 number of wins: 12 Ranked: 0 ID: 1
+Number of teams being compared after checkTotalWins: 2
+
+starting findWinner() third stage
+
+Number of tied teams remaining: 2
+Now inside checkWinPctAgainstTied()
+Number of teams being compared: 2
+Team 1 win percentage: 0 Ranked: 0 ID: 0
+Team 2 win percentage: 1000 Ranked: 0 ID: 1
+Number of teams being compared after checkWinPctAgainstTied(): 1
+
+East Division team 1
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 14 Ranked: 0 ID: 5
+Team 2 number of playoff points: 6 Ranked: 0 ID: 6
+Team 3 number of playoff points: 19 Ranked: 0 ID: 7
+Team 4 number of playoff points: 26 Ranked: 0 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+West Division team 2
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 24 Ranked: 0 ID: 0
+Team 2 number of playoff points: 24 Ranked: 1 ID: 1
+Team 3 number of playoff points: 18 Ranked: 0 ID: 2
+Team 4 number of playoff points: 20 Ranked: 0 ID: 3
+Team 5 number of playoff points: 11 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 2
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 14 Ranked: 0 ID: 5
+Team 2 number of playoff points: 6 Ranked: 0 ID: 6
+Team 3 number of playoff points: 19 Ranked: 0 ID: 7
+Team 4 number of playoff points: 26 Ranked: 1 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+West Division team 3
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 24 Ranked: 1 ID: 0
+Team 2 number of playoff points: 24 Ranked: 1 ID: 1
+Team 3 number of playoff points: 18 Ranked: 0 ID: 2
+Team 4 number of playoff points: 20 Ranked: 0 ID: 3
+Team 5 number of playoff points: 11 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 3
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 14 Ranked: 0 ID: 5
+Team 2 number of playoff points: 6 Ranked: 0 ID: 6
+Team 3 number of playoff points: 19 Ranked: 1 ID: 7
+Team 4 number of playoff points: 26 Ranked: 1 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+West Division team 4
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 24 Ranked: 1 ID: 0
+Team 2 number of playoff points: 24 Ranked: 1 ID: 1
+Team 3 number of playoff points: 18 Ranked: 0 ID: 2
+Team 4 number of playoff points: 20 Ranked: 1 ID: 3
+Team 5 number of playoff points: 11 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 4
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 14 Ranked: 1 ID: 5
+Team 2 number of playoff points: 6 Ranked: 0 ID: 6
+Team 3 number of playoff points: 19 Ranked: 1 ID: 7
+Team 4 number of playoff points: 26 Ranked: 1 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+Determining fifth-place west team - calling findWinner from crunchSeasonResults()
+
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 24 Ranked: 1 ID: 0
+Team 2 number of playoff points: 24 Ranked: 1 ID: 1
+Team 3 number of playoff points: 18 Ranked: 1 ID: 2
+Team 4 number of playoff points: 20 Ranked: 1 ID: 3
+Team 5 number of playoff points: 11 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+WEST DIVISION RANKINGS
+1. Edmonton Eskimos
+2. Saskatchewan Roughriders
+3. Winnipeg Blue Bombers
+4. Calgary Stampeders
+5. BC Lions
+EAST DIVISION RANKINGS
+1. Hamilton Tiger Cats
+2. Montreal Alouettes
+3. Ottawa REDBLACKS
+4. Toronto Argonauts
+
+Updating final ranking totals for first, second, and fifth-place teams.
+Rankings updated.
+Testing if crossover in effect...
+Checking for East-to-West crossover
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 2
+Team 1 number of playoff points: 6 Ranked: 0 ID: 6
+Team 2 number of playoff points: 20 Ranked: 0 ID: 3
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 2
+Team 1 number of playoff points: 18 Ranked: 0 ID: 2
+Team 2 number of playoff points: 14 Ranked: 0 ID: 5
+Number of teams remaining at end of checkPlayoffPoints(): 1
+Checking for West-to-East crossover
+
+West-to-East crossover in effect
+Updating season ranking totals for third and fourth place teams
+
+New season ranking totals by team:
+
+Saskatchewan Roughriders
+First place finishes: 1
+Second place finishes: 2
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 0
+
+Edmonton Eskimos
+First place finishes: 1
+Second place finishes: 0
+Third place (made playoffs): 1
+Crossovers: 1
+Times missed playoffs: 0
+
+Calgary Stampeders
+First place finishes: 1
+Second place finishes: 1
+Third place (made playoffs): 0
+Crossovers: 1
+Times missed playoffs: 0
+
+Winnipeg Blue Bombers
+First place finishes: 0
+Second place finishes: 0
+Third place (made playoffs): 2
+Crossovers: 1
+Times missed playoffs: 0
+
+BC Lions
+First place finishes: 0
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 3
+
+Ottawa REDBLACKS
+First place finishes: 0
+Second place finishes: 1
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 2
+
+Toronto Argonauts
+First place finishes: 0
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 3
+
+Montreal Alouettes
+First place finishes: 0
+Second place finishes: 2
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 1
+
+Hamilton Tiger Cats
+First place finishes: 3
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 0
+Reached end of crunchSeasonResults(), returning to calling function
+crunchSeasonResults() executed successfully, returning to main()
+Calling copySchedule() from main()
+Copying season schedule
+Copied schedule details:
+
+Week 1
+Game 1: Team 0 17 @ Team 8 23
+Game 2: Team 7 25 @ Team 1 32
+Game 3: Team 5 32 @ Team 2 28
+Game 4: Team 3 33 @ Team 4 23
+Week 2
+Game 1: Team 0 41 @ Team 5 44
+Game 2: Team 4 23 @ Team 1 39
+Game 3: Team 8 64 @ Team 6 14
+Game 4 not scheduled
+Week 3
+Game 1: Team 1 21 @ Team 3 28
+Game 2: Team 7 10 @ Team 8 41
+Game 3: Team 4 32 @ Team 2 36
+Game 4: Team 6 7 @ Team 0 32
+Week 4
+Game 1: Team 8 29 @ Team 7 36
+Game 2: Team 3 29 @ Team 5 14
+Game 3: Team 4 18 @ Team 6 17
+Game 4: Team 2 37 @ Team 0 10
+Week 5
+Game 1: Team 1 33 @ Team 4 6
+Game 2: Team 6 21 @ Team 3 48
+Game 3: Team 7 36 @ Team 5 19
+Game 4: Team 2 23 @ Team 8 30
+Week 6
+Game 1: Team 6 16 @ Team 2 26
+Game 2: Team 5 1 @ Team 3 31
+Game 3: Team 1 10 @ Team 7 20
+Game 4: Team 4 25 @ Team 0 38
+Week 7
+Game 1: Team 2 17 @ Team 5 16
+Game 2: Team 6 0 @ Team 1 26
+Game 3: Team 3 15 @ Team 8 23
+Game 4: Team 0 45 @ Team 4 18
+Week 8
+Game 1: Team 3 27 @ Team 6 28
+Game 2: Team 8 19 @ Team 0 24
+Game 3: Team 5 30 @ Team 7 27
+Game 4: Team 1 18 @ Team 2 24
+Week 9
+Game 1: Team 2 24 @ Team 3 26
+Game 2: Team 0 17 @ Team 7 10
+Game 3: Team 5 12 @ Team 1 16
+Game 4: Team 4 34 @ Team 8 35
+Week 10
+Game 1: Team 4 16 @ Team 3 32
+Game 2: Team 1 41 @ Team 6 26
+Game 3: Team 8 21 @ Team 5 7
+Game 4: Team 7 40 @ Team 2 34
+Week 11
+Game 1: Team 3 34 @ Team 1 28
+Game 2: Team 5 18 @ Team 0 40
+Game 3: Team 8 13 @ Team 4 10
+Game 4: Team 7 28 @ Team 6 22
+Week 12
+Game 1 (not yet played): Team 3 @ 0
+Game 2 (not yet played): Team 6 @ 8
+Game 3 (not yet played): Team 1 @ 2
+Game 4 not scheduled
+Week 13
+Game 1 (not yet played): Team 4 @ 7
+Game 2 (not yet played): Team 6 @ 5
+Game 3 (not yet played): Team 0 @ 3
+Game 4 (not yet played): Team 2 @ 1
+Week 14
+Game 1 (not yet played): Team 5 @ 4
+Game 2 (not yet played): Team 8 @ 2
+Game 3 (not yet played): Team 7 @ 0
+Game 4 not scheduled
+Week 15
+Game 1 (not yet played): Team 2 @ 6
+Game 2 (not yet played): Team 8 @ 1
+Game 3 (not yet played): Team 3 @ 7
+Game 4 (not yet played): Team 4 @ 5
+Week 16
+Game 1 (not yet played): Team 8 @ 3
+Game 2 (not yet played): Team 1 @ 5
+Game 3 (not yet played): Team 0 @ 6
+Game 4 (not yet played): Team 7 @ 4
+Week 17
+Game 1 (not yet played): Team 1 @ 8
+Game 2 (not yet played): Team 2 @ 7
+Game 3 (not yet played): Team 3 @ 0
+Game 4 (not yet played): Team 6 @ 4
+Week 18
+Game 1 (not yet played): Team 5 @ 6
+Game 2 (not yet played): Team 0 @ 2
+Game 3 (not yet played): Team 7 @ 3
+Game 4 (not yet played): Team 4 @ 1
+Week 19
+Game 1 (not yet played): Team 6 @ 7
+Game 2 (not yet played): Team 0 @ 4
+Game 3 (not yet played): Team 5 @ 8
+Game 4 (not yet played): Team 3 @ 2
+Week 20
+Game 1 (not yet played): Team 2 @ 3
+Game 2 (not yet played): Team 8 @ 7
+Game 3 (not yet played): Team 5 @ 6
+Game 4 (not yet played): Team 0 @ 1
+Week 21
+Game 1 (not yet played): Team 7 @ 5
+Game 2 (not yet played): Team 1 @ 0
+Game 3 (not yet played): Team 6 @ 8
+Game 4 (not yet played): Team 2 @ 4
+
+copySchedule() completed, returning to calling function
+copySchedule() executed successfully, returning to main()
+Calling copyLeague() from main()
+Now in copyLeague()
+Copied team statistics:
+
+Saskatchewan Roughriders	6	3	0	264	201
+Edmonton Eskimos	6	4	0	264	198
+Calgary Stampeders	5	4	0	249	220
+Winnipeg Blue Bombers	8	2	0	303	199
+BC Lions	1	9	0	205	321
+Ottawa REDBLACKS	3	7	0	193	286
+Toronto Argonauts	1	8	0	151	310
+Montreal Alouettes	5	4	0	232	234
+Hamilton Tiger Cats	8	2	0	298	190
+copyLeague() completed, returning to calling function
+copyLeague() executed successfully, returning to main()
+Calling simulateSeason() from main()
+Now in simulateSeason()
+Setting team ranked status to false
+Value of "ranked":
+Saskatchewan Roughriders: 0
+Edmonton Eskimos: 0
+Calgary Stampeders: 0
+Winnipeg Blue Bombers: 0
+BC Lions: 0
+Ottawa REDBLACKS: 0
+Toronto Argonauts: 0
+Montreal Alouettes: 0
+Hamilton Tiger Cats: 0
+Simulating unplayed games in season
+Season results following simulation:
+
+
+Week 1
+
+Game 1: Team 0 17 @ Team 8 23
+Game 2: Team 7 25 @ Team 1 32
+Game 3: Team 5 32 @ Team 2 28
+Game 4: Team 3 33 @ Team 4 23
+
+Week 2
+
+Game 1: Team 0 41 @ Team 5 44
+Game 2: Team 4 23 @ Team 1 39
+Game 3: Team 8 64 @ Team 6 14
+Game 4 not scheduled
+
+Week 3
+
+Game 1: Team 1 21 @ Team 3 28
+Game 2: Team 7 10 @ Team 8 41
+Game 3: Team 4 32 @ Team 2 36
+Game 4: Team 6 7 @ Team 0 32
+
+Week 4
+
+Game 1: Team 8 29 @ Team 7 36
+Game 2: Team 3 29 @ Team 5 14
+Game 3: Team 4 18 @ Team 6 17
+Game 4: Team 2 37 @ Team 0 10
+
+Week 5
+
+Game 1: Team 1 33 @ Team 4 6
+Game 2: Team 6 21 @ Team 3 48
+Game 3: Team 7 36 @ Team 5 19
+Game 4: Team 2 23 @ Team 8 30
+
+Week 6
+
+Game 1: Team 6 16 @ Team 2 26
+Game 2: Team 5 1 @ Team 3 31
+Game 3: Team 1 10 @ Team 7 20
+Game 4: Team 4 25 @ Team 0 38
+
+Week 7
+
+Game 1: Team 2 17 @ Team 5 16
+Game 2: Team 6 0 @ Team 1 26
+Game 3: Team 3 15 @ Team 8 23
+Game 4: Team 0 45 @ Team 4 18
+
+Week 8
+
+Game 1: Team 3 27 @ Team 6 28
+Game 2: Team 8 19 @ Team 0 24
+Game 3: Team 5 30 @ Team 7 27
+Game 4: Team 1 18 @ Team 2 24
+
+Week 9
+
+Game 1: Team 2 24 @ Team 3 26
+Game 2: Team 0 17 @ Team 7 10
+Game 3: Team 5 12 @ Team 1 16
+Game 4: Team 4 34 @ Team 8 35
+
+Week 10
+
+Game 1: Team 4 16 @ Team 3 32
+Game 2: Team 1 41 @ Team 6 26
+Game 3: Team 8 21 @ Team 5 7
+Game 4: Team 7 40 @ Team 2 34
+
+Week 11
+
+Game 1: Team 3 34 @ Team 1 28
+Game 2: Team 5 18 @ Team 0 40
+Game 3: Team 8 13 @ Team 4 10
+Game 4: Team 7 28 @ Team 6 22
+
+Week 12
+
+Game 1: Team 3 51 @ Team 0 19
+Game 2: Team 6 31 @ Team 8 31
+Game 3: Team 1 10 @ Team 2 60
+Game 4 not scheduled
+
+Week 13
+
+Game 1: Team 4 25 @ Team 7 19
+Game 2: Team 6 35 @ Team 5 8
+Game 3: Team 0 49 @ Team 3 51
+Game 4: Team 2 66 @ Team 1 13
+
+Week 14
+
+Game 1: Team 5 59 @ Team 4 56
+Game 2: Team 8 41 @ Team 2 44
+Game 3: Team 7 57 @ Team 0 21
+Game 4 not scheduled
+
+Week 15
+
+Game 1: Team 2 7 @ Team 6 41
+Game 2: Team 8 18 @ Team 1 62
+Game 3: Team 3 66 @ Team 7 19
+Game 4: Team 4 0 @ Team 5 49
+
+Week 16
+
+Game 1: Team 8 24 @ Team 3 64
+Game 2: Team 1 4 @ Team 5 4
+Game 3: Team 0 24 @ Team 6 52
+Game 4: Team 7 13 @ Team 4 29
+
+Week 17
+
+Game 1: Team 1 7 @ Team 8 31
+Game 2: Team 2 34 @ Team 7 12
+Game 3: Team 3 30 @ Team 0 35
+Game 4: Team 6 5 @ Team 4 42
+
+Week 18
+
+Game 1: Team 5 30 @ Team 6 18
+Game 2: Team 0 56 @ Team 2 10
+Game 3: Team 7 12 @ Team 3 22
+Game 4: Team 4 14 @ Team 1 14
+
+Week 19
+
+Game 1: Team 6 48 @ Team 7 29
+Game 2: Team 0 55 @ Team 4 57
+Game 3: Team 5 58 @ Team 8 11
+Game 4: Team 3 65 @ Team 2 54
+
+Week 20
+
+Game 1: Team 2 60 @ Team 3 5
+Game 2: Team 8 41 @ Team 7 20
+Game 3: Team 5 65 @ Team 6 7
+Game 4: Team 0 15 @ Team 1 19
+
+Week 21
+
+Game 1: Team 7 64 @ Team 5 54
+Game 2: Team 1 23 @ Team 0 2
+Game 3: Team 6 18 @ Team 8 7
+Game 4: Team 2 46 @ Team 4 61
+
+Team statistics following simulation:
+Key: wins/losses/ties/points for/points against/team ID number)
+
+Saskatchewan Roughriders	8	10	0	540	551	0
+Edmonton Eskimos	9	7	2	416	408	1
+Calgary Stampeders	10	8	0	630	524	2
+Winnipeg Blue Bombers	14	4	0	657	471	3
+BC Lions	6	11	1	489	581	4
+Ottawa REDBLACKS	8	9	1	520	481	5
+Toronto Argonauts	6	11	1	406	553	6
+Montreal Alouettes	7	11	0	477	574	7
+Hamilton Tiger Cats	10	7	1	502	494	8
+simulateSeason() completed, returning to calling function
+simulateSeason() executed successfully, returning to main()
+Calling crunchSeasonResults() from main()
+Now in crunchSeasonResults
+Sorting teams into division vectors
+West division:
+1. Saskatchewan Roughriders
+2. Edmonton Eskimos
+3. Calgary Stampeders
+4. Winnipeg Blue Bombers
+5. BC Lions
+
+East division:
+6. Saskatchewan Roughriders
+7. Edmonton Eskimos
+8. Calgary Stampeders
+9. Winnipeg Blue Bombers
+
+Determining top four teams in each division
+
+West Division team 1
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 16 Ranked: 0 ID: 0
+Team 2 number of playoff points: 20 Ranked: 0 ID: 1
+Team 3 number of playoff points: 20 Ranked: 0 ID: 2
+Team 4 number of playoff points: 28 Ranked: 0 ID: 3
+Team 5 number of playoff points: 13 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 1
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 17 Ranked: 0 ID: 5
+Team 2 number of playoff points: 13 Ranked: 0 ID: 6
+Team 3 number of playoff points: 14 Ranked: 0 ID: 7
+Team 4 number of playoff points: 21 Ranked: 0 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+West Division team 2
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 16 Ranked: 0 ID: 0
+Team 2 number of playoff points: 20 Ranked: 0 ID: 1
+Team 3 number of playoff points: 20 Ranked: 0 ID: 2
+Team 4 number of playoff points: 28 Ranked: 1 ID: 3
+Team 5 number of playoff points: 13 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 2
+
+starting findWinner() second stage
+
+Number of tied teams remaining: 2
+Now inside checkTotalWins()
+Number of teams being compared: 2
+Team 1 number of wins: 9 Ranked: 0 ID: 1
+Team 2 number of wins: 10 Ranked: 0 ID: 2
+Number of teams being compared after checkTotalWins: 1
+
+East Division team 2
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 17 Ranked: 0 ID: 5
+Team 2 number of playoff points: 13 Ranked: 0 ID: 6
+Team 3 number of playoff points: 14 Ranked: 0 ID: 7
+Team 4 number of playoff points: 21 Ranked: 1 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+West Division team 3
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 16 Ranked: 0 ID: 0
+Team 2 number of playoff points: 20 Ranked: 0 ID: 1
+Team 3 number of playoff points: 20 Ranked: 1 ID: 2
+Team 4 number of playoff points: 28 Ranked: 1 ID: 3
+Team 5 number of playoff points: 13 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 3
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 17 Ranked: 1 ID: 5
+Team 2 number of playoff points: 13 Ranked: 0 ID: 6
+Team 3 number of playoff points: 14 Ranked: 0 ID: 7
+Team 4 number of playoff points: 21 Ranked: 1 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+West Division team 4
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 16 Ranked: 0 ID: 0
+Team 2 number of playoff points: 20 Ranked: 1 ID: 1
+Team 3 number of playoff points: 20 Ranked: 1 ID: 2
+Team 4 number of playoff points: 28 Ranked: 1 ID: 3
+Team 5 number of playoff points: 13 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 4
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 17 Ranked: 1 ID: 5
+Team 2 number of playoff points: 13 Ranked: 0 ID: 6
+Team 3 number of playoff points: 14 Ranked: 1 ID: 7
+Team 4 number of playoff points: 21 Ranked: 1 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+Determining fifth-place west team - calling findWinner from crunchSeasonResults()
+
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 16 Ranked: 1 ID: 0
+Team 2 number of playoff points: 20 Ranked: 1 ID: 1
+Team 3 number of playoff points: 20 Ranked: 1 ID: 2
+Team 4 number of playoff points: 28 Ranked: 1 ID: 3
+Team 5 number of playoff points: 13 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+WEST DIVISION RANKINGS
+1. Winnipeg Blue Bombers
+2. Calgary Stampeders
+3. Edmonton Eskimos
+4. Saskatchewan Roughriders
+5. BC Lions
+EAST DIVISION RANKINGS
+1. Hamilton Tiger Cats
+2. Ottawa REDBLACKS
+3. Montreal Alouettes
+4. Toronto Argonauts
+
+Updating final ranking totals for first, second, and fifth-place teams.
+Rankings updated.
+Testing if crossover in effect...
+Checking for East-to-West crossover
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 2
+Team 1 number of playoff points: 13 Ranked: 0 ID: 6
+Team 2 number of playoff points: 20 Ranked: 0 ID: 1
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 2
+Team 1 number of playoff points: 16 Ranked: 0 ID: 0
+Team 2 number of playoff points: 14 Ranked: 0 ID: 7
+Number of teams remaining at end of checkPlayoffPoints(): 1
+Checking for West-to-East crossover
+
+West-to-East crossover in effect
+Updating season ranking totals for third and fourth place teams
+
+New season ranking totals by team:
+
+Saskatchewan Roughriders
+First place finishes: 1
+Second place finishes: 2
+Third place (made playoffs): 0
+Crossovers: 1
+Times missed playoffs: 0
+
+Edmonton Eskimos
+First place finishes: 1
+Second place finishes: 0
+Third place (made playoffs): 2
+Crossovers: 1
+Times missed playoffs: 0
+
+Calgary Stampeders
+First place finishes: 1
+Second place finishes: 2
+Third place (made playoffs): 0
+Crossovers: 1
+Times missed playoffs: 0
+
+Winnipeg Blue Bombers
+First place finishes: 1
+Second place finishes: 0
+Third place (made playoffs): 2
+Crossovers: 1
+Times missed playoffs: 0
+
+BC Lions
+First place finishes: 0
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 4
+
+Ottawa REDBLACKS
+First place finishes: 0
+Second place finishes: 2
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 2
+
+Toronto Argonauts
+First place finishes: 0
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 4
+
+Montreal Alouettes
+First place finishes: 0
+Second place finishes: 2
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 2
+
+Hamilton Tiger Cats
+First place finishes: 4
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 0
+Reached end of crunchSeasonResults(), returning to calling function
+crunchSeasonResults() executed successfully, returning to main()
+Calling copySchedule() from main()
+Copying season schedule
+Copied schedule details:
+
+Week 1
+Game 1: Team 0 17 @ Team 8 23
+Game 2: Team 7 25 @ Team 1 32
+Game 3: Team 5 32 @ Team 2 28
+Game 4: Team 3 33 @ Team 4 23
+Week 2
+Game 1: Team 0 41 @ Team 5 44
+Game 2: Team 4 23 @ Team 1 39
+Game 3: Team 8 64 @ Team 6 14
+Game 4 not scheduled
+Week 3
+Game 1: Team 1 21 @ Team 3 28
+Game 2: Team 7 10 @ Team 8 41
+Game 3: Team 4 32 @ Team 2 36
+Game 4: Team 6 7 @ Team 0 32
+Week 4
+Game 1: Team 8 29 @ Team 7 36
+Game 2: Team 3 29 @ Team 5 14
+Game 3: Team 4 18 @ Team 6 17
+Game 4: Team 2 37 @ Team 0 10
+Week 5
+Game 1: Team 1 33 @ Team 4 6
+Game 2: Team 6 21 @ Team 3 48
+Game 3: Team 7 36 @ Team 5 19
+Game 4: Team 2 23 @ Team 8 30
+Week 6
+Game 1: Team 6 16 @ Team 2 26
+Game 2: Team 5 1 @ Team 3 31
+Game 3: Team 1 10 @ Team 7 20
+Game 4: Team 4 25 @ Team 0 38
+Week 7
+Game 1: Team 2 17 @ Team 5 16
+Game 2: Team 6 0 @ Team 1 26
+Game 3: Team 3 15 @ Team 8 23
+Game 4: Team 0 45 @ Team 4 18
+Week 8
+Game 1: Team 3 27 @ Team 6 28
+Game 2: Team 8 19 @ Team 0 24
+Game 3: Team 5 30 @ Team 7 27
+Game 4: Team 1 18 @ Team 2 24
+Week 9
+Game 1: Team 2 24 @ Team 3 26
+Game 2: Team 0 17 @ Team 7 10
+Game 3: Team 5 12 @ Team 1 16
+Game 4: Team 4 34 @ Team 8 35
+Week 10
+Game 1: Team 4 16 @ Team 3 32
+Game 2: Team 1 41 @ Team 6 26
+Game 3: Team 8 21 @ Team 5 7
+Game 4: Team 7 40 @ Team 2 34
+Week 11
+Game 1: Team 3 34 @ Team 1 28
+Game 2: Team 5 18 @ Team 0 40
+Game 3: Team 8 13 @ Team 4 10
+Game 4: Team 7 28 @ Team 6 22
+Week 12
+Game 1 (not yet played): Team 3 @ 0
+Game 2 (not yet played): Team 6 @ 8
+Game 3 (not yet played): Team 1 @ 2
+Game 4 not scheduled
+Week 13
+Game 1 (not yet played): Team 4 @ 7
+Game 2 (not yet played): Team 6 @ 5
+Game 3 (not yet played): Team 0 @ 3
+Game 4 (not yet played): Team 2 @ 1
+Week 14
+Game 1 (not yet played): Team 5 @ 4
+Game 2 (not yet played): Team 8 @ 2
+Game 3 (not yet played): Team 7 @ 0
+Game 4 not scheduled
+Week 15
+Game 1 (not yet played): Team 2 @ 6
+Game 2 (not yet played): Team 8 @ 1
+Game 3 (not yet played): Team 3 @ 7
+Game 4 (not yet played): Team 4 @ 5
+Week 16
+Game 1 (not yet played): Team 8 @ 3
+Game 2 (not yet played): Team 1 @ 5
+Game 3 (not yet played): Team 0 @ 6
+Game 4 (not yet played): Team 7 @ 4
+Week 17
+Game 1 (not yet played): Team 1 @ 8
+Game 2 (not yet played): Team 2 @ 7
+Game 3 (not yet played): Team 3 @ 0
+Game 4 (not yet played): Team 6 @ 4
+Week 18
+Game 1 (not yet played): Team 5 @ 6
+Game 2 (not yet played): Team 0 @ 2
+Game 3 (not yet played): Team 7 @ 3
+Game 4 (not yet played): Team 4 @ 1
+Week 19
+Game 1 (not yet played): Team 6 @ 7
+Game 2 (not yet played): Team 0 @ 4
+Game 3 (not yet played): Team 5 @ 8
+Game 4 (not yet played): Team 3 @ 2
+Week 20
+Game 1 (not yet played): Team 2 @ 3
+Game 2 (not yet played): Team 8 @ 7
+Game 3 (not yet played): Team 5 @ 6
+Game 4 (not yet played): Team 0 @ 1
+Week 21
+Game 1 (not yet played): Team 7 @ 5
+Game 2 (not yet played): Team 1 @ 0
+Game 3 (not yet played): Team 6 @ 8
+Game 4 (not yet played): Team 2 @ 4
+
+copySchedule() completed, returning to calling function
+copySchedule() executed successfully, returning to main()
+Calling copyLeague() from main()
+Now in copyLeague()
+Copied team statistics:
+
+Saskatchewan Roughriders	6	3	0	264	201
+Edmonton Eskimos	6	4	0	264	198
+Calgary Stampeders	5	4	0	249	220
+Winnipeg Blue Bombers	8	2	0	303	199
+BC Lions	1	9	0	205	321
+Ottawa REDBLACKS	3	7	0	193	286
+Toronto Argonauts	1	8	0	151	310
+Montreal Alouettes	5	4	0	232	234
+Hamilton Tiger Cats	8	2	0	298	190
+copyLeague() completed, returning to calling function
+copyLeague() executed successfully, returning to main()
+Calling simulateSeason() from main()
+Now in simulateSeason()
+Setting team ranked status to false
+Value of "ranked":
+Saskatchewan Roughriders: 0
+Edmonton Eskimos: 0
+Calgary Stampeders: 0
+Winnipeg Blue Bombers: 0
+BC Lions: 0
+Ottawa REDBLACKS: 0
+Toronto Argonauts: 0
+Montreal Alouettes: 0
+Hamilton Tiger Cats: 0
+Simulating unplayed games in season
+Season results following simulation:
+
+
+Week 1
+
+Game 1: Team 0 17 @ Team 8 23
+Game 2: Team 7 25 @ Team 1 32
+Game 3: Team 5 32 @ Team 2 28
+Game 4: Team 3 33 @ Team 4 23
+
+Week 2
+
+Game 1: Team 0 41 @ Team 5 44
+Game 2: Team 4 23 @ Team 1 39
+Game 3: Team 8 64 @ Team 6 14
+Game 4 not scheduled
+
+Week 3
+
+Game 1: Team 1 21 @ Team 3 28
+Game 2: Team 7 10 @ Team 8 41
+Game 3: Team 4 32 @ Team 2 36
+Game 4: Team 6 7 @ Team 0 32
+
+Week 4
+
+Game 1: Team 8 29 @ Team 7 36
+Game 2: Team 3 29 @ Team 5 14
+Game 3: Team 4 18 @ Team 6 17
+Game 4: Team 2 37 @ Team 0 10
+
+Week 5
+
+Game 1: Team 1 33 @ Team 4 6
+Game 2: Team 6 21 @ Team 3 48
+Game 3: Team 7 36 @ Team 5 19
+Game 4: Team 2 23 @ Team 8 30
+
+Week 6
+
+Game 1: Team 6 16 @ Team 2 26
+Game 2: Team 5 1 @ Team 3 31
+Game 3: Team 1 10 @ Team 7 20
+Game 4: Team 4 25 @ Team 0 38
+
+Week 7
+
+Game 1: Team 2 17 @ Team 5 16
+Game 2: Team 6 0 @ Team 1 26
+Game 3: Team 3 15 @ Team 8 23
+Game 4: Team 0 45 @ Team 4 18
+
+Week 8
+
+Game 1: Team 3 27 @ Team 6 28
+Game 2: Team 8 19 @ Team 0 24
+Game 3: Team 5 30 @ Team 7 27
+Game 4: Team 1 18 @ Team 2 24
+
+Week 9
+
+Game 1: Team 2 24 @ Team 3 26
+Game 2: Team 0 17 @ Team 7 10
+Game 3: Team 5 12 @ Team 1 16
+Game 4: Team 4 34 @ Team 8 35
+
+Week 10
+
+Game 1: Team 4 16 @ Team 3 32
+Game 2: Team 1 41 @ Team 6 26
+Game 3: Team 8 21 @ Team 5 7
+Game 4: Team 7 40 @ Team 2 34
+
+Week 11
+
+Game 1: Team 3 34 @ Team 1 28
+Game 2: Team 5 18 @ Team 0 40
+Game 3: Team 8 13 @ Team 4 10
+Game 4: Team 7 28 @ Team 6 22
+
+Week 12
+
+Game 1: Team 3 33 @ Team 0 16
+Game 2: Team 6 66 @ Team 8 48
+Game 3: Team 1 46 @ Team 2 65
+Game 4 not scheduled
+
+Week 13
+
+Game 1: Team 4 63 @ Team 7 65
+Game 2: Team 6 34 @ Team 5 0
+Game 3: Team 0 56 @ Team 3 31
+Game 4: Team 2 29 @ Team 1 57
+
+Week 14
+
+Game 1: Team 5 0 @ Team 4 63
+Game 2: Team 8 43 @ Team 2 39
+Game 3: Team 7 55 @ Team 0 33
+Game 4 not scheduled
+
+Week 15
+
+Game 1: Team 2 34 @ Team 6 28
+Game 2: Team 8 47 @ Team 1 7
+Game 3: Team 3 26 @ Team 7 54
+Game 4: Team 4 35 @ Team 5 41
+
+Week 16
+
+Game 1: Team 8 12 @ Team 3 17
+Game 2: Team 1 11 @ Team 5 4
+Game 3: Team 0 40 @ Team 6 11
+Game 4: Team 7 49 @ Team 4 20
+
+Week 17
+
+Game 1: Team 1 55 @ Team 8 21
+Game 2: Team 2 42 @ Team 7 0
+Game 3: Team 3 19 @ Team 0 46
+Game 4: Team 6 63 @ Team 4 32
+
+Week 18
+
+Game 1: Team 5 7 @ Team 6 45
+Game 2: Team 0 64 @ Team 2 12
+Game 3: Team 7 49 @ Team 3 41
+Game 4: Team 4 43 @ Team 1 43
+
+Week 19
+
+Game 1: Team 6 64 @ Team 7 7
+Game 2: Team 0 49 @ Team 4 42
+Game 3: Team 5 60 @ Team 8 5
+Game 4: Team 3 15 @ Team 2 43
+
+Week 20
+
+Game 1: Team 2 7 @ Team 3 3
+Game 2: Team 8 37 @ Team 7 0
+Game 3: Team 5 52 @ Team 6 16
+Game 4: Team 0 31 @ Team 1 17
+
+Week 21
+
+Game 1: Team 7 2 @ Team 5 40
+Game 2: Team 1 45 @ Team 0 32
+Game 3: Team 6 44 @ Team 8 22
+Game 4: Team 2 62 @ Team 4 44
+
+Team statistics following simulation:
+Key: wins/losses/ties/points for/points against/team ID number)
+
+Saskatchewan Roughriders	12	6	0	631	466	0
+Edmonton Eskimos	10	7	1	545	470	1
+Calgary Stampeders	11	7	0	582	520	2
+Winnipeg Blue Bombers	10	8	0	488	482	3
+BC Lions	2	15	1	547	693	4
+Ottawa REDBLACKS	7	11	0	397	497	5
+Toronto Argonauts	7	11	0	522	552	6
+Montreal Alouettes	10	8	0	513	600	7
+Hamilton Tiger Cats	11	7	0	533	478	8
+simulateSeason() completed, returning to calling function
+simulateSeason() executed successfully, returning to main()
+Calling crunchSeasonResults() from main()
+Now in crunchSeasonResults
+Sorting teams into division vectors
+West division:
+1. Saskatchewan Roughriders
+2. Edmonton Eskimos
+3. Calgary Stampeders
+4. Winnipeg Blue Bombers
+5. BC Lions
+
+East division:
+6. Saskatchewan Roughriders
+7. Edmonton Eskimos
+8. Calgary Stampeders
+9. Winnipeg Blue Bombers
+
+Determining top four teams in each division
+
+West Division team 1
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 24 Ranked: 0 ID: 0
+Team 2 number of playoff points: 21 Ranked: 0 ID: 1
+Team 3 number of playoff points: 22 Ranked: 0 ID: 2
+Team 4 number of playoff points: 20 Ranked: 0 ID: 3
+Team 5 number of playoff points: 5 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 1
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 14 Ranked: 0 ID: 5
+Team 2 number of playoff points: 14 Ranked: 0 ID: 6
+Team 3 number of playoff points: 20 Ranked: 0 ID: 7
+Team 4 number of playoff points: 22 Ranked: 0 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+West Division team 2
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 24 Ranked: 1 ID: 0
+Team 2 number of playoff points: 21 Ranked: 0 ID: 1
+Team 3 number of playoff points: 22 Ranked: 0 ID: 2
+Team 4 number of playoff points: 20 Ranked: 0 ID: 3
+Team 5 number of playoff points: 5 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 2
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 14 Ranked: 0 ID: 5
+Team 2 number of playoff points: 14 Ranked: 0 ID: 6
+Team 3 number of playoff points: 20 Ranked: 0 ID: 7
+Team 4 number of playoff points: 22 Ranked: 1 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+West Division team 3
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 24 Ranked: 1 ID: 0
+Team 2 number of playoff points: 21 Ranked: 0 ID: 1
+Team 3 number of playoff points: 22 Ranked: 1 ID: 2
+Team 4 number of playoff points: 20 Ranked: 0 ID: 3
+Team 5 number of playoff points: 5 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 3
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 14 Ranked: 0 ID: 5
+Team 2 number of playoff points: 14 Ranked: 0 ID: 6
+Team 3 number of playoff points: 20 Ranked: 1 ID: 7
+Team 4 number of playoff points: 22 Ranked: 1 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 2
+
+starting findWinner() second stage
+
+Number of tied teams remaining: 2
+Now inside checkTotalWins()
+Number of teams being compared: 2
+Team 1 number of wins: 7 Ranked: 0 ID: 5
+Team 2 number of wins: 7 Ranked: 0 ID: 6
+Number of teams being compared after checkTotalWins: 2
+
+starting findWinner() third stage
+
+Number of tied teams remaining: 2
+Now inside checkWinPctAgainstTied()
+Number of teams being compared: 2
+Team 1 win percentage: 333 Ranked: 0 ID: 5
+Team 2 win percentage: 666 Ranked: 0 ID: 6
+Number of teams being compared after checkWinPctAgainstTied(): 1
+
+West Division team 4
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 24 Ranked: 1 ID: 0
+Team 2 number of playoff points: 21 Ranked: 1 ID: 1
+Team 3 number of playoff points: 22 Ranked: 1 ID: 2
+Team 4 number of playoff points: 20 Ranked: 0 ID: 3
+Team 5 number of playoff points: 5 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 4
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 14 Ranked: 0 ID: 5
+Team 2 number of playoff points: 14 Ranked: 1 ID: 6
+Team 3 number of playoff points: 20 Ranked: 1 ID: 7
+Team 4 number of playoff points: 22 Ranked: 1 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+Determining fifth-place west team - calling findWinner from crunchSeasonResults()
+
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 24 Ranked: 1 ID: 0
+Team 2 number of playoff points: 21 Ranked: 1 ID: 1
+Team 3 number of playoff points: 22 Ranked: 1 ID: 2
+Team 4 number of playoff points: 20 Ranked: 1 ID: 3
+Team 5 number of playoff points: 5 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+WEST DIVISION RANKINGS
+1. Saskatchewan Roughriders
+2. Calgary Stampeders
+3. Edmonton Eskimos
+4. Winnipeg Blue Bombers
+5. BC Lions
+EAST DIVISION RANKINGS
+1. Hamilton Tiger Cats
+2. Montreal Alouettes
+3. Toronto Argonauts
+4. Ottawa REDBLACKS
+
+Updating final ranking totals for first, second, and fifth-place teams.
+Rankings updated.
+Testing if crossover in effect...
+Checking for East-to-West crossover
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 2
+Team 1 number of playoff points: 14 Ranked: 0 ID: 5
+Team 2 number of playoff points: 21 Ranked: 0 ID: 1
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 2
+Team 1 number of playoff points: 20 Ranked: 0 ID: 3
+Team 2 number of playoff points: 14 Ranked: 0 ID: 6
+Number of teams remaining at end of checkPlayoffPoints(): 1
+Checking for West-to-East crossover
+
+West-to-East crossover in effect
+Updating season ranking totals for third and fourth place teams
+
+New season ranking totals by team:
+
+Saskatchewan Roughriders
+First place finishes: 2
+Second place finishes: 2
+Third place (made playoffs): 0
+Crossovers: 1
+Times missed playoffs: 0
+
+Edmonton Eskimos
+First place finishes: 1
+Second place finishes: 0
+Third place (made playoffs): 3
+Crossovers: 1
+Times missed playoffs: 0
+
+Calgary Stampeders
+First place finishes: 1
+Second place finishes: 3
+Third place (made playoffs): 0
+Crossovers: 1
+Times missed playoffs: 0
+
+Winnipeg Blue Bombers
+First place finishes: 1
+Second place finishes: 0
+Third place (made playoffs): 2
+Crossovers: 2
+Times missed playoffs: 0
+
+BC Lions
+First place finishes: 0
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 5
+
+Ottawa REDBLACKS
+First place finishes: 0
+Second place finishes: 2
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 3
+
+Toronto Argonauts
+First place finishes: 0
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 5
+
+Montreal Alouettes
+First place finishes: 0
+Second place finishes: 3
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 2
+
+Hamilton Tiger Cats
+First place finishes: 5
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 0
+Reached end of crunchSeasonResults(), returning to calling function
+crunchSeasonResults() executed successfully, returning to main()
+Calling copySchedule() from main()
+Copying season schedule
+Copied schedule details:
+
+Week 1
+Game 1: Team 0 17 @ Team 8 23
+Game 2: Team 7 25 @ Team 1 32
+Game 3: Team 5 32 @ Team 2 28
+Game 4: Team 3 33 @ Team 4 23
+Week 2
+Game 1: Team 0 41 @ Team 5 44
+Game 2: Team 4 23 @ Team 1 39
+Game 3: Team 8 64 @ Team 6 14
+Game 4 not scheduled
+Week 3
+Game 1: Team 1 21 @ Team 3 28
+Game 2: Team 7 10 @ Team 8 41
+Game 3: Team 4 32 @ Team 2 36
+Game 4: Team 6 7 @ Team 0 32
+Week 4
+Game 1: Team 8 29 @ Team 7 36
+Game 2: Team 3 29 @ Team 5 14
+Game 3: Team 4 18 @ Team 6 17
+Game 4: Team 2 37 @ Team 0 10
+Week 5
+Game 1: Team 1 33 @ Team 4 6
+Game 2: Team 6 21 @ Team 3 48
+Game 3: Team 7 36 @ Team 5 19
+Game 4: Team 2 23 @ Team 8 30
+Week 6
+Game 1: Team 6 16 @ Team 2 26
+Game 2: Team 5 1 @ Team 3 31
+Game 3: Team 1 10 @ Team 7 20
+Game 4: Team 4 25 @ Team 0 38
+Week 7
+Game 1: Team 2 17 @ Team 5 16
+Game 2: Team 6 0 @ Team 1 26
+Game 3: Team 3 15 @ Team 8 23
+Game 4: Team 0 45 @ Team 4 18
+Week 8
+Game 1: Team 3 27 @ Team 6 28
+Game 2: Team 8 19 @ Team 0 24
+Game 3: Team 5 30 @ Team 7 27
+Game 4: Team 1 18 @ Team 2 24
+Week 9
+Game 1: Team 2 24 @ Team 3 26
+Game 2: Team 0 17 @ Team 7 10
+Game 3: Team 5 12 @ Team 1 16
+Game 4: Team 4 34 @ Team 8 35
+Week 10
+Game 1: Team 4 16 @ Team 3 32
+Game 2: Team 1 41 @ Team 6 26
+Game 3: Team 8 21 @ Team 5 7
+Game 4: Team 7 40 @ Team 2 34
+Week 11
+Game 1: Team 3 34 @ Team 1 28
+Game 2: Team 5 18 @ Team 0 40
+Game 3: Team 8 13 @ Team 4 10
+Game 4: Team 7 28 @ Team 6 22
+Week 12
+Game 1 (not yet played): Team 3 @ 0
+Game 2 (not yet played): Team 6 @ 8
+Game 3 (not yet played): Team 1 @ 2
+Game 4 not scheduled
+Week 13
+Game 1 (not yet played): Team 4 @ 7
+Game 2 (not yet played): Team 6 @ 5
+Game 3 (not yet played): Team 0 @ 3
+Game 4 (not yet played): Team 2 @ 1
+Week 14
+Game 1 (not yet played): Team 5 @ 4
+Game 2 (not yet played): Team 8 @ 2
+Game 3 (not yet played): Team 7 @ 0
+Game 4 not scheduled
+Week 15
+Game 1 (not yet played): Team 2 @ 6
+Game 2 (not yet played): Team 8 @ 1
+Game 3 (not yet played): Team 3 @ 7
+Game 4 (not yet played): Team 4 @ 5
+Week 16
+Game 1 (not yet played): Team 8 @ 3
+Game 2 (not yet played): Team 1 @ 5
+Game 3 (not yet played): Team 0 @ 6
+Game 4 (not yet played): Team 7 @ 4
+Week 17
+Game 1 (not yet played): Team 1 @ 8
+Game 2 (not yet played): Team 2 @ 7
+Game 3 (not yet played): Team 3 @ 0
+Game 4 (not yet played): Team 6 @ 4
+Week 18
+Game 1 (not yet played): Team 5 @ 6
+Game 2 (not yet played): Team 0 @ 2
+Game 3 (not yet played): Team 7 @ 3
+Game 4 (not yet played): Team 4 @ 1
+Week 19
+Game 1 (not yet played): Team 6 @ 7
+Game 2 (not yet played): Team 0 @ 4
+Game 3 (not yet played): Team 5 @ 8
+Game 4 (not yet played): Team 3 @ 2
+Week 20
+Game 1 (not yet played): Team 2 @ 3
+Game 2 (not yet played): Team 8 @ 7
+Game 3 (not yet played): Team 5 @ 6
+Game 4 (not yet played): Team 0 @ 1
+Week 21
+Game 1 (not yet played): Team 7 @ 5
+Game 2 (not yet played): Team 1 @ 0
+Game 3 (not yet played): Team 6 @ 8
+Game 4 (not yet played): Team 2 @ 4
+
+copySchedule() completed, returning to calling function
+copySchedule() executed successfully, returning to main()
+Calling copyLeague() from main()
+Now in copyLeague()
+Copied team statistics:
+
+Saskatchewan Roughriders	6	3	0	264	201
+Edmonton Eskimos	6	4	0	264	198
+Calgary Stampeders	5	4	0	249	220
+Winnipeg Blue Bombers	8	2	0	303	199
+BC Lions	1	9	0	205	321
+Ottawa REDBLACKS	3	7	0	193	286
+Toronto Argonauts	1	8	0	151	310
+Montreal Alouettes	5	4	0	232	234
+Hamilton Tiger Cats	8	2	0	298	190
+copyLeague() completed, returning to calling function
+copyLeague() executed successfully, returning to main()
+Calling simulateSeason() from main()
+Now in simulateSeason()
+Setting team ranked status to false
+Value of "ranked":
+Saskatchewan Roughriders: 0
+Edmonton Eskimos: 0
+Calgary Stampeders: 0
+Winnipeg Blue Bombers: 0
+BC Lions: 0
+Ottawa REDBLACKS: 0
+Toronto Argonauts: 0
+Montreal Alouettes: 0
+Hamilton Tiger Cats: 0
+Simulating unplayed games in season
+Season results following simulation:
+
+
+Week 1
+
+Game 1: Team 0 17 @ Team 8 23
+Game 2: Team 7 25 @ Team 1 32
+Game 3: Team 5 32 @ Team 2 28
+Game 4: Team 3 33 @ Team 4 23
+
+Week 2
+
+Game 1: Team 0 41 @ Team 5 44
+Game 2: Team 4 23 @ Team 1 39
+Game 3: Team 8 64 @ Team 6 14
+Game 4 not scheduled
+
+Week 3
+
+Game 1: Team 1 21 @ Team 3 28
+Game 2: Team 7 10 @ Team 8 41
+Game 3: Team 4 32 @ Team 2 36
+Game 4: Team 6 7 @ Team 0 32
+
+Week 4
+
+Game 1: Team 8 29 @ Team 7 36
+Game 2: Team 3 29 @ Team 5 14
+Game 3: Team 4 18 @ Team 6 17
+Game 4: Team 2 37 @ Team 0 10
+
+Week 5
+
+Game 1: Team 1 33 @ Team 4 6
+Game 2: Team 6 21 @ Team 3 48
+Game 3: Team 7 36 @ Team 5 19
+Game 4: Team 2 23 @ Team 8 30
+
+Week 6
+
+Game 1: Team 6 16 @ Team 2 26
+Game 2: Team 5 1 @ Team 3 31
+Game 3: Team 1 10 @ Team 7 20
+Game 4: Team 4 25 @ Team 0 38
+
+Week 7
+
+Game 1: Team 2 17 @ Team 5 16
+Game 2: Team 6 0 @ Team 1 26
+Game 3: Team 3 15 @ Team 8 23
+Game 4: Team 0 45 @ Team 4 18
+
+Week 8
+
+Game 1: Team 3 27 @ Team 6 28
+Game 2: Team 8 19 @ Team 0 24
+Game 3: Team 5 30 @ Team 7 27
+Game 4: Team 1 18 @ Team 2 24
+
+Week 9
+
+Game 1: Team 2 24 @ Team 3 26
+Game 2: Team 0 17 @ Team 7 10
+Game 3: Team 5 12 @ Team 1 16
+Game 4: Team 4 34 @ Team 8 35
+
+Week 10
+
+Game 1: Team 4 16 @ Team 3 32
+Game 2: Team 1 41 @ Team 6 26
+Game 3: Team 8 21 @ Team 5 7
+Game 4: Team 7 40 @ Team 2 34
+
+Week 11
+
+Game 1: Team 3 34 @ Team 1 28
+Game 2: Team 5 18 @ Team 0 40
+Game 3: Team 8 13 @ Team 4 10
+Game 4: Team 7 28 @ Team 6 22
+
+Week 12
+
+Game 1: Team 3 58 @ Team 0 18
+Game 2: Team 6 48 @ Team 8 48
+Game 3: Team 1 36 @ Team 2 51
+Game 4 not scheduled
+
+Week 13
+
+Game 1: Team 4 18 @ Team 7 45
+Game 2: Team 6 13 @ Team 5 9
+Game 3: Team 0 50 @ Team 3 51
+Game 4: Team 2 29 @ Team 1 19
+
+Week 14
+
+Game 1: Team 5 20 @ Team 4 26
+Game 2: Team 8 37 @ Team 2 66
+Game 3: Team 7 60 @ Team 0 14
+Game 4 not scheduled
+
+Week 15
+
+Game 1: Team 2 41 @ Team 6 21
+Game 2: Team 8 30 @ Team 1 59
+Game 3: Team 3 38 @ Team 7 30
+Game 4: Team 4 36 @ Team 5 33
+
+Week 16
+
+Game 1: Team 8 40 @ Team 3 7
+Game 2: Team 1 17 @ Team 5 55
+Game 3: Team 0 46 @ Team 6 46
+Game 4: Team 7 31 @ Team 4 4
+
+Week 17
+
+Game 1: Team 1 7 @ Team 8 38
+Game 2: Team 2 55 @ Team 7 38
+Game 3: Team 3 39 @ Team 0 16
+Game 4: Team 6 44 @ Team 4 12
+
+Week 18
+
+Game 1: Team 5 64 @ Team 6 57
+Game 2: Team 0 57 @ Team 2 7
+Game 3: Team 7 13 @ Team 3 51
+Game 4: Team 4 59 @ Team 1 12
+
+Week 19
+
+Game 1: Team 6 54 @ Team 7 50
+Game 2: Team 0 49 @ Team 4 18
+Game 3: Team 5 6 @ Team 8 13
+Game 4: Team 3 15 @ Team 2 1
+
+Week 20
+
+Game 1: Team 2 63 @ Team 3 38
+Game 2: Team 8 50 @ Team 7 30
+Game 3: Team 5 46 @ Team 6 15
+Game 4: Team 0 44 @ Team 1 25
+
+Week 21
+
+Game 1: Team 7 34 @ Team 5 20
+Game 2: Team 1 18 @ Team 0 6
+Game 3: Team 6 7 @ Team 8 0
+Game 4: Team 2 14 @ Team 4 5
+
+Team statistics following simulation:
+Key: wins/losses/ties/points for/points against/team ID number)
+
+Saskatchewan Roughriders	9	8	1	564	523	0
+Edmonton Eskimos	8	10	0	457	510	1
+Calgary Stampeders	12	6	0	576	486	2
+Winnipeg Blue Bombers	14	4	0	600	430	3
+BC Lions	4	14	0	383	569	4
+Ottawa REDBLACKS	6	12	0	446	497	5
+Toronto Argonauts	5	11	2	456	626	6
+Montreal Alouettes	9	9	0	563	538	7
+Hamilton Tiger Cats	12	5	1	554	420	8
+simulateSeason() completed, returning to calling function
+simulateSeason() executed successfully, returning to main()
+Calling crunchSeasonResults() from main()
+Now in crunchSeasonResults
+Sorting teams into division vectors
+West division:
+1. Saskatchewan Roughriders
+2. Edmonton Eskimos
+3. Calgary Stampeders
+4. Winnipeg Blue Bombers
+5. BC Lions
+
+East division:
+6. Saskatchewan Roughriders
+7. Edmonton Eskimos
+8. Calgary Stampeders
+9. Winnipeg Blue Bombers
+
+Determining top four teams in each division
+
+West Division team 1
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 19 Ranked: 0 ID: 0
+Team 2 number of playoff points: 16 Ranked: 0 ID: 1
+Team 3 number of playoff points: 24 Ranked: 0 ID: 2
+Team 4 number of playoff points: 28 Ranked: 0 ID: 3
+Team 5 number of playoff points: 8 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 1
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 12 Ranked: 0 ID: 5
+Team 2 number of playoff points: 12 Ranked: 0 ID: 6
+Team 3 number of playoff points: 18 Ranked: 0 ID: 7
+Team 4 number of playoff points: 25 Ranked: 0 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+West Division team 2
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 19 Ranked: 0 ID: 0
+Team 2 number of playoff points: 16 Ranked: 0 ID: 1
+Team 3 number of playoff points: 24 Ranked: 0 ID: 2
+Team 4 number of playoff points: 28 Ranked: 1 ID: 3
+Team 5 number of playoff points: 8 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 2
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 12 Ranked: 0 ID: 5
+Team 2 number of playoff points: 12 Ranked: 0 ID: 6
+Team 3 number of playoff points: 18 Ranked: 0 ID: 7
+Team 4 number of playoff points: 25 Ranked: 1 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+West Division team 3
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 19 Ranked: 0 ID: 0
+Team 2 number of playoff points: 16 Ranked: 0 ID: 1
+Team 3 number of playoff points: 24 Ranked: 1 ID: 2
+Team 4 number of playoff points: 28 Ranked: 1 ID: 3
+Team 5 number of playoff points: 8 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 3
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 12 Ranked: 0 ID: 5
+Team 2 number of playoff points: 12 Ranked: 0 ID: 6
+Team 3 number of playoff points: 18 Ranked: 1 ID: 7
+Team 4 number of playoff points: 25 Ranked: 1 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 2
+
+starting findWinner() second stage
+
+Number of tied teams remaining: 2
+Now inside checkTotalWins()
+Number of teams being compared: 2
+Team 1 number of wins: 6 Ranked: 0 ID: 5
+Team 2 number of wins: 5 Ranked: 0 ID: 6
+Number of teams being compared after checkTotalWins: 1
+
+West Division team 4
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 19 Ranked: 1 ID: 0
+Team 2 number of playoff points: 16 Ranked: 0 ID: 1
+Team 3 number of playoff points: 24 Ranked: 1 ID: 2
+Team 4 number of playoff points: 28 Ranked: 1 ID: 3
+Team 5 number of playoff points: 8 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 4
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 12 Ranked: 1 ID: 5
+Team 2 number of playoff points: 12 Ranked: 0 ID: 6
+Team 3 number of playoff points: 18 Ranked: 1 ID: 7
+Team 4 number of playoff points: 25 Ranked: 1 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+Determining fifth-place west team - calling findWinner from crunchSeasonResults()
+
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 19 Ranked: 1 ID: 0
+Team 2 number of playoff points: 16 Ranked: 1 ID: 1
+Team 3 number of playoff points: 24 Ranked: 1 ID: 2
+Team 4 number of playoff points: 28 Ranked: 1 ID: 3
+Team 5 number of playoff points: 8 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+WEST DIVISION RANKINGS
+1. Winnipeg Blue Bombers
+2. Calgary Stampeders
+3. Saskatchewan Roughriders
+4. Edmonton Eskimos
+5. BC Lions
+EAST DIVISION RANKINGS
+1. Hamilton Tiger Cats
+2. Montreal Alouettes
+3. Ottawa REDBLACKS
+4. Toronto Argonauts
+
+Updating final ranking totals for first, second, and fifth-place teams.
+Rankings updated.
+Testing if crossover in effect...
+Checking for East-to-West crossover
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 2
+Team 1 number of playoff points: 12 Ranked: 0 ID: 6
+Team 2 number of playoff points: 19 Ranked: 0 ID: 0
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 2
+Team 1 number of playoff points: 16 Ranked: 0 ID: 1
+Team 2 number of playoff points: 12 Ranked: 0 ID: 5
+Number of teams remaining at end of checkPlayoffPoints(): 1
+Checking for West-to-East crossover
+
+West-to-East crossover in effect
+Updating season ranking totals for third and fourth place teams
+
+New season ranking totals by team:
+
+Saskatchewan Roughriders
+First place finishes: 2
+Second place finishes: 2
+Third place (made playoffs): 1
+Crossovers: 1
+Times missed playoffs: 0
+
+Edmonton Eskimos
+First place finishes: 1
+Second place finishes: 0
+Third place (made playoffs): 3
+Crossovers: 2
+Times missed playoffs: 0
+
+Calgary Stampeders
+First place finishes: 1
+Second place finishes: 4
+Third place (made playoffs): 0
+Crossovers: 1
+Times missed playoffs: 0
+
+Winnipeg Blue Bombers
+First place finishes: 2
+Second place finishes: 0
+Third place (made playoffs): 2
+Crossovers: 2
+Times missed playoffs: 0
+
+BC Lions
+First place finishes: 0
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 6
+
+Ottawa REDBLACKS
+First place finishes: 0
+Second place finishes: 2
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 4
+
+Toronto Argonauts
+First place finishes: 0
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 6
+
+Montreal Alouettes
+First place finishes: 0
+Second place finishes: 4
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 2
+
+Hamilton Tiger Cats
+First place finishes: 6
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 0
+Reached end of crunchSeasonResults(), returning to calling function
+crunchSeasonResults() executed successfully, returning to main()
+Calling copySchedule() from main()
+Copying season schedule
+Copied schedule details:
+
+Week 1
+Game 1: Team 0 17 @ Team 8 23
+Game 2: Team 7 25 @ Team 1 32
+Game 3: Team 5 32 @ Team 2 28
+Game 4: Team 3 33 @ Team 4 23
+Week 2
+Game 1: Team 0 41 @ Team 5 44
+Game 2: Team 4 23 @ Team 1 39
+Game 3: Team 8 64 @ Team 6 14
+Game 4 not scheduled
+Week 3
+Game 1: Team 1 21 @ Team 3 28
+Game 2: Team 7 10 @ Team 8 41
+Game 3: Team 4 32 @ Team 2 36
+Game 4: Team 6 7 @ Team 0 32
+Week 4
+Game 1: Team 8 29 @ Team 7 36
+Game 2: Team 3 29 @ Team 5 14
+Game 3: Team 4 18 @ Team 6 17
+Game 4: Team 2 37 @ Team 0 10
+Week 5
+Game 1: Team 1 33 @ Team 4 6
+Game 2: Team 6 21 @ Team 3 48
+Game 3: Team 7 36 @ Team 5 19
+Game 4: Team 2 23 @ Team 8 30
+Week 6
+Game 1: Team 6 16 @ Team 2 26
+Game 2: Team 5 1 @ Team 3 31
+Game 3: Team 1 10 @ Team 7 20
+Game 4: Team 4 25 @ Team 0 38
+Week 7
+Game 1: Team 2 17 @ Team 5 16
+Game 2: Team 6 0 @ Team 1 26
+Game 3: Team 3 15 @ Team 8 23
+Game 4: Team 0 45 @ Team 4 18
+Week 8
+Game 1: Team 3 27 @ Team 6 28
+Game 2: Team 8 19 @ Team 0 24
+Game 3: Team 5 30 @ Team 7 27
+Game 4: Team 1 18 @ Team 2 24
+Week 9
+Game 1: Team 2 24 @ Team 3 26
+Game 2: Team 0 17 @ Team 7 10
+Game 3: Team 5 12 @ Team 1 16
+Game 4: Team 4 34 @ Team 8 35
+Week 10
+Game 1: Team 4 16 @ Team 3 32
+Game 2: Team 1 41 @ Team 6 26
+Game 3: Team 8 21 @ Team 5 7
+Game 4: Team 7 40 @ Team 2 34
+Week 11
+Game 1: Team 3 34 @ Team 1 28
+Game 2: Team 5 18 @ Team 0 40
+Game 3: Team 8 13 @ Team 4 10
+Game 4: Team 7 28 @ Team 6 22
+Week 12
+Game 1 (not yet played): Team 3 @ 0
+Game 2 (not yet played): Team 6 @ 8
+Game 3 (not yet played): Team 1 @ 2
+Game 4 not scheduled
+Week 13
+Game 1 (not yet played): Team 4 @ 7
+Game 2 (not yet played): Team 6 @ 5
+Game 3 (not yet played): Team 0 @ 3
+Game 4 (not yet played): Team 2 @ 1
+Week 14
+Game 1 (not yet played): Team 5 @ 4
+Game 2 (not yet played): Team 8 @ 2
+Game 3 (not yet played): Team 7 @ 0
+Game 4 not scheduled
+Week 15
+Game 1 (not yet played): Team 2 @ 6
+Game 2 (not yet played): Team 8 @ 1
+Game 3 (not yet played): Team 3 @ 7
+Game 4 (not yet played): Team 4 @ 5
+Week 16
+Game 1 (not yet played): Team 8 @ 3
+Game 2 (not yet played): Team 1 @ 5
+Game 3 (not yet played): Team 0 @ 6
+Game 4 (not yet played): Team 7 @ 4
+Week 17
+Game 1 (not yet played): Team 1 @ 8
+Game 2 (not yet played): Team 2 @ 7
+Game 3 (not yet played): Team 3 @ 0
+Game 4 (not yet played): Team 6 @ 4
+Week 18
+Game 1 (not yet played): Team 5 @ 6
+Game 2 (not yet played): Team 0 @ 2
+Game 3 (not yet played): Team 7 @ 3
+Game 4 (not yet played): Team 4 @ 1
+Week 19
+Game 1 (not yet played): Team 6 @ 7
+Game 2 (not yet played): Team 0 @ 4
+Game 3 (not yet played): Team 5 @ 8
+Game 4 (not yet played): Team 3 @ 2
+Week 20
+Game 1 (not yet played): Team 2 @ 3
+Game 2 (not yet played): Team 8 @ 7
+Game 3 (not yet played): Team 5 @ 6
+Game 4 (not yet played): Team 0 @ 1
+Week 21
+Game 1 (not yet played): Team 7 @ 5
+Game 2 (not yet played): Team 1 @ 0
+Game 3 (not yet played): Team 6 @ 8
+Game 4 (not yet played): Team 2 @ 4
+
+copySchedule() completed, returning to calling function
+copySchedule() executed successfully, returning to main()
+Calling copyLeague() from main()
+Now in copyLeague()
+Copied team statistics:
+
+Saskatchewan Roughriders	6	3	0	264	201
+Edmonton Eskimos	6	4	0	264	198
+Calgary Stampeders	5	4	0	249	220
+Winnipeg Blue Bombers	8	2	0	303	199
+BC Lions	1	9	0	205	321
+Ottawa REDBLACKS	3	7	0	193	286
+Toronto Argonauts	1	8	0	151	310
+Montreal Alouettes	5	4	0	232	234
+Hamilton Tiger Cats	8	2	0	298	190
+copyLeague() completed, returning to calling function
+copyLeague() executed successfully, returning to main()
+Calling simulateSeason() from main()
+Now in simulateSeason()
+Setting team ranked status to false
+Value of "ranked":
+Saskatchewan Roughriders: 0
+Edmonton Eskimos: 0
+Calgary Stampeders: 0
+Winnipeg Blue Bombers: 0
+BC Lions: 0
+Ottawa REDBLACKS: 0
+Toronto Argonauts: 0
+Montreal Alouettes: 0
+Hamilton Tiger Cats: 0
+Simulating unplayed games in season
+Season results following simulation:
+
+
+Week 1
+
+Game 1: Team 0 17 @ Team 8 23
+Game 2: Team 7 25 @ Team 1 32
+Game 3: Team 5 32 @ Team 2 28
+Game 4: Team 3 33 @ Team 4 23
+
+Week 2
+
+Game 1: Team 0 41 @ Team 5 44
+Game 2: Team 4 23 @ Team 1 39
+Game 3: Team 8 64 @ Team 6 14
+Game 4 not scheduled
+
+Week 3
+
+Game 1: Team 1 21 @ Team 3 28
+Game 2: Team 7 10 @ Team 8 41
+Game 3: Team 4 32 @ Team 2 36
+Game 4: Team 6 7 @ Team 0 32
+
+Week 4
+
+Game 1: Team 8 29 @ Team 7 36
+Game 2: Team 3 29 @ Team 5 14
+Game 3: Team 4 18 @ Team 6 17
+Game 4: Team 2 37 @ Team 0 10
+
+Week 5
+
+Game 1: Team 1 33 @ Team 4 6
+Game 2: Team 6 21 @ Team 3 48
+Game 3: Team 7 36 @ Team 5 19
+Game 4: Team 2 23 @ Team 8 30
+
+Week 6
+
+Game 1: Team 6 16 @ Team 2 26
+Game 2: Team 5 1 @ Team 3 31
+Game 3: Team 1 10 @ Team 7 20
+Game 4: Team 4 25 @ Team 0 38
+
+Week 7
+
+Game 1: Team 2 17 @ Team 5 16
+Game 2: Team 6 0 @ Team 1 26
+Game 3: Team 3 15 @ Team 8 23
+Game 4: Team 0 45 @ Team 4 18
+
+Week 8
+
+Game 1: Team 3 27 @ Team 6 28
+Game 2: Team 8 19 @ Team 0 24
+Game 3: Team 5 30 @ Team 7 27
+Game 4: Team 1 18 @ Team 2 24
+
+Week 9
+
+Game 1: Team 2 24 @ Team 3 26
+Game 2: Team 0 17 @ Team 7 10
+Game 3: Team 5 12 @ Team 1 16
+Game 4: Team 4 34 @ Team 8 35
+
+Week 10
+
+Game 1: Team 4 16 @ Team 3 32
+Game 2: Team 1 41 @ Team 6 26
+Game 3: Team 8 21 @ Team 5 7
+Game 4: Team 7 40 @ Team 2 34
+
+Week 11
+
+Game 1: Team 3 34 @ Team 1 28
+Game 2: Team 5 18 @ Team 0 40
+Game 3: Team 8 13 @ Team 4 10
+Game 4: Team 7 28 @ Team 6 22
+
+Week 12
+
+Game 1: Team 3 34 @ Team 0 46
+Game 2: Team 6 33 @ Team 8 52
+Game 3: Team 1 39 @ Team 2 9
+Game 4 not scheduled
+
+Week 13
+
+Game 1: Team 4 33 @ Team 7 29
+Game 2: Team 6 28 @ Team 5 52
+Game 3: Team 0 28 @ Team 3 12
+Game 4: Team 2 53 @ Team 1 57
+
+Week 14
+
+Game 1: Team 5 49 @ Team 4 44
+Game 2: Team 8 63 @ Team 2 63
+Game 3: Team 7 27 @ Team 0 17
+Game 4 not scheduled
+
+Week 15
+
+Game 1: Team 2 4 @ Team 6 17
+Game 2: Team 8 5 @ Team 1 62
+Game 3: Team 3 58 @ Team 7 32
+Game 4: Team 4 7 @ Team 5 34
+
+Week 16
+
+Game 1: Team 8 42 @ Team 3 62
+Game 2: Team 1 41 @ Team 5 12
+Game 3: Team 0 38 @ Team 6 60
+Game 4: Team 7 5 @ Team 4 4
+
+Week 17
+
+Game 1: Team 1 16 @ Team 8 19
+Game 2: Team 2 52 @ Team 7 21
+Game 3: Team 3 33 @ Team 0 52
+Game 4: Team 6 27 @ Team 4 16
+
+Week 18
+
+Game 1: Team 5 49 @ Team 6 25
+Game 2: Team 0 26 @ Team 2 36
+Game 3: Team 7 36 @ Team 3 66
+Game 4: Team 4 32 @ Team 1 45
+
+Week 19
+
+Game 1: Team 6 56 @ Team 7 5
+Game 2: Team 0 0 @ Team 4 5
+Game 3: Team 5 37 @ Team 8 54
+Game 4: Team 3 26 @ Team 2 58
+
+Week 20
+
+Game 1: Team 2 39 @ Team 3 19
+Game 2: Team 8 32 @ Team 7 52
+Game 3: Team 5 43 @ Team 6 2
+Game 4: Team 0 51 @ Team 1 17
+
+Week 21
+
+Game 1: Team 7 26 @ Team 5 62
+Game 2: Team 1 20 @ Team 0 9
+Game 3: Team 6 9 @ Team 8 55
+Game 4: Team 2 19 @ Team 4 3
+
+Team statistics following simulation:
+Key: wins/losses/ties/points for/points against/team ID number)
+
+Saskatchewan Roughriders	10	8	0	531	445	0
+Edmonton Eskimos	12	6	0	561	388	1
+Calgary Stampeders	10	7	1	582	491	2
+Winnipeg Blue Bombers	11	7	0	613	532	3
+BC Lions	3	15	0	349	529	4
+Ottawa REDBLACKS	9	9	0	531	513	5
+Toronto Argonauts	5	13	0	408	624	6
+Montreal Alouettes	8	10	0	465	614	7
+Hamilton Tiger Cats	12	5	1	620	524	8
+simulateSeason() completed, returning to calling function
+simulateSeason() executed successfully, returning to main()
+Calling crunchSeasonResults() from main()
+Now in crunchSeasonResults
+Sorting teams into division vectors
+West division:
+1. Saskatchewan Roughriders
+2. Edmonton Eskimos
+3. Calgary Stampeders
+4. Winnipeg Blue Bombers
+5. BC Lions
+
+East division:
+6. Saskatchewan Roughriders
+7. Edmonton Eskimos
+8. Calgary Stampeders
+9. Winnipeg Blue Bombers
+
+Determining top four teams in each division
+
+West Division team 1
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 20 Ranked: 0 ID: 0
+Team 2 number of playoff points: 24 Ranked: 0 ID: 1
+Team 3 number of playoff points: 21 Ranked: 0 ID: 2
+Team 4 number of playoff points: 22 Ranked: 0 ID: 3
+Team 5 number of playoff points: 6 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 1
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 18 Ranked: 0 ID: 5
+Team 2 number of playoff points: 10 Ranked: 0 ID: 6
+Team 3 number of playoff points: 16 Ranked: 0 ID: 7
+Team 4 number of playoff points: 25 Ranked: 0 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+West Division team 2
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 20 Ranked: 0 ID: 0
+Team 2 number of playoff points: 24 Ranked: 1 ID: 1
+Team 3 number of playoff points: 21 Ranked: 0 ID: 2
+Team 4 number of playoff points: 22 Ranked: 0 ID: 3
+Team 5 number of playoff points: 6 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 2
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 18 Ranked: 0 ID: 5
+Team 2 number of playoff points: 10 Ranked: 0 ID: 6
+Team 3 number of playoff points: 16 Ranked: 0 ID: 7
+Team 4 number of playoff points: 25 Ranked: 1 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+West Division team 3
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 20 Ranked: 0 ID: 0
+Team 2 number of playoff points: 24 Ranked: 1 ID: 1
+Team 3 number of playoff points: 21 Ranked: 0 ID: 2
+Team 4 number of playoff points: 22 Ranked: 1 ID: 3
+Team 5 number of playoff points: 6 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 3
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 18 Ranked: 1 ID: 5
+Team 2 number of playoff points: 10 Ranked: 0 ID: 6
+Team 3 number of playoff points: 16 Ranked: 0 ID: 7
+Team 4 number of playoff points: 25 Ranked: 1 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+West Division team 4
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 20 Ranked: 0 ID: 0
+Team 2 number of playoff points: 24 Ranked: 1 ID: 1
+Team 3 number of playoff points: 21 Ranked: 1 ID: 2
+Team 4 number of playoff points: 22 Ranked: 1 ID: 3
+Team 5 number of playoff points: 6 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 4
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 18 Ranked: 1 ID: 5
+Team 2 number of playoff points: 10 Ranked: 0 ID: 6
+Team 3 number of playoff points: 16 Ranked: 1 ID: 7
+Team 4 number of playoff points: 25 Ranked: 1 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+Determining fifth-place west team - calling findWinner from crunchSeasonResults()
+
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 20 Ranked: 1 ID: 0
+Team 2 number of playoff points: 24 Ranked: 1 ID: 1
+Team 3 number of playoff points: 21 Ranked: 1 ID: 2
+Team 4 number of playoff points: 22 Ranked: 1 ID: 3
+Team 5 number of playoff points: 6 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+WEST DIVISION RANKINGS
+1. Edmonton Eskimos
+2. Winnipeg Blue Bombers
+3. Calgary Stampeders
+4. Saskatchewan Roughriders
+5. BC Lions
+EAST DIVISION RANKINGS
+1. Hamilton Tiger Cats
+2. Ottawa REDBLACKS
+3. Montreal Alouettes
+4. Toronto Argonauts
+
+Updating final ranking totals for first, second, and fifth-place teams.
+Rankings updated.
+Testing if crossover in effect...
+Checking for East-to-West crossover
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 2
+Team 1 number of playoff points: 10 Ranked: 0 ID: 6
+Team 2 number of playoff points: 21 Ranked: 0 ID: 2
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 2
+Team 1 number of playoff points: 20 Ranked: 0 ID: 0
+Team 2 number of playoff points: 16 Ranked: 0 ID: 7
+Number of teams remaining at end of checkPlayoffPoints(): 1
+Checking for West-to-East crossover
+
+West-to-East crossover in effect
+Updating season ranking totals for third and fourth place teams
+
+New season ranking totals by team:
+
+Saskatchewan Roughriders
+First place finishes: 2
+Second place finishes: 2
+Third place (made playoffs): 1
+Crossovers: 2
+Times missed playoffs: 0
+
+Edmonton Eskimos
+First place finishes: 2
+Second place finishes: 0
+Third place (made playoffs): 3
+Crossovers: 2
+Times missed playoffs: 0
+
+Calgary Stampeders
+First place finishes: 1
+Second place finishes: 4
+Third place (made playoffs): 1
+Crossovers: 1
+Times missed playoffs: 0
+
+Winnipeg Blue Bombers
+First place finishes: 2
+Second place finishes: 1
+Third place (made playoffs): 2
+Crossovers: 2
+Times missed playoffs: 0
+
+BC Lions
+First place finishes: 0
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 7
+
+Ottawa REDBLACKS
+First place finishes: 0
+Second place finishes: 3
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 4
+
+Toronto Argonauts
+First place finishes: 0
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 7
+
+Montreal Alouettes
+First place finishes: 0
+Second place finishes: 4
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 3
+
+Hamilton Tiger Cats
+First place finishes: 7
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 0
+Reached end of crunchSeasonResults(), returning to calling function
+crunchSeasonResults() executed successfully, returning to main()
+Calling copySchedule() from main()
+Copying season schedule
+Copied schedule details:
+
+Week 1
+Game 1: Team 0 17 @ Team 8 23
+Game 2: Team 7 25 @ Team 1 32
+Game 3: Team 5 32 @ Team 2 28
+Game 4: Team 3 33 @ Team 4 23
+Week 2
+Game 1: Team 0 41 @ Team 5 44
+Game 2: Team 4 23 @ Team 1 39
+Game 3: Team 8 64 @ Team 6 14
+Game 4 not scheduled
+Week 3
+Game 1: Team 1 21 @ Team 3 28
+Game 2: Team 7 10 @ Team 8 41
+Game 3: Team 4 32 @ Team 2 36
+Game 4: Team 6 7 @ Team 0 32
+Week 4
+Game 1: Team 8 29 @ Team 7 36
+Game 2: Team 3 29 @ Team 5 14
+Game 3: Team 4 18 @ Team 6 17
+Game 4: Team 2 37 @ Team 0 10
+Week 5
+Game 1: Team 1 33 @ Team 4 6
+Game 2: Team 6 21 @ Team 3 48
+Game 3: Team 7 36 @ Team 5 19
+Game 4: Team 2 23 @ Team 8 30
+Week 6
+Game 1: Team 6 16 @ Team 2 26
+Game 2: Team 5 1 @ Team 3 31
+Game 3: Team 1 10 @ Team 7 20
+Game 4: Team 4 25 @ Team 0 38
+Week 7
+Game 1: Team 2 17 @ Team 5 16
+Game 2: Team 6 0 @ Team 1 26
+Game 3: Team 3 15 @ Team 8 23
+Game 4: Team 0 45 @ Team 4 18
+Week 8
+Game 1: Team 3 27 @ Team 6 28
+Game 2: Team 8 19 @ Team 0 24
+Game 3: Team 5 30 @ Team 7 27
+Game 4: Team 1 18 @ Team 2 24
+Week 9
+Game 1: Team 2 24 @ Team 3 26
+Game 2: Team 0 17 @ Team 7 10
+Game 3: Team 5 12 @ Team 1 16
+Game 4: Team 4 34 @ Team 8 35
+Week 10
+Game 1: Team 4 16 @ Team 3 32
+Game 2: Team 1 41 @ Team 6 26
+Game 3: Team 8 21 @ Team 5 7
+Game 4: Team 7 40 @ Team 2 34
+Week 11
+Game 1: Team 3 34 @ Team 1 28
+Game 2: Team 5 18 @ Team 0 40
+Game 3: Team 8 13 @ Team 4 10
+Game 4: Team 7 28 @ Team 6 22
+Week 12
+Game 1 (not yet played): Team 3 @ 0
+Game 2 (not yet played): Team 6 @ 8
+Game 3 (not yet played): Team 1 @ 2
+Game 4 not scheduled
+Week 13
+Game 1 (not yet played): Team 4 @ 7
+Game 2 (not yet played): Team 6 @ 5
+Game 3 (not yet played): Team 0 @ 3
+Game 4 (not yet played): Team 2 @ 1
+Week 14
+Game 1 (not yet played): Team 5 @ 4
+Game 2 (not yet played): Team 8 @ 2
+Game 3 (not yet played): Team 7 @ 0
+Game 4 not scheduled
+Week 15
+Game 1 (not yet played): Team 2 @ 6
+Game 2 (not yet played): Team 8 @ 1
+Game 3 (not yet played): Team 3 @ 7
+Game 4 (not yet played): Team 4 @ 5
+Week 16
+Game 1 (not yet played): Team 8 @ 3
+Game 2 (not yet played): Team 1 @ 5
+Game 3 (not yet played): Team 0 @ 6
+Game 4 (not yet played): Team 7 @ 4
+Week 17
+Game 1 (not yet played): Team 1 @ 8
+Game 2 (not yet played): Team 2 @ 7
+Game 3 (not yet played): Team 3 @ 0
+Game 4 (not yet played): Team 6 @ 4
+Week 18
+Game 1 (not yet played): Team 5 @ 6
+Game 2 (not yet played): Team 0 @ 2
+Game 3 (not yet played): Team 7 @ 3
+Game 4 (not yet played): Team 4 @ 1
+Week 19
+Game 1 (not yet played): Team 6 @ 7
+Game 2 (not yet played): Team 0 @ 4
+Game 3 (not yet played): Team 5 @ 8
+Game 4 (not yet played): Team 3 @ 2
+Week 20
+Game 1 (not yet played): Team 2 @ 3
+Game 2 (not yet played): Team 8 @ 7
+Game 3 (not yet played): Team 5 @ 6
+Game 4 (not yet played): Team 0 @ 1
+Week 21
+Game 1 (not yet played): Team 7 @ 5
+Game 2 (not yet played): Team 1 @ 0
+Game 3 (not yet played): Team 6 @ 8
+Game 4 (not yet played): Team 2 @ 4
+
+copySchedule() completed, returning to calling function
+copySchedule() executed successfully, returning to main()
+Calling copyLeague() from main()
+Now in copyLeague()
+Copied team statistics:
+
+Saskatchewan Roughriders	6	3	0	264	201
+Edmonton Eskimos	6	4	0	264	198
+Calgary Stampeders	5	4	0	249	220
+Winnipeg Blue Bombers	8	2	0	303	199
+BC Lions	1	9	0	205	321
+Ottawa REDBLACKS	3	7	0	193	286
+Toronto Argonauts	1	8	0	151	310
+Montreal Alouettes	5	4	0	232	234
+Hamilton Tiger Cats	8	2	0	298	190
+copyLeague() completed, returning to calling function
+copyLeague() executed successfully, returning to main()
+Calling simulateSeason() from main()
+Now in simulateSeason()
+Setting team ranked status to false
+Value of "ranked":
+Saskatchewan Roughriders: 0
+Edmonton Eskimos: 0
+Calgary Stampeders: 0
+Winnipeg Blue Bombers: 0
+BC Lions: 0
+Ottawa REDBLACKS: 0
+Toronto Argonauts: 0
+Montreal Alouettes: 0
+Hamilton Tiger Cats: 0
+Simulating unplayed games in season
+Season results following simulation:
+
+
+Week 1
+
+Game 1: Team 0 17 @ Team 8 23
+Game 2: Team 7 25 @ Team 1 32
+Game 3: Team 5 32 @ Team 2 28
+Game 4: Team 3 33 @ Team 4 23
+
+Week 2
+
+Game 1: Team 0 41 @ Team 5 44
+Game 2: Team 4 23 @ Team 1 39
+Game 3: Team 8 64 @ Team 6 14
+Game 4 not scheduled
+
+Week 3
+
+Game 1: Team 1 21 @ Team 3 28
+Game 2: Team 7 10 @ Team 8 41
+Game 3: Team 4 32 @ Team 2 36
+Game 4: Team 6 7 @ Team 0 32
+
+Week 4
+
+Game 1: Team 8 29 @ Team 7 36
+Game 2: Team 3 29 @ Team 5 14
+Game 3: Team 4 18 @ Team 6 17
+Game 4: Team 2 37 @ Team 0 10
+
+Week 5
+
+Game 1: Team 1 33 @ Team 4 6
+Game 2: Team 6 21 @ Team 3 48
+Game 3: Team 7 36 @ Team 5 19
+Game 4: Team 2 23 @ Team 8 30
+
+Week 6
+
+Game 1: Team 6 16 @ Team 2 26
+Game 2: Team 5 1 @ Team 3 31
+Game 3: Team 1 10 @ Team 7 20
+Game 4: Team 4 25 @ Team 0 38
+
+Week 7
+
+Game 1: Team 2 17 @ Team 5 16
+Game 2: Team 6 0 @ Team 1 26
+Game 3: Team 3 15 @ Team 8 23
+Game 4: Team 0 45 @ Team 4 18
+
+Week 8
+
+Game 1: Team 3 27 @ Team 6 28
+Game 2: Team 8 19 @ Team 0 24
+Game 3: Team 5 30 @ Team 7 27
+Game 4: Team 1 18 @ Team 2 24
+
+Week 9
+
+Game 1: Team 2 24 @ Team 3 26
+Game 2: Team 0 17 @ Team 7 10
+Game 3: Team 5 12 @ Team 1 16
+Game 4: Team 4 34 @ Team 8 35
+
+Week 10
+
+Game 1: Team 4 16 @ Team 3 32
+Game 2: Team 1 41 @ Team 6 26
+Game 3: Team 8 21 @ Team 5 7
+Game 4: Team 7 40 @ Team 2 34
+
+Week 11
+
+Game 1: Team 3 34 @ Team 1 28
+Game 2: Team 5 18 @ Team 0 40
+Game 3: Team 8 13 @ Team 4 10
+Game 4: Team 7 28 @ Team 6 22
+
+Week 12
+
+Game 1: Team 3 49 @ Team 0 24
+Game 2: Team 6 25 @ Team 8 49
+Game 3: Team 1 25 @ Team 2 25
+Game 4 not scheduled
+
+Week 13
+
+Game 1: Team 4 11 @ Team 7 63
+Game 2: Team 6 1 @ Team 5 2
+Game 3: Team 0 24 @ Team 3 22
+Game 4: Team 2 21 @ Team 1 1
+
+Week 14
+
+Game 1: Team 5 56 @ Team 4 56
+Game 2: Team 8 11 @ Team 2 4
+Game 3: Team 7 61 @ Team 0 13
+Game 4 not scheduled
+
+Week 15
+
+Game 1: Team 2 36 @ Team 6 42
+Game 2: Team 8 52 @ Team 1 0
+Game 3: Team 3 42 @ Team 7 3
+Game 4: Team 4 39 @ Team 5 28
+
+Week 16
+
+Game 1: Team 8 44 @ Team 3 50
+Game 2: Team 1 14 @ Team 5 42
+Game 3: Team 0 56 @ Team 6 28
+Game 4: Team 7 19 @ Team 4 12
+
+Week 17
+
+Game 1: Team 1 50 @ Team 8 19
+Game 2: Team 2 45 @ Team 7 39
+Game 3: Team 3 41 @ Team 0 5
+Game 4: Team 6 1 @ Team 4 31
+
+Week 18
+
+Game 1: Team 5 15 @ Team 6 30
+Game 2: Team 0 55 @ Team 2 1
+Game 3: Team 7 45 @ Team 3 15
+Game 4: Team 4 50 @ Team 1 31
+
+Week 19
+
+Game 1: Team 6 32 @ Team 7 33
+Game 2: Team 0 33 @ Team 4 29
+Game 3: Team 5 14 @ Team 8 37
+Game 4: Team 3 31 @ Team 2 14
+
+Week 20
+
+Game 1: Team 2 14 @ Team 3 21
+Game 2: Team 8 18 @ Team 7 18
+Game 3: Team 5 11 @ Team 6 15
+Game 4: Team 0 12 @ Team 1 56
+
+Week 21
+
+Game 1: Team 7 25 @ Team 5 18
+Game 2: Team 1 5 @ Team 0 63
+Game 3: Team 6 0 @ Team 8 35
+Game 4: Team 2 2 @ Team 4 1
+
+Team statistics following simulation:
+Key: wins/losses/ties/points for/points against/team ID number)
+
+Saskatchewan Roughriders	11	7	0	549	493	0
+Edmonton Eskimos	8	9	1	446	482	1
+Calgary Stampeders	8	9	1	411	446	2
+Winnipeg Blue Bombers	14	4	0	574	372	3
+BC Lions	4	13	1	434	554	4
+Ottawa REDBLACKS	5	12	1	379	503	5
+Toronto Argonauts	4	14	0	325	578	6
+Montreal Alouettes	11	6	1	538	440	7
+Hamilton Tiger Cats	13	4	1	563	351	8
+simulateSeason() completed, returning to calling function
+simulateSeason() executed successfully, returning to main()
+Calling crunchSeasonResults() from main()
+Now in crunchSeasonResults
+Sorting teams into division vectors
+West division:
+1. Saskatchewan Roughriders
+2. Edmonton Eskimos
+3. Calgary Stampeders
+4. Winnipeg Blue Bombers
+5. BC Lions
+
+East division:
+6. Saskatchewan Roughriders
+7. Edmonton Eskimos
+8. Calgary Stampeders
+9. Winnipeg Blue Bombers
+
+Determining top four teams in each division
+
+West Division team 1
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 22 Ranked: 0 ID: 0
+Team 2 number of playoff points: 17 Ranked: 0 ID: 1
+Team 3 number of playoff points: 17 Ranked: 0 ID: 2
+Team 4 number of playoff points: 28 Ranked: 0 ID: 3
+Team 5 number of playoff points: 9 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 1
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 11 Ranked: 0 ID: 5
+Team 2 number of playoff points: 8 Ranked: 0 ID: 6
+Team 3 number of playoff points: 23 Ranked: 0 ID: 7
+Team 4 number of playoff points: 27 Ranked: 0 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+West Division team 2
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 22 Ranked: 0 ID: 0
+Team 2 number of playoff points: 17 Ranked: 0 ID: 1
+Team 3 number of playoff points: 17 Ranked: 0 ID: 2
+Team 4 number of playoff points: 28 Ranked: 1 ID: 3
+Team 5 number of playoff points: 9 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 2
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 11 Ranked: 0 ID: 5
+Team 2 number of playoff points: 8 Ranked: 0 ID: 6
+Team 3 number of playoff points: 23 Ranked: 0 ID: 7
+Team 4 number of playoff points: 27 Ranked: 1 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+West Division team 3
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
 Now inside checkPlayoffPoints()
 Number of teams being compared: 5
 Team 1 number of playoff points: 22 Ranked: 1 ID: 0
-Team 2 number of playoff points: 12 Ranked: 0 ID: 1
-Team 3 number of playoff points: 24 Ranked: 1 ID: 2
-Team 4 number of playoff points: 20 Ranked: 0 ID: 3
-Team 5 number of playoff points: 20 Ranked: 0 ID: 4
+Team 2 number of playoff points: 17 Ranked: 0 ID: 1
+Team 3 number of playoff points: 17 Ranked: 0 ID: 2
+Team 4 number of playoff points: 28 Ranked: 1 ID: 3
+Team 5 number of playoff points: 9 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 2
+
 starting findWinner() second stage
+
 Number of tied teams remaining: 2
 Now inside checkTotalWins()
 Number of teams being compared: 2
-Team 1 number of wins: 10 Ranked: 0 ID: 3
-Team 2 number of wins: 10 Ranked: 0 ID: 4
+Team 1 number of wins: 8 Ranked: 0 ID: 1
+Team 2 number of wins: 8 Ranked: 0 ID: 2
 Number of teams being compared after checkTotalWins: 2
+
 starting findWinner() third stage
+
 Number of tied teams remaining: 2
 Now inside checkWinPctAgainstTied()
 Number of teams being compared: 2
-starting findWinner() fourth stage
-Number of tied teams remaining: 2
-Now inside checkNetAggAgainstTied()
-	Number of teams being compared: 2
+Team 1 win percentage: 0 Ranked: 0 ID: 1
+Team 2 win percentage: 1000 Ranked: 0 ID: 2
+Number of teams being compared after checkWinPctAgainstTied(): 1
+
+East Division team 3
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
 starting findWinner() first stage
+
 Now inside checkPlayoffPoints()
-Number of teams being compared: 0
+Number of teams being compared: 4
+Team 1 number of playoff points: 11 Ranked: 0 ID: 5
+Team 2 number of playoff points: 8 Ranked: 0 ID: 6
+Team 3 number of playoff points: 23 Ranked: 1 ID: 7
+Team 4 number of playoff points: 27 Ranked: 1 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+West Division team 4
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 22 Ranked: 1 ID: 0
+Team 2 number of playoff points: 17 Ranked: 0 ID: 1
+Team 3 number of playoff points: 17 Ranked: 1 ID: 2
+Team 4 number of playoff points: 28 Ranked: 1 ID: 3
+Team 5 number of playoff points: 9 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 4
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 11 Ranked: 1 ID: 5
+Team 2 number of playoff points: 8 Ranked: 0 ID: 6
+Team 3 number of playoff points: 23 Ranked: 1 ID: 7
+Team 4 number of playoff points: 27 Ranked: 1 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+Determining fifth-place west team - calling findWinner from crunchSeasonResults()
+
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 22 Ranked: 1 ID: 0
+Team 2 number of playoff points: 17 Ranked: 1 ID: 1
+Team 3 number of playoff points: 17 Ranked: 1 ID: 2
+Team 4 number of playoff points: 28 Ranked: 1 ID: 3
+Team 5 number of playoff points: 9 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+WEST DIVISION RANKINGS
+1. Winnipeg Blue Bombers
+2. Saskatchewan Roughriders
+3. Calgary Stampeders
+4. Edmonton Eskimos
+5. BC Lions
+EAST DIVISION RANKINGS
+1. Hamilton Tiger Cats
+2. Montreal Alouettes
+3. Ottawa REDBLACKS
+4. Toronto Argonauts
+
+Updating final ranking totals for first, second, and fifth-place teams.
+Rankings updated.
+Testing if crossover in effect...
+Checking for East-to-West crossover
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 2
+Team 1 number of playoff points: 8 Ranked: 0 ID: 6
+Team 2 number of playoff points: 17 Ranked: 0 ID: 2
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 2
+Team 1 number of playoff points: 17 Ranked: 0 ID: 1
+Team 2 number of playoff points: 11 Ranked: 0 ID: 5
+Number of teams remaining at end of checkPlayoffPoints(): 1
+Checking for West-to-East crossover
+
+West-to-East crossover in effect
+Updating season ranking totals for third and fourth place teams
+
+New season ranking totals by team:
+
+Saskatchewan Roughriders
+First place finishes: 2
+Second place finishes: 3
+Third place (made playoffs): 1
+Crossovers: 2
+Times missed playoffs: 0
+
+Edmonton Eskimos
+First place finishes: 2
+Second place finishes: 0
+Third place (made playoffs): 3
+Crossovers: 3
+Times missed playoffs: 0
+
+Calgary Stampeders
+First place finishes: 1
+Second place finishes: 4
+Third place (made playoffs): 2
+Crossovers: 1
+Times missed playoffs: 0
+
+Winnipeg Blue Bombers
+First place finishes: 3
+Second place finishes: 1
+Third place (made playoffs): 2
+Crossovers: 2
+Times missed playoffs: 0
+
+BC Lions
+First place finishes: 0
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 8
+
+Ottawa REDBLACKS
+First place finishes: 0
+Second place finishes: 3
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 5
+
+Toronto Argonauts
+First place finishes: 0
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 8
+
+Montreal Alouettes
+First place finishes: 0
+Second place finishes: 5
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 3
+
+Hamilton Tiger Cats
+First place finishes: 8
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 0
+Reached end of crunchSeasonResults(), returning to calling function
+crunchSeasonResults() executed successfully, returning to main()
+Calling copySchedule() from main()
+Copying season schedule
+Copied schedule details:
+
+Week 1
+Game 1: Team 0 17 @ Team 8 23
+Game 2: Team 7 25 @ Team 1 32
+Game 3: Team 5 32 @ Team 2 28
+Game 4: Team 3 33 @ Team 4 23
+Week 2
+Game 1: Team 0 41 @ Team 5 44
+Game 2: Team 4 23 @ Team 1 39
+Game 3: Team 8 64 @ Team 6 14
+Game 4 not scheduled
+Week 3
+Game 1: Team 1 21 @ Team 3 28
+Game 2: Team 7 10 @ Team 8 41
+Game 3: Team 4 32 @ Team 2 36
+Game 4: Team 6 7 @ Team 0 32
+Week 4
+Game 1: Team 8 29 @ Team 7 36
+Game 2: Team 3 29 @ Team 5 14
+Game 3: Team 4 18 @ Team 6 17
+Game 4: Team 2 37 @ Team 0 10
+Week 5
+Game 1: Team 1 33 @ Team 4 6
+Game 2: Team 6 21 @ Team 3 48
+Game 3: Team 7 36 @ Team 5 19
+Game 4: Team 2 23 @ Team 8 30
+Week 6
+Game 1: Team 6 16 @ Team 2 26
+Game 2: Team 5 1 @ Team 3 31
+Game 3: Team 1 10 @ Team 7 20
+Game 4: Team 4 25 @ Team 0 38
+Week 7
+Game 1: Team 2 17 @ Team 5 16
+Game 2: Team 6 0 @ Team 1 26
+Game 3: Team 3 15 @ Team 8 23
+Game 4: Team 0 45 @ Team 4 18
+Week 8
+Game 1: Team 3 27 @ Team 6 28
+Game 2: Team 8 19 @ Team 0 24
+Game 3: Team 5 30 @ Team 7 27
+Game 4: Team 1 18 @ Team 2 24
+Week 9
+Game 1: Team 2 24 @ Team 3 26
+Game 2: Team 0 17 @ Team 7 10
+Game 3: Team 5 12 @ Team 1 16
+Game 4: Team 4 34 @ Team 8 35
+Week 10
+Game 1: Team 4 16 @ Team 3 32
+Game 2: Team 1 41 @ Team 6 26
+Game 3: Team 8 21 @ Team 5 7
+Game 4: Team 7 40 @ Team 2 34
+Week 11
+Game 1: Team 3 34 @ Team 1 28
+Game 2: Team 5 18 @ Team 0 40
+Game 3: Team 8 13 @ Team 4 10
+Game 4: Team 7 28 @ Team 6 22
+Week 12
+Game 1 (not yet played): Team 3 @ 0
+Game 2 (not yet played): Team 6 @ 8
+Game 3 (not yet played): Team 1 @ 2
+Game 4 not scheduled
+Week 13
+Game 1 (not yet played): Team 4 @ 7
+Game 2 (not yet played): Team 6 @ 5
+Game 3 (not yet played): Team 0 @ 3
+Game 4 (not yet played): Team 2 @ 1
+Week 14
+Game 1 (not yet played): Team 5 @ 4
+Game 2 (not yet played): Team 8 @ 2
+Game 3 (not yet played): Team 7 @ 0
+Game 4 not scheduled
+Week 15
+Game 1 (not yet played): Team 2 @ 6
+Game 2 (not yet played): Team 8 @ 1
+Game 3 (not yet played): Team 3 @ 7
+Game 4 (not yet played): Team 4 @ 5
+Week 16
+Game 1 (not yet played): Team 8 @ 3
+Game 2 (not yet played): Team 1 @ 5
+Game 3 (not yet played): Team 0 @ 6
+Game 4 (not yet played): Team 7 @ 4
+Week 17
+Game 1 (not yet played): Team 1 @ 8
+Game 2 (not yet played): Team 2 @ 7
+Game 3 (not yet played): Team 3 @ 0
+Game 4 (not yet played): Team 6 @ 4
+Week 18
+Game 1 (not yet played): Team 5 @ 6
+Game 2 (not yet played): Team 0 @ 2
+Game 3 (not yet played): Team 7 @ 3
+Game 4 (not yet played): Team 4 @ 1
+Week 19
+Game 1 (not yet played): Team 6 @ 7
+Game 2 (not yet played): Team 0 @ 4
+Game 3 (not yet played): Team 5 @ 8
+Game 4 (not yet played): Team 3 @ 2
+Week 20
+Game 1 (not yet played): Team 2 @ 3
+Game 2 (not yet played): Team 8 @ 7
+Game 3 (not yet played): Team 5 @ 6
+Game 4 (not yet played): Team 0 @ 1
+Week 21
+Game 1 (not yet played): Team 7 @ 5
+Game 2 (not yet played): Team 1 @ 0
+Game 3 (not yet played): Team 6 @ 8
+Game 4 (not yet played): Team 2 @ 4
+
+copySchedule() completed, returning to calling function
+copySchedule() executed successfully, returning to main()
+Calling copyLeague() from main()
+Now in copyLeague()
+Copied team statistics:
+
+Saskatchewan Roughriders	6	3	0	264	201
+Edmonton Eskimos	6	4	0	264	198
+Calgary Stampeders	5	4	0	249	220
+Winnipeg Blue Bombers	8	2	0	303	199
+BC Lions	1	9	0	205	321
+Ottawa REDBLACKS	3	7	0	193	286
+Toronto Argonauts	1	8	0	151	310
+Montreal Alouettes	5	4	0	232	234
+Hamilton Tiger Cats	8	2	0	298	190
+copyLeague() completed, returning to calling function
+copyLeague() executed successfully, returning to main()
+Calling simulateSeason() from main()
+Now in simulateSeason()
+Setting team ranked status to false
+Value of "ranked":
+Saskatchewan Roughriders: 0
+Edmonton Eskimos: 0
+Calgary Stampeders: 0
+Winnipeg Blue Bombers: 0
+BC Lions: 0
+Ottawa REDBLACKS: 0
+Toronto Argonauts: 0
+Montreal Alouettes: 0
+Hamilton Tiger Cats: 0
+Simulating unplayed games in season
+Season results following simulation:
+
+
+Week 1
+
+Game 1: Team 0 17 @ Team 8 23
+Game 2: Team 7 25 @ Team 1 32
+Game 3: Team 5 32 @ Team 2 28
+Game 4: Team 3 33 @ Team 4 23
+
+Week 2
+
+Game 1: Team 0 41 @ Team 5 44
+Game 2: Team 4 23 @ Team 1 39
+Game 3: Team 8 64 @ Team 6 14
+Game 4 not scheduled
+
+Week 3
+
+Game 1: Team 1 21 @ Team 3 28
+Game 2: Team 7 10 @ Team 8 41
+Game 3: Team 4 32 @ Team 2 36
+Game 4: Team 6 7 @ Team 0 32
+
+Week 4
+
+Game 1: Team 8 29 @ Team 7 36
+Game 2: Team 3 29 @ Team 5 14
+Game 3: Team 4 18 @ Team 6 17
+Game 4: Team 2 37 @ Team 0 10
+
+Week 5
+
+Game 1: Team 1 33 @ Team 4 6
+Game 2: Team 6 21 @ Team 3 48
+Game 3: Team 7 36 @ Team 5 19
+Game 4: Team 2 23 @ Team 8 30
+
+Week 6
+
+Game 1: Team 6 16 @ Team 2 26
+Game 2: Team 5 1 @ Team 3 31
+Game 3: Team 1 10 @ Team 7 20
+Game 4: Team 4 25 @ Team 0 38
+
+Week 7
+
+Game 1: Team 2 17 @ Team 5 16
+Game 2: Team 6 0 @ Team 1 26
+Game 3: Team 3 15 @ Team 8 23
+Game 4: Team 0 45 @ Team 4 18
+
+Week 8
+
+Game 1: Team 3 27 @ Team 6 28
+Game 2: Team 8 19 @ Team 0 24
+Game 3: Team 5 30 @ Team 7 27
+Game 4: Team 1 18 @ Team 2 24
+
+Week 9
+
+Game 1: Team 2 24 @ Team 3 26
+Game 2: Team 0 17 @ Team 7 10
+Game 3: Team 5 12 @ Team 1 16
+Game 4: Team 4 34 @ Team 8 35
+
+Week 10
+
+Game 1: Team 4 16 @ Team 3 32
+Game 2: Team 1 41 @ Team 6 26
+Game 3: Team 8 21 @ Team 5 7
+Game 4: Team 7 40 @ Team 2 34
+
+Week 11
+
+Game 1: Team 3 34 @ Team 1 28
+Game 2: Team 5 18 @ Team 0 40
+Game 3: Team 8 13 @ Team 4 10
+Game 4: Team 7 28 @ Team 6 22
+
+Week 12
+
+Game 1: Team 3 6 @ Team 0 40
+Game 2: Team 6 63 @ Team 8 19
+Game 3: Team 1 54 @ Team 2 6
+Game 4 not scheduled
+
+Week 13
+
+Game 1: Team 4 63 @ Team 7 12
+Game 2: Team 6 29 @ Team 5 25
+Game 3: Team 0 17 @ Team 3 17
+Game 4: Team 2 47 @ Team 1 59
+
+Week 14
+
+Game 1: Team 5 63 @ Team 4 49
+Game 2: Team 8 21 @ Team 2 52
+Game 3: Team 7 34 @ Team 0 23
+Game 4 not scheduled
+
+Week 15
+
+Game 1: Team 2 30 @ Team 6 36
+Game 2: Team 8 12 @ Team 1 61
+Game 3: Team 3 49 @ Team 7 21
+Game 4: Team 4 56 @ Team 5 6
+
+Week 16
+
+Game 1: Team 8 57 @ Team 3 63
+Game 2: Team 1 8 @ Team 5 35
+Game 3: Team 0 26 @ Team 6 38
+Game 4: Team 7 2 @ Team 4 36
+
+Week 17
+
+Game 1: Team 1 48 @ Team 8 26
+Game 2: Team 2 47 @ Team 7 64
+Game 3: Team 3 40 @ Team 0 5
+Game 4: Team 6 33 @ Team 4 50
+
+Week 18
+
+Game 1: Team 5 64 @ Team 6 18
+Game 2: Team 0 21 @ Team 2 49
+Game 3: Team 7 45 @ Team 3 25
+Game 4: Team 4 12 @ Team 1 15
+
+Week 19
+
+Game 1: Team 6 62 @ Team 7 63
+Game 2: Team 0 12 @ Team 4 32
+Game 3: Team 5 60 @ Team 8 24
+Game 4: Team 3 52 @ Team 2 65
+
+Week 20
+
+Game 1: Team 2 58 @ Team 3 26
+Game 2: Team 8 54 @ Team 7 26
+Game 3: Team 5 40 @ Team 6 18
+Game 4: Team 0 47 @ Team 1 44
+
+Week 21
+
+Game 1: Team 7 19 @ Team 5 26
+Game 2: Team 1 50 @ Team 0 48
+Game 3: Team 6 3 @ Team 8 46
+Game 4: Team 2 39 @ Team 4 10
+
+Team statistics following simulation:
+Key: wins/losses/ties/points for/points against/team ID number)
+
+Saskatchewan Roughriders	8	9	1	503	511	0
+Edmonton Eskimos	12	6	0	603	431	1
+Calgary Stampeders	10	8	0	642	563	2
+Winnipeg Blue Bombers	11	6	1	581	507	3
+BC Lions	6	12	0	513	503	4
+Ottawa REDBLACKS	9	9	0	512	507	5
+Toronto Argonauts	5	13	0	451	673	6
+Montreal Alouettes	9	9	0	518	619	7
+Hamilton Tiger Cats	10	8	0	557	566	8
+simulateSeason() completed, returning to calling function
+simulateSeason() executed successfully, returning to main()
+Calling crunchSeasonResults() from main()
+Now in crunchSeasonResults
+Sorting teams into division vectors
+West division:
+1. Saskatchewan Roughriders
+2. Edmonton Eskimos
+3. Calgary Stampeders
+4. Winnipeg Blue Bombers
+5. BC Lions
+
+East division:
+6. Saskatchewan Roughriders
+7. Edmonton Eskimos
+8. Calgary Stampeders
+9. Winnipeg Blue Bombers
+
+Determining top four teams in each division
+
+West Division team 1
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 17 Ranked: 0 ID: 0
+Team 2 number of playoff points: 24 Ranked: 0 ID: 1
+Team 3 number of playoff points: 20 Ranked: 0 ID: 2
+Team 4 number of playoff points: 23 Ranked: 0 ID: 3
+Team 5 number of playoff points: 12 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 1
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 18 Ranked: 0 ID: 5
+Team 2 number of playoff points: 10 Ranked: 0 ID: 6
+Team 3 number of playoff points: 18 Ranked: 0 ID: 7
+Team 4 number of playoff points: 20 Ranked: 0 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+West Division team 2
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 17 Ranked: 0 ID: 0
+Team 2 number of playoff points: 24 Ranked: 1 ID: 1
+Team 3 number of playoff points: 20 Ranked: 0 ID: 2
+Team 4 number of playoff points: 23 Ranked: 0 ID: 3
+Team 5 number of playoff points: 12 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 2
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 18 Ranked: 0 ID: 5
+Team 2 number of playoff points: 10 Ranked: 0 ID: 6
+Team 3 number of playoff points: 18 Ranked: 0 ID: 7
+Team 4 number of playoff points: 20 Ranked: 1 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 2
+
+starting findWinner() second stage
+
+Number of tied teams remaining: 2
+Now inside checkTotalWins()
+Number of teams being compared: 2
+Team 1 number of wins: 9 Ranked: 0 ID: 5
+Team 2 number of wins: 9 Ranked: 0 ID: 7
+Number of teams being compared after checkTotalWins: 2
+
+starting findWinner() third stage
+
+Number of tied teams remaining: 2
+Now inside checkWinPctAgainstTied()
+Number of teams being compared: 2
+Team 1 win percentage: 666 Ranked: 0 ID: 5
+Team 2 win percentage: 333 Ranked: 0 ID: 7
+Number of teams being compared after checkWinPctAgainstTied(): 1
+
+West Division team 3
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 17 Ranked: 0 ID: 0
+Team 2 number of playoff points: 24 Ranked: 1 ID: 1
+Team 3 number of playoff points: 20 Ranked: 0 ID: 2
+Team 4 number of playoff points: 23 Ranked: 1 ID: 3
+Team 5 number of playoff points: 12 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 3
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 18 Ranked: 1 ID: 5
+Team 2 number of playoff points: 10 Ranked: 0 ID: 6
+Team 3 number of playoff points: 18 Ranked: 0 ID: 7
+Team 4 number of playoff points: 20 Ranked: 1 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+West Division team 4
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 17 Ranked: 0 ID: 0
+Team 2 number of playoff points: 24 Ranked: 1 ID: 1
+Team 3 number of playoff points: 20 Ranked: 1 ID: 2
+Team 4 number of playoff points: 23 Ranked: 1 ID: 3
+Team 5 number of playoff points: 12 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 4
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 18 Ranked: 1 ID: 5
+Team 2 number of playoff points: 10 Ranked: 0 ID: 6
+Team 3 number of playoff points: 18 Ranked: 1 ID: 7
+Team 4 number of playoff points: 20 Ranked: 1 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+Determining fifth-place west team - calling findWinner from crunchSeasonResults()
+
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 17 Ranked: 1 ID: 0
+Team 2 number of playoff points: 24 Ranked: 1 ID: 1
+Team 3 number of playoff points: 20 Ranked: 1 ID: 2
+Team 4 number of playoff points: 23 Ranked: 1 ID: 3
+Team 5 number of playoff points: 12 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+WEST DIVISION RANKINGS
+1. Edmonton Eskimos
+2. Winnipeg Blue Bombers
+3. Calgary Stampeders
+4. Saskatchewan Roughriders
+5. BC Lions
+EAST DIVISION RANKINGS
+1. Hamilton Tiger Cats
+2. Ottawa REDBLACKS
+3. Montreal Alouettes
+4. Toronto Argonauts
+
+Updating final ranking totals for first, second, and fifth-place teams.
+Rankings updated.
+Testing if crossover in effect...
+Checking for East-to-West crossover
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 2
+Team 1 number of playoff points: 10 Ranked: 0 ID: 6
+Team 2 number of playoff points: 20 Ranked: 0 ID: 2
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 2
+Team 1 number of playoff points: 17 Ranked: 0 ID: 0
+Team 2 number of playoff points: 18 Ranked: 0 ID: 7
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+No crossover in effect
+Updating season ranking totals for third and fourth place teams
+
+New season ranking totals by team:
+
+Saskatchewan Roughriders
+First place finishes: 2
+Second place finishes: 3
+Third place (made playoffs): 1
+Crossovers: 2
+Times missed playoffs: 1
+
+Edmonton Eskimos
+First place finishes: 3
+Second place finishes: 0
+Third place (made playoffs): 3
+Crossovers: 3
+Times missed playoffs: 0
+
+Calgary Stampeders
+First place finishes: 1
+Second place finishes: 4
+Third place (made playoffs): 3
+Crossovers: 1
+Times missed playoffs: 0
+
+Winnipeg Blue Bombers
+First place finishes: 3
+Second place finishes: 2
+Third place (made playoffs): 2
+Crossovers: 2
+Times missed playoffs: 0
+
+BC Lions
+First place finishes: 0
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 9
+
+Ottawa REDBLACKS
+First place finishes: 0
+Second place finishes: 4
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 5
+
+Toronto Argonauts
+First place finishes: 0
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 9
+
+Montreal Alouettes
+First place finishes: 0
+Second place finishes: 5
+Third place (made playoffs): 1
+Crossovers: 0
+Times missed playoffs: 3
+
+Hamilton Tiger Cats
+First place finishes: 9
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 0
+Reached end of crunchSeasonResults(), returning to calling function
+crunchSeasonResults() executed successfully, returning to main()
+Calling copySchedule() from main()
+Copying season schedule
+Copied schedule details:
+
+Week 1
+Game 1: Team 0 17 @ Team 8 23
+Game 2: Team 7 25 @ Team 1 32
+Game 3: Team 5 32 @ Team 2 28
+Game 4: Team 3 33 @ Team 4 23
+Week 2
+Game 1: Team 0 41 @ Team 5 44
+Game 2: Team 4 23 @ Team 1 39
+Game 3: Team 8 64 @ Team 6 14
+Game 4 not scheduled
+Week 3
+Game 1: Team 1 21 @ Team 3 28
+Game 2: Team 7 10 @ Team 8 41
+Game 3: Team 4 32 @ Team 2 36
+Game 4: Team 6 7 @ Team 0 32
+Week 4
+Game 1: Team 8 29 @ Team 7 36
+Game 2: Team 3 29 @ Team 5 14
+Game 3: Team 4 18 @ Team 6 17
+Game 4: Team 2 37 @ Team 0 10
+Week 5
+Game 1: Team 1 33 @ Team 4 6
+Game 2: Team 6 21 @ Team 3 48
+Game 3: Team 7 36 @ Team 5 19
+Game 4: Team 2 23 @ Team 8 30
+Week 6
+Game 1: Team 6 16 @ Team 2 26
+Game 2: Team 5 1 @ Team 3 31
+Game 3: Team 1 10 @ Team 7 20
+Game 4: Team 4 25 @ Team 0 38
+Week 7
+Game 1: Team 2 17 @ Team 5 16
+Game 2: Team 6 0 @ Team 1 26
+Game 3: Team 3 15 @ Team 8 23
+Game 4: Team 0 45 @ Team 4 18
+Week 8
+Game 1: Team 3 27 @ Team 6 28
+Game 2: Team 8 19 @ Team 0 24
+Game 3: Team 5 30 @ Team 7 27
+Game 4: Team 1 18 @ Team 2 24
+Week 9
+Game 1: Team 2 24 @ Team 3 26
+Game 2: Team 0 17 @ Team 7 10
+Game 3: Team 5 12 @ Team 1 16
+Game 4: Team 4 34 @ Team 8 35
+Week 10
+Game 1: Team 4 16 @ Team 3 32
+Game 2: Team 1 41 @ Team 6 26
+Game 3: Team 8 21 @ Team 5 7
+Game 4: Team 7 40 @ Team 2 34
+Week 11
+Game 1: Team 3 34 @ Team 1 28
+Game 2: Team 5 18 @ Team 0 40
+Game 3: Team 8 13 @ Team 4 10
+Game 4: Team 7 28 @ Team 6 22
+Week 12
+Game 1 (not yet played): Team 3 @ 0
+Game 2 (not yet played): Team 6 @ 8
+Game 3 (not yet played): Team 1 @ 2
+Game 4 not scheduled
+Week 13
+Game 1 (not yet played): Team 4 @ 7
+Game 2 (not yet played): Team 6 @ 5
+Game 3 (not yet played): Team 0 @ 3
+Game 4 (not yet played): Team 2 @ 1
+Week 14
+Game 1 (not yet played): Team 5 @ 4
+Game 2 (not yet played): Team 8 @ 2
+Game 3 (not yet played): Team 7 @ 0
+Game 4 not scheduled
+Week 15
+Game 1 (not yet played): Team 2 @ 6
+Game 2 (not yet played): Team 8 @ 1
+Game 3 (not yet played): Team 3 @ 7
+Game 4 (not yet played): Team 4 @ 5
+Week 16
+Game 1 (not yet played): Team 8 @ 3
+Game 2 (not yet played): Team 1 @ 5
+Game 3 (not yet played): Team 0 @ 6
+Game 4 (not yet played): Team 7 @ 4
+Week 17
+Game 1 (not yet played): Team 1 @ 8
+Game 2 (not yet played): Team 2 @ 7
+Game 3 (not yet played): Team 3 @ 0
+Game 4 (not yet played): Team 6 @ 4
+Week 18
+Game 1 (not yet played): Team 5 @ 6
+Game 2 (not yet played): Team 0 @ 2
+Game 3 (not yet played): Team 7 @ 3
+Game 4 (not yet played): Team 4 @ 1
+Week 19
+Game 1 (not yet played): Team 6 @ 7
+Game 2 (not yet played): Team 0 @ 4
+Game 3 (not yet played): Team 5 @ 8
+Game 4 (not yet played): Team 3 @ 2
+Week 20
+Game 1 (not yet played): Team 2 @ 3
+Game 2 (not yet played): Team 8 @ 7
+Game 3 (not yet played): Team 5 @ 6
+Game 4 (not yet played): Team 0 @ 1
+Week 21
+Game 1 (not yet played): Team 7 @ 5
+Game 2 (not yet played): Team 1 @ 0
+Game 3 (not yet played): Team 6 @ 8
+Game 4 (not yet played): Team 2 @ 4
+
+copySchedule() completed, returning to calling function
+copySchedule() executed successfully, returning to main()
+Calling copyLeague() from main()
+Now in copyLeague()
+Copied team statistics:
+
+Saskatchewan Roughriders	6	3	0	264	201
+Edmonton Eskimos	6	4	0	264	198
+Calgary Stampeders	5	4	0	249	220
+Winnipeg Blue Bombers	8	2	0	303	199
+BC Lions	1	9	0	205	321
+Ottawa REDBLACKS	3	7	0	193	286
+Toronto Argonauts	1	8	0	151	310
+Montreal Alouettes	5	4	0	232	234
+Hamilton Tiger Cats	8	2	0	298	190
+copyLeague() completed, returning to calling function
+copyLeague() executed successfully, returning to main()
+Calling simulateSeason() from main()
+Now in simulateSeason()
+Setting team ranked status to false
+Value of "ranked":
+Saskatchewan Roughriders: 0
+Edmonton Eskimos: 0
+Calgary Stampeders: 0
+Winnipeg Blue Bombers: 0
+BC Lions: 0
+Ottawa REDBLACKS: 0
+Toronto Argonauts: 0
+Montreal Alouettes: 0
+Hamilton Tiger Cats: 0
+Simulating unplayed games in season
+Season results following simulation:
+
+
+Week 1
+
+Game 1: Team 0 17 @ Team 8 23
+Game 2: Team 7 25 @ Team 1 32
+Game 3: Team 5 32 @ Team 2 28
+Game 4: Team 3 33 @ Team 4 23
+
+Week 2
+
+Game 1: Team 0 41 @ Team 5 44
+Game 2: Team 4 23 @ Team 1 39
+Game 3: Team 8 64 @ Team 6 14
+Game 4 not scheduled
+
+Week 3
+
+Game 1: Team 1 21 @ Team 3 28
+Game 2: Team 7 10 @ Team 8 41
+Game 3: Team 4 32 @ Team 2 36
+Game 4: Team 6 7 @ Team 0 32
+
+Week 4
+
+Game 1: Team 8 29 @ Team 7 36
+Game 2: Team 3 29 @ Team 5 14
+Game 3: Team 4 18 @ Team 6 17
+Game 4: Team 2 37 @ Team 0 10
+
+Week 5
+
+Game 1: Team 1 33 @ Team 4 6
+Game 2: Team 6 21 @ Team 3 48
+Game 3: Team 7 36 @ Team 5 19
+Game 4: Team 2 23 @ Team 8 30
+
+Week 6
+
+Game 1: Team 6 16 @ Team 2 26
+Game 2: Team 5 1 @ Team 3 31
+Game 3: Team 1 10 @ Team 7 20
+Game 4: Team 4 25 @ Team 0 38
+
+Week 7
+
+Game 1: Team 2 17 @ Team 5 16
+Game 2: Team 6 0 @ Team 1 26
+Game 3: Team 3 15 @ Team 8 23
+Game 4: Team 0 45 @ Team 4 18
+
+Week 8
+
+Game 1: Team 3 27 @ Team 6 28
+Game 2: Team 8 19 @ Team 0 24
+Game 3: Team 5 30 @ Team 7 27
+Game 4: Team 1 18 @ Team 2 24
+
+Week 9
+
+Game 1: Team 2 24 @ Team 3 26
+Game 2: Team 0 17 @ Team 7 10
+Game 3: Team 5 12 @ Team 1 16
+Game 4: Team 4 34 @ Team 8 35
+
+Week 10
+
+Game 1: Team 4 16 @ Team 3 32
+Game 2: Team 1 41 @ Team 6 26
+Game 3: Team 8 21 @ Team 5 7
+Game 4: Team 7 40 @ Team 2 34
+
+Week 11
+
+Game 1: Team 3 34 @ Team 1 28
+Game 2: Team 5 18 @ Team 0 40
+Game 3: Team 8 13 @ Team 4 10
+Game 4: Team 7 28 @ Team 6 22
+
+Week 12
+
+Game 1: Team 3 40 @ Team 0 42
+Game 2: Team 6 62 @ Team 8 42
+Game 3: Team 1 50 @ Team 2 32
+Game 4 not scheduled
+
+Week 13
+
+Game 1: Team 4 26 @ Team 7 34
+Game 2: Team 6 4 @ Team 5 13
+Game 3: Team 0 35 @ Team 3 60
+Game 4: Team 2 13 @ Team 1 55
+
+Week 14
+
+Game 1: Team 5 58 @ Team 4 45
+Game 2: Team 8 1 @ Team 2 28
+Game 3: Team 7 33 @ Team 0 6
+Game 4 not scheduled
+
+Week 15
+
+Game 1: Team 2 28 @ Team 6 34
+Game 2: Team 8 29 @ Team 1 22
+Game 3: Team 3 48 @ Team 7 6
+Game 4: Team 4 57 @ Team 5 20
+
+Week 16
+
+Game 1: Team 8 34 @ Team 3 9
+Game 2: Team 1 46 @ Team 5 8
+Game 3: Team 0 43 @ Team 6 27
+Game 4: Team 7 65 @ Team 4 54
+
+Week 17
+
+Game 1: Team 1 58 @ Team 8 53
+Game 2: Team 2 42 @ Team 7 3
+Game 3: Team 3 54 @ Team 0 1
+Game 4: Team 6 64 @ Team 4 11
+
+Week 18
+
+Game 1: Team 5 51 @ Team 6 18
+Game 2: Team 0 0 @ Team 2 42
+Game 3: Team 7 7 @ Team 3 30
+Game 4: Team 4 12 @ Team 1 30
+
+Week 19
+
+Game 1: Team 6 25 @ Team 7 48
+Game 2: Team 0 55 @ Team 4 10
+Game 3: Team 5 26 @ Team 8 31
+Game 4: Team 3 38 @ Team 2 22
+
+Week 20
+
+Game 1: Team 2 20 @ Team 3 2
+Game 2: Team 8 43 @ Team 7 32
+Game 3: Team 5 31 @ Team 6 24
+Game 4: Team 0 8 @ Team 1 66
+
+Week 21
+
+Game 1: Team 7 20 @ Team 5 41
+Game 2: Team 1 30 @ Team 0 61
+Game 3: Team 6 52 @ Team 8 33
+Game 4: Team 2 65 @ Team 4 37
+
+Team statistics following simulation:
+Key: wins/losses/ties/points for/points against/team ID number)
+
+Saskatchewan Roughriders	10	8	0	515	563	0
+Edmonton Eskimos	12	6	0	621	414	1
+Calgary Stampeders	10	8	0	541	440	2
+Winnipeg Blue Bombers	13	5	0	584	366	3
+BC Lions	2	16	0	457	712	4
+Ottawa REDBLACKS	8	10	0	441	531	5
+Toronto Argonauts	5	13	0	461	610	6
+Montreal Alouettes	9	9	0	480	549	7
+Hamilton Tiger Cats	12	6	0	564	479	8
+simulateSeason() completed, returning to calling function
+simulateSeason() executed successfully, returning to main()
+Calling crunchSeasonResults() from main()
+Now in crunchSeasonResults
+Sorting teams into division vectors
+West division:
+1. Saskatchewan Roughriders
+2. Edmonton Eskimos
+3. Calgary Stampeders
+4. Winnipeg Blue Bombers
+5. BC Lions
+
+East division:
+6. Saskatchewan Roughriders
+7. Edmonton Eskimos
+8. Calgary Stampeders
+9. Winnipeg Blue Bombers
+
+Determining top four teams in each division
+
+West Division team 1
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 20 Ranked: 0 ID: 0
+Team 2 number of playoff points: 24 Ranked: 0 ID: 1
+Team 3 number of playoff points: 20 Ranked: 0 ID: 2
+Team 4 number of playoff points: 26 Ranked: 0 ID: 3
+Team 5 number of playoff points: 4 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 1
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 16 Ranked: 0 ID: 5
+Team 2 number of playoff points: 10 Ranked: 0 ID: 6
+Team 3 number of playoff points: 18 Ranked: 0 ID: 7
+Team 4 number of playoff points: 24 Ranked: 0 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+West Division team 2
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 20 Ranked: 0 ID: 0
+Team 2 number of playoff points: 24 Ranked: 0 ID: 1
+Team 3 number of playoff points: 20 Ranked: 0 ID: 2
+Team 4 number of playoff points: 26 Ranked: 1 ID: 3
+Team 5 number of playoff points: 4 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 2
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 16 Ranked: 0 ID: 5
+Team 2 number of playoff points: 10 Ranked: 0 ID: 6
+Team 3 number of playoff points: 18 Ranked: 0 ID: 7
+Team 4 number of playoff points: 24 Ranked: 1 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+West Division team 3
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 20 Ranked: 0 ID: 0
+Team 2 number of playoff points: 24 Ranked: 1 ID: 1
+Team 3 number of playoff points: 20 Ranked: 0 ID: 2
+Team 4 number of playoff points: 26 Ranked: 1 ID: 3
+Team 5 number of playoff points: 4 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 2
+
+starting findWinner() second stage
+
+Number of tied teams remaining: 2
+Now inside checkTotalWins()
+Number of teams being compared: 2
+Team 1 number of wins: 10 Ranked: 0 ID: 0
+Team 2 number of wins: 10 Ranked: 0 ID: 2
+Number of teams being compared after checkTotalWins: 2
+
+starting findWinner() third stage
+
+Number of tied teams remaining: 2
+Now inside checkWinPctAgainstTied()
+Number of teams being compared: 2
+Team 1 win percentage: 0 Ranked: 0 ID: 0
+Team 2 win percentage: 1000 Ranked: 0 ID: 2
+Number of teams being compared after checkWinPctAgainstTied(): 1
+
+East Division team 3
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 16 Ranked: 0 ID: 5
+Team 2 number of playoff points: 10 Ranked: 0 ID: 6
+Team 3 number of playoff points: 18 Ranked: 1 ID: 7
+Team 4 number of playoff points: 24 Ranked: 1 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+West Division team 4
+
+Number of teams in West Division vector: 5
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 20 Ranked: 0 ID: 0
+Team 2 number of playoff points: 24 Ranked: 1 ID: 1
+Team 3 number of playoff points: 20 Ranked: 1 ID: 2
+Team 4 number of playoff points: 26 Ranked: 1 ID: 3
+Team 5 number of playoff points: 4 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+East Division team 4
+
+Number of teams in East Division vector: 4
+Calling findWinner() from crunchSeasonResults()
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 4
+Team 1 number of playoff points: 16 Ranked: 1 ID: 5
+Team 2 number of playoff points: 10 Ranked: 0 ID: 6
+Team 3 number of playoff points: 18 Ranked: 1 ID: 7
+Team 4 number of playoff points: 24 Ranked: 1 ID: 8
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+Determining fifth-place west team - calling findWinner from crunchSeasonResults()
+
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 5
+Team 1 number of playoff points: 20 Ranked: 1 ID: 0
+Team 2 number of playoff points: 24 Ranked: 1 ID: 1
+Team 3 number of playoff points: 20 Ranked: 1 ID: 2
+Team 4 number of playoff points: 26 Ranked: 1 ID: 3
+Team 5 number of playoff points: 4 Ranked: 0 ID: 4
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+WEST DIVISION RANKINGS
+1. Winnipeg Blue Bombers
+2. Edmonton Eskimos
+3. Calgary Stampeders
+4. Saskatchewan Roughriders
+5. BC Lions
+EAST DIVISION RANKINGS
+1. Hamilton Tiger Cats
+2. Montreal Alouettes
+3. Ottawa REDBLACKS
+4. Toronto Argonauts
+
+Updating final ranking totals for first, second, and fifth-place teams.
+Rankings updated.
+Testing if crossover in effect...
+Checking for East-to-West crossover
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 2
+Team 1 number of playoff points: 10 Ranked: 0 ID: 6
+Team 2 number of playoff points: 20 Ranked: 0 ID: 2
+Number of teams remaining at end of checkPlayoffPoints(): 1
+
+starting findWinner() first stage
+
+Now inside checkPlayoffPoints()
+Number of teams being compared: 2
+Team 1 number of playoff points: 20 Ranked: 0 ID: 0
+Team 2 number of playoff points: 16 Ranked: 0 ID: 5
+Number of teams remaining at end of checkPlayoffPoints(): 1
+Checking for West-to-East crossover
+
+West-to-East crossover in effect
+Updating season ranking totals for third and fourth place teams
+
+New season ranking totals by team:
+
+Saskatchewan Roughriders
+First place finishes: 2
+Second place finishes: 3
+Third place (made playoffs): 1
+Crossovers: 3
+Times missed playoffs: 1
+
+Edmonton Eskimos
+First place finishes: 3
+Second place finishes: 1
+Third place (made playoffs): 3
+Crossovers: 3
+Times missed playoffs: 0
+
+Calgary Stampeders
+First place finishes: 1
+Second place finishes: 4
+Third place (made playoffs): 4
+Crossovers: 1
+Times missed playoffs: 0
+
+Winnipeg Blue Bombers
+First place finishes: 4
+Second place finishes: 2
+Third place (made playoffs): 2
+Crossovers: 2
+Times missed playoffs: 0
+
+BC Lions
+First place finishes: 0
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 10
+
+Ottawa REDBLACKS
+First place finishes: 0
+Second place finishes: 4
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 6
+
+Toronto Argonauts
+First place finishes: 0
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 10
+
+Montreal Alouettes
+First place finishes: 0
+Second place finishes: 6
+Third place (made playoffs): 1
+Crossovers: 0
+Times missed playoffs: 3
+
+Hamilton Tiger Cats
+First place finishes: 10
+Second place finishes: 0
+Third place (made playoffs): 0
+Crossovers: 0
+Times missed playoffs: 0
+Reached end of crunchSeasonResults(), returning to calling function
+crunchSeasonResults() executed successfully, returning to main()
+Calling print_report() from main()
+print_report() executed successfully, returning to main()

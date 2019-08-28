@@ -1,0 +1,96 @@
+=== CFL SEASON SIMULATION: SUMMARY ===
+
+Simulations run: 10
+
+TEAM RESULTS
+
+Saskatchewan Roughriders
+Division: 
+
+1st place finishes:           2         0.200     
+2nd place finishes:           3         0.300     
+3rd place (made playoffs):    1         0.100     
+Crossovers:                   3         0.300     
+Times missed playoffs:        1         0.100     
+% chance of making the playoffs: 0.900
+
+Edmonton Eskimos
+Division: 
+
+1st place finishes:           3         0.300     
+2nd place finishes:           1         0.100     
+3rd place (made playoffs):    3         0.300     
+Crossovers:                   3         0.300     
+Times missed playoffs:        0         0.000     
+% chance of making the playoffs: 1.000
+
+Calgary Stampeders
+Division: 
+
+1st place finishes:           1         0.100     
+2nd place finishes:           4         0.400     
+3rd place (made playoffs):    4         0.400     
+Crossovers:                   1         0.100     
+Times missed playoffs:        0         0.000     
+% chance of making the playoffs: 1.000
+
+Winnipeg Blue Bombers
+Division: 
+
+1st place finishes:           4         0.400     
+2nd place finishes:           2         0.200     
+3rd place (made playoffs):    2         0.200     
+Crossovers:                   2         0.200     
+Times missed playoffs:        0         0.000     
+% chance of making the playoffs: 1.000
+
+BC Lions
+Division: 
+
+1st place finishes:           0         0.000     
+2nd place finishes:           0         0.000     
+3rd place (made playoffs):    0         0.000     
+Crossovers:                   0         0.000     
+Times missed playoffs:        10        1.000     
+% chance of making the playoffs: 0.000
+
+Ottawa REDBLACKS
+Division: 
+
+1st place finishes:           0         0.000     
+2nd place finishes:           4         0.400     
+3rd place (made playoffs):    0         0.000     
+Crossovers:                   0         0.000     
+Times missed playoffs:        6         0.600     
+% chance of making the playoffs: 0.400
+
+Toronto Argonauts
+Division: 
+
+1st place finishes:           0         0.000     
+2nd place finishes:           0         0.000     
+3rd place (made playoffs):    0         0.000     
+Crossovers:                   0         0.000     
+Times missed playoffs:        10        1.000     
+% chance of making the playoffs: 0.000
+
+Montreal Alouettes
+Division: 
+
+1st place finishes:           0         0.000     
+2nd place finishes:           6         0.600     
+3rd place (made playoffs):    1         0.100     
+Crossovers:                   0         0.000     
+Times missed playoffs:        3         0.300     
+% chance of making the playoffs: 0.700
+
+Hamilton Tiger Cats
+Division: 
+
+1st place finishes:           10        1.000     
+2nd place finishes:           0         0.000     
+3rd place (made playoffs):    0         0.000     
+Crossovers:                   0         0.000     
+Times missed playoffs:        0         0.000     
+% chance of making the playoffs: 1.000
+
