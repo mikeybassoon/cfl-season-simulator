@@ -16,49 +16,24 @@
 using namespace std;
 
 void copySchedule(){
-	log << "Copying season schedule" << endl;
-	log << "Copied schedule details:" << endl << endl;
 	for(int x = 0; x < NUMBER_OF_WEEKS; x++){ // for each week of season
-		log << "Week " << x + 1 << endl;
 		for(int y =0; y < MAX_GAMES_PER_WEEK; y++){ // for each game in week
 			sim_seasonSchedule[x][y] = seasonSchedule[x][y]; // copy all game details to sim_seasonSchedule
-			if(sim_seasonSchedule[x][y].was_played())
-				log << "Game " << y + 1 << ": Team " << sim_seasonSchedule[x][y].awayTeam() << " "
-					<< sim_seasonSchedule[x][y].get_awayScore() << " @ Team " << sim_seasonSchedule[x][y].homeTeam()
-					<< " " << sim_seasonSchedule[x][y].get_homeScore() << endl;
-			else if(sim_seasonSchedule[x][y].is_scheduled()){
-				log << "Game " << y + 1 << " (not yet played): Team " << sim_seasonSchedule[x][y].awayTeam()
-						<< " @ " << sim_seasonSchedule[x][y].homeTeam() << endl;
-			}
-			else log <<"Game " << y + 1 << " not scheduled" << endl;
 		}
 	}
-	log << endl << "copySchedule() completed, returning to calling function" << endl;
 }
 
 void copyLeague(){
-	log << "Now in copyLeague()" << endl;
-	log << "Copied team statistics:" << endl << endl;
 	for(int x = 0; x < NUMBER_OF_TEAMS; x++){ // for each team in league
 		sim_league[x] = league[x]; // copy all team details to sim_league
-		Team thisTeam = sim_league[x];
-		log << thisTeam.get_name() << "\t" << thisTeam.get_wins() << "\t" << thisTeam.get_losses()
-				<< "\t" << thisTeam.get_ties() << "\t" << thisTeam.get_pointsScored()
-				<< "\t" << thisTeam.get_pointsAllowed() << endl;
 	}
-	log << "copyLeague() completed, returning to calling function" << endl;
 }
 
 void simulateSeason(){
-	log << "Now in simulateSeason()" << endl;
-	log << "Setting team ranked status to false" << endl;
-	log << "Value of \"ranked\":" << endl;
 	// set all teams "ranked" status to false
 	for(int x = 0; x < NUMBER_OF_TEAMS; x++){
 		sim_league[x].set_ranked(false);
-		log << sim_league[x].get_name() << ": " << sim_league[x].is_ranked() << endl;
 	}
-	log << "Simulating unplayed games in season" << endl;
 	for(int x = 0; x < NUMBER_OF_WEEKS; x++){ // for each week of season
 		for(int y = 0; y < MAX_GAMES_PER_WEEK; y++){ // for each game in week
 			if(sim_seasonSchedule[x][y].is_scheduled() // game scheduled?
@@ -67,34 +42,9 @@ void simulateSeason(){
 			}
 		}
 	}
-
-	// print game results to log
-	log << "Season results following simulation:" << endl << endl;
-	for(int x = 0; x < NUMBER_OF_WEEKS; x++){ // for each week in season
-		log << endl << "Week " << x + 1 << endl << endl;
-		for(int y = 0; y < MAX_GAMES_PER_WEEK; y++){ // for each game in week
-			if(sim_seasonSchedule[x][y].was_played()){
-				log << "Game " << y + 1 << ": Team " << sim_seasonSchedule[x][y].awayTeam() << " "
-						<< sim_seasonSchedule[x][y].get_awayScore() << " @ Team " << sim_seasonSchedule[x][y].homeTeam()
-						<< " " << sim_seasonSchedule[x][y].get_homeScore() << endl;
-			}
-			else log << "Game " << y + 1 << " not scheduled" << endl;
-		}
-	}
-	log << endl << "Team statistics following simulation:" << endl;
-	log << "Key: wins/losses/ties/points for/points against/team ID number)"<< endl << endl;
-	// print team results
-	for(int i = 0; i < NUMBER_OF_TEAMS; i++){
-		Team thisTeam = sim_league[i];
-		log << thisTeam.get_name() << "\t" << thisTeam.get_wins() << "\t" << thisTeam.get_losses()
-				<< "\t" << thisTeam.get_ties() << "\t" << thisTeam.get_pointsScored()
-				<< "\t" << thisTeam.get_pointsAllowed() << "\t" << thisTeam.get_teamID() << endl;
-	}
-	log << "simulateSeason() completed, returning to calling function" << endl;
 }
 
 void crunchSeasonResults(){
-	log << "Now in crunchSeasonResults" << endl;
 	bool eastCrossesOver;
 	bool westCrossesOver;
 	int westDivision[5], eastDivision[4]; // create arrays to hold teamIDs of rankings in each division
@@ -103,53 +53,26 @@ void crunchSeasonResults(){
 	eastTeams.resize(4);
 	westTeams.resize(5);
 
-	log << "Sorting teams into division vectors" << endl;
-	log << "West division:" << endl;
 	// store team IDs to division vectors
 	for(int i = 0; i <= 4; i++){
 		westTeams[i] = i;
-		log << i + 1 << ". " << sim_league[i].get_name() << endl;
 	}
-	log << endl << "East division:" << endl;
 	for(int i = 0; i <= 3; i++){
 		eastTeams[i] = i + 5;
-		log << i + 5 + 1 << ". " << sim_league[i].get_name() << endl;
 	}
-
-	log << endl << "Determining top four teams in each division" << endl;
 
 	// find the top four teams in each division
 	for(int i = 0; i < 4; i ++){
-		log << endl << "West Division team " << i + 1 << endl << endl;
-		log << "Number of teams in West Division vector: " << westTeams.size() << endl;
-		log << "Calling findWinner() from crunchSeasonResults()" << endl;
 		westDivision[i] = findWinner(westTeams);
 		assert(westTeams.size() == 5);
 		assert(eastTeams.size() == 4);
-		log << endl << "East Division team " << i + 1 << endl << endl;
-		log << "Number of teams in East Division vector: " << eastTeams.size() << endl;
-		log << "Calling findWinner() from crunchSeasonResults()" << endl;
 		eastDivision[i] = findWinner(eastTeams);
 		assert(westTeams.size() == 5);
 		assert(eastTeams.size() == 4);
 	}
 
-	log << endl << "Determining fifth-place west team - calling findWinner from crunchSeasonResults()" << endl << endl;
-
 	// set fifth-place west team
 	westDivision[4] = findWinner(westTeams); // only one team should be left unranked
-
-	log << endl << "WEST DIVISION RANKINGS" << endl;
-	for(int i = 0; i < 5; i++){
-		log << i + 1 << ". " << sim_league[westDivision[i]].get_name() << endl;
-	}
-
-	log << "EAST DIVISION RANKINGS" << endl;
-	for(int i = 0; i < 4; i++){
-		log << i + 1 << ". " << sim_league[eastDivision[i]].get_name() << endl;
-	}
-
-	log << endl << "Updating final ranking totals for first, second, and fifth-place teams." << endl;
 
 	// update results for first, second, fifth-place teams
 	league[westDivision[0]].add_firstPlace();
@@ -157,10 +80,6 @@ void crunchSeasonResults(){
 	league[westDivision[1]].add_secondPlace();
 	league[eastDivision[1]].add_secondPlace();
 	league[westDivision[4]].add_missedPlayoffs();
-
-	log << "Rankings updated." << endl;
-
-	log << "Testing if crossover in effect..." << endl;
 
 	// test if crossover in effect
 
@@ -179,26 +98,20 @@ void crunchSeasonResults(){
 		sim_league[westCrossoverCheck[i]].set_ranked(false);
 	}
 
-	log << "Checking for East-to-West crossover" << endl;
 	if(findWinner(eastCrossoverCheck) >= 5){
 		eastCrossesOver = true;
 		westCrossesOver = false;
-		log << endl << "East-to-West crossover in effect" << endl;
 	}
 	else if(findWinner(westCrossoverCheck) <= 4){
-		log << "Checking for West-to-East crossover" << endl;
 		westCrossesOver = true;
 		eastCrossesOver = false;
-		log << endl << "West-to-East crossover in effect" << endl;
 	}
 	else{
 		eastCrossesOver = false;
 		westCrossesOver = false;
-		log << endl << "No crossover in effect" << endl;
 	}
 
 	// update third and fourth place team results according to crossover status
-	log << "Updating season ranking totals for third and fourth place teams" << endl;
 	if(eastCrossesOver){
 		league[westDivision[2]].add_missedPlayoffs();
 		league[westDivision[3]].add_missedPlayoffs();
@@ -217,23 +130,9 @@ void crunchSeasonResults(){
 		league[eastDivision[2]].add_thirdPlace();
 		league[eastDivision[3]].add_missedPlayoffs();
 	}
-
-	log << endl << "New season ranking totals by team:" << endl;
-	for(int i = 0; i < NUMBER_OF_TEAMS; i++){ // for each team in league
-		log << endl << league[i].get_name() << endl; // log team name
-		log << "First place finishes: " << league[i].get_firstPlace() << endl;
-		log << "Second place finishes: " << league[i].get_secondPlace() << endl;
-		log << "Third place (made playoffs): " << league[i].get_thirdPlace() << endl;
-		log << "Crossovers: " << league[i].get_crossovers() << endl;
-		log << "Times missed playoffs: " << league[i].get_missedPlayoffs() << endl;
-	}
-
-	log << "Reached end of crunchSeasonResults(), returning to calling function" << endl;
 }
 
 int findWinner(const vector<int>& teams){
-
-	log << endl << "starting findWinner() first stage" << endl << endl;
 
 	vector<int>&& playoffPoints = checkPlayoffPoints(teams);
 	assert(playoffPoints.size() > 0);
@@ -241,9 +140,6 @@ int findWinner(const vector<int>& teams){
 		sim_league[playoffPoints[0]].set_ranked(true);
 		return playoffPoints[0];
 	}
-
-	log << endl << "starting findWinner() second stage" << endl << endl;
-	log << "Number of tied teams remaining: " << playoffPoints.size() << endl;
 
 	vector<int>&& totalWins = checkTotalWins(playoffPoints);
 	assert(totalWins.size() > 0);
@@ -253,9 +149,6 @@ int findWinner(const vector<int>& teams){
 	}
 	playoffPoints.resize(0);
 
-	log << endl << "starting findWinner() third stage" << endl << endl;
-	log << "Number of tied teams remaining: " << totalWins.size() << endl;
-
 	vector<int>&& winPctAgainstTied = checkWinPctAgainstTied(totalWins);
 	assert(winPctAgainstTied.size() > 0);
 	if(winPctAgainstTied.size() == 1){
@@ -263,9 +156,6 @@ int findWinner(const vector<int>& teams){
 		return winPctAgainstTied[0];
 	}
 	totalWins.resize(0);
-
-	log << endl << "starting findWinner() fourth stage" << endl << endl;
-	log << "Number of tied teams remaining: " << winPctAgainstTied.size() << endl;
 
 	vector<int>&& netAggAgainstTied = checkNetAggAgainstTied(winPctAgainstTied);
 	assert(netAggAgainstTied.size() > 0);
@@ -275,9 +165,6 @@ int findWinner(const vector<int>& teams){
 	}
 	winPctAgainstTied.resize(0);
 
-	log << endl << "starting findWinner() fifth stage" << endl << endl;
-	log << "Number of tied teams remaining: " << netAggAgainstTied.size() << endl;
-
 	vector<int>&& netQuotAgainstTied = checkNetQuotAgainstTied(netAggAgainstTied);
 	assert(netQuotAgainstTied.size() > 0);
 	if(netQuotAgainstTied.size() == 1){
@@ -285,9 +172,6 @@ int findWinner(const vector<int>& teams){
 		return netQuotAgainstTied[0];
 	}
 	netAggAgainstTied.resize(0);
-
-	log << endl << "starting findWinner() sixth stage" << endl << endl;
-	log << "Number of tied teams remaining: " << netQuotAgainstTied.size() << endl;
 
 	vector<int>&& winPctAgainstDiv = checkWinPctAgainstDiv(netQuotAgainstTied);
 	assert(winPctAgainstDiv.size() > 0);
@@ -297,9 +181,6 @@ int findWinner(const vector<int>& teams){
 	}
 	netQuotAgainstTied.resize(0);
 
-	log << endl << "starting findWinner() seventh stage" << endl << endl;
-	log << "Number of tied teams remaining: " << winPctAgainstDiv.size() << endl;
-
 	vector<int>&& netAggAgainstDiv = checkNetAggAgainstDiv(winPctAgainstDiv);
 	assert(netAggAgainstDiv.size() > 0);
 	if(netAggAgainstDiv.size() == 1){
@@ -307,9 +188,6 @@ int findWinner(const vector<int>& teams){
 		return netAggAgainstDiv[0];
 	}
 	winPctAgainstDiv.resize(0);
-
-	log << endl << "starting findWinner() eigth stage" << endl << endl;
-	log << "Number of tied teams remaining: " << netAggAgainstDiv.size() << endl;
 
 	vector<int>&& netQuotAgainstDiv = checkNetQuotAgainstDiv(netAggAgainstDiv);
 	assert(netQuotAgainstDiv.size() > 0);
@@ -319,9 +197,6 @@ int findWinner(const vector<int>& teams){
 	}
 	netAggAgainstDiv.resize(0);
 
-	log << endl << "starting findWinner() ninth stage" << endl << endl;
-	log << "Number of tied teams remaining: " << netQuotAgainstDiv.size() << endl;
-
 	vector<int>&& netAggTotal = checkNetAggTotal(netQuotAgainstDiv);
 	assert(netAggTotal.size() > 0);
 	if(netAggTotal.size() == 1){
@@ -329,9 +204,6 @@ int findWinner(const vector<int>& teams){
 		return netAggTotal[0];
 	}
 	netQuotAgainstDiv.resize(0);
-
-	log << endl << "starting findWinner() tenth stage" << endl << endl;
-	log << "Number of tied teams remaining: " << netAggTotal.size() << endl;
 
 	vector<int>&& netQuotTotal = checkNetQuotTotal(netAggTotal);
 	assert(netQuotTotal.size() > 0);
@@ -341,26 +213,17 @@ int findWinner(const vector<int>& teams){
 	}
 	netAggTotal.resize(0);
 
-	log << endl << "starting findWinner() eleventh and final stage" << endl << endl;
-	log << "Number of tied teams remaining: " << netQuotTotal.size() << endl;
-
 	int winner = coinFlip(netQuotTotal);
 	sim_league[winner].set_ranked(true);
-
-	log << "reached end of findWinner()" << endl << endl;
 
 	return winner;
 }
 
 vector<int> checkPlayoffPoints(const vector<int>& teams){
-	log << "Now inside checkPlayoffPoints()" << endl;
-	log << "Number of teams being compared: " << teams.size() << endl;
 	vector<int> winners;
 	int winningValue = 0;
 	for(int x = 0; x < teams.size(); x++){
 		Team thisTeam = sim_league[teams[x]];
-		log << "Team " << x + 1 << " number of playoff points: " << thisTeam.get_playoffPoints()
-				<< " Ranked: " << thisTeam.is_ranked() << " ID: " << thisTeam.get_teamID() << endl;
 		if(thisTeam.is_ranked() == false){ // not yet ranked?
 			if(thisTeam.get_playoffPoints() > winningValue){ // new winner?
 				winningValue = thisTeam.get_playoffPoints(); // set new winning value
@@ -372,20 +235,15 @@ vector<int> checkPlayoffPoints(const vector<int>& teams){
 			}
 		}
 	}
-	log << "Number of teams remaining at end of checkPlayoffPoints(): " << winners.size() << endl;
 	return winners;
 }
 
 vector<int> checkTotalWins(const vector<int>& teams){
 	assert(teams.size() > 0);
-	log << "Now inside checkTotalWins()" << endl;
-	log << "Number of teams being compared: " << teams.size() << endl;
 	vector<int> winners;
 	int winningValue = 0;
 	for(int x = 0; x < teams.size(); x++){ // for each tied team
 		Team thisTeam = sim_league[teams[x]];
-		log << "Team " << x + 1 << " number of wins: " << thisTeam.get_wins()
-				<< " Ranked: " << thisTeam.is_ranked() << " ID: " << thisTeam.get_teamID() << endl;
 		if(thisTeam.is_ranked() == false){ // not yet ranked?
 			if(thisTeam.get_wins() > winningValue){ // new winner?
 				winningValue = thisTeam.get_wins(); // set new winning value
@@ -397,14 +255,11 @@ vector<int> checkTotalWins(const vector<int>& teams){
 			}
 		}
 	}
-	log << "Number of teams being compared after checkTotalWins: " << winners.size() << endl;
 	return winners;
 }
 
 vector<int> checkWinPctAgainstTied(const vector<int>& teams){
 	assert(teams.size() > 0);
-	log << "Now inside checkWinPctAgainstTied()" << endl;
-	log << "Number of teams being compared: " << teams.size() << endl;
 	vector<int> winners;
 	int winningValue = 0;
 	for(int x = 0; x < teams.size(); x++){ // for every team in the winner vector
@@ -418,8 +273,6 @@ vector<int> checkWinPctAgainstTied(const vector<int>& teams){
 			}
 		}
 		int winPercentage = (wins * 1000) / (wins + losses);
-		log << "Team " << x + 1 << " win percentage: " << winPercentage
-				<< " Ranked: " << thisTeam.is_ranked() << " ID: " << thisTeam.get_teamID() << endl;
 		if(winPercentage > winningValue){ // new winner?
 			winningValue = winPercentage; // set new winning value
 			winners.resize(1); // set winners vector size to 1
@@ -429,14 +282,11 @@ vector<int> checkWinPctAgainstTied(const vector<int>& teams){
 			winners.push_back(thisTeam.get_teamID()); // add tied team to winners vector
 		}
 	}
-	log << "Number of teams being compared after checkWinPctAgainstTied(): " << winners.size() << endl;
 	return winners;
 }
 
 vector<int> checkNetAggAgainstTied(const vector<int>& teams){
 	assert(teams.size() > 0);
-	log << "Now inside checkNetAggAgainstTied()" << endl;
-	log << "\tNumber of teams being compared: " << teams.size() << endl;
 	vector<int> winners;
 	int winningValue = 0;
 	for(int i = 0; i < teams.size(); i++){ // for all teams in pctWinners
@@ -460,14 +310,11 @@ vector<int> checkNetAggAgainstTied(const vector<int>& teams){
 			winners.push_back(thisTeam.get_teamID()); // add to winner vector
 		}
 	}
-	log << "Number of teams being compared after checkNetAggAgainstTied: " << winners.size() << endl;
 	return winners;
 }
 
 vector<int> checkNetQuotAgainstTied(const vector<int>& teams){
 	assert(teams.size() > 0);
-	log << "Now inside checkNetQuotAgainstTied()" << endl;
-	log << "\tNumber of teams being compared: " << teams.size() << endl;
 	vector<int> winners;
 	int winningValue = 0;
 	for(int i = 0; i < teams.size(); i++){ // for all teams in pctWinners
@@ -491,14 +338,11 @@ vector<int> checkNetQuotAgainstTied(const vector<int>& teams){
 			winners.push_back(thisTeam.get_teamID()); // add to winner vector
 		}
 	}
-	log << "Number of teams being compared after checkNetQuotAgainstTied: " << winners.size() << endl;
 	return winners;
 }
 
 vector<int> checkWinPctAgainstDiv(const vector<int>& teams){
 	assert(teams.size() > 0);
-	log << "Now inside checkWinPctAgainstDiv()" << endl;
-	log << "\tNumber of teams being compared: " << teams.size() << endl;
 	vector<int> winners;
 	int winningValue = 0;
 	for(int i = 0; i < teams.size(); i++){ // for every team in the winner vector
@@ -513,14 +357,11 @@ vector<int> checkWinPctAgainstDiv(const vector<int>& teams){
 			winners.push_back(thisTeam.get_teamID()); // add tied index to winners vector
 		}
 	}
-	log << "Number of teams being compared after checkWinPctAgainstDiv(): " << winners.size() << endl;
 	return winners;
 }
 
 vector<int> checkNetAggAgainstDiv(const vector<int>& teams){
 	assert(teams.size() > 0);
-	log << "Now inside checkNetAggAgainstDiv()" << endl;
-	log << "\tNumber of teams being compared: " << teams.size() << endl;
 	vector<int> winners;
 	int winningValue = 0;
 	for(int i = 0; i < teams.size(); i++){
@@ -535,14 +376,11 @@ vector<int> checkNetAggAgainstDiv(const vector<int>& teams){
 			winners.push_back(thisTeam.get_teamID());
 		}
 	}
-	log << "Number of teams being compared after checkNetAggAgainstDiv(): " << winners.size() << endl;
 	return winners;
 }
 
 vector<int> checkNetQuotAgainstDiv(const vector<int>& teams){
 	assert(teams.size() > 0);
-	log << "Now inside checkNetQuotAgainstDiv()" << endl;
-	log << "\tNumber of teams being compared: " << teams.size() << endl;
 	vector<int> winners;
 	int winningValue = 0;
 	for(int i = 0; i < teams.size(); i++){
@@ -557,14 +395,11 @@ vector<int> checkNetQuotAgainstDiv(const vector<int>& teams){
 			winners.push_back(thisTeam.get_teamID());
 		}
 	}
-	log << "Number of teams being compared after checkNetQuotAgainstDiv(): " << winners.size() << endl;
 	return winners;
 }
 
 vector<int> checkNetAggTotal(const vector<int>& teams){
 	assert(teams.size() > 0);
-	log << "Now inside checkNetAggTotal()" << endl;
-	log << "\tNumber of teams being compared: " << teams.size() << endl;
 	vector<int> winners;
 	int winningValue = 0;
 	for(int i = 0; i < teams.size(); i++){
@@ -579,14 +414,11 @@ vector<int> checkNetAggTotal(const vector<int>& teams){
 			winners.push_back(thisTeam.get_teamID());
 		}
 	}
-	log << "Number of teams being compared after checkNetAggTotal(): " << winners.size() << endl;
 	return winners;
 }
 
 vector<int> checkNetQuotTotal(const vector<int>& teams){
 	assert(teams.size() > 0);
-	log << "Now inside checkNetQuotTotal()" << endl;
-	log << "\tNumber of teams being compared: " << teams.size() << endl;
 	vector<int> winners;
 	int winningValue = 0;
 	for(int i = 0; i < teams.size(); i++){
@@ -601,16 +433,12 @@ vector<int> checkNetQuotTotal(const vector<int>& teams){
 			winners.push_back(thisTeam.get_teamID());
 		}
 	}
-	log << "Number of teams being compared after checkNetQuotTotal(): " << winners.size() << endl;
 	return winners;
 }
 
 int coinFlip(const vector<int>& teams){
 	assert(teams.size() > 0);
-	log << "Now inside coinFlip()" << endl;
-	log << "\tNumber of teams being compared: " << teams.size() << endl;
 	int winner = rand() % teams.size();
-	log << "\tWinning index as selected by coin flip: " << winner << endl;
 	return teams[winner];
 }
 

@@ -34,7 +34,8 @@ string Team::get_name(){
 }
 
 string Team::get_division(){
-	return division;
+	if(teamID <= 4) return "west";
+	else return "east";
 }
 
 int Team::get_playoffPoints() const{
@@ -53,16 +54,6 @@ bool Team::is_ranked(){
 
 void Team::set_name(const string& teamName){
 	name = teamName;
-}
-
-void Team::set_division(const string& divisionName){
-	string lowercaseName;
-	for(int i = 0; i < divisionName.size(); i++) // for each char in name
-		lowercaseName[i] = tolower(divisionName[i]); // convert to lowercase
-	if(lowercaseName != "west" and lowercaseName != "east"){ // invalid division name?
-		cerr << "ERROR: invalid division name for team: " << name << endl;
-	}
-	division = lowercaseName; // set division name
 }
 
 void Team::set_teamID(int id){
@@ -180,7 +171,6 @@ int Team::get_winPercentage(int opponentID) const{
 }
 
 int Team::get_winPercentage(const string& division) const{
-	assert(division == "east" || division == "west");
 	int divisionWins = 0;
 	int divisionLosses = 0;
 	int divisionTies = 0;
@@ -198,7 +188,7 @@ int Team::get_winPercentage(const string& division) const{
 			divisionTies += tiesAgainst[x];
 		}
 	}
-	else cerr << "ERROR: invalid division input in get_winPercentage" << endl;
+	else cerr << "ERROR: invalid division input in get_winPercentage()" << endl;
 	int divisionPct = (divisionWins * 1000) /
 			(divisionLosses + divisionTies);
 	return divisionPct;
