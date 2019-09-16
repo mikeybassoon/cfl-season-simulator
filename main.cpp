@@ -23,10 +23,6 @@ int main(){
 	cout << "Beginning simulation . . ." << endl;
 
 	for(int i = 0; i < NUMBER_OF_SIMULATIONS; i++){
-		if((i * 100) / NUMBER_OF_SIMULATIONS == 20) cout << "20% . . ." << endl;
-		else if((i * 100) / NUMBER_OF_SIMULATIONS == 40) cout << "40% . . ." << endl;
-		else if((i * 100) / NUMBER_OF_SIMULATIONS == 60) cout << "60% . . ." << endl;
-		else if((i * 100) / NUMBER_OF_SIMULATIONS == 80) cout << "80% . . ." << endl;
 
 		copySchedule(); // copy season schedule to a new array
 

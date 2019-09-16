@@ -61,7 +61,6 @@ void Team::set_teamID(int id){
 }
 
 void Team::set_ranked(bool newValue){
-	assert(newValue == true or newValue == false);
 	isRanked = newValue;
 }
 
@@ -166,7 +165,7 @@ int Team::get_pointsAllowedAgainst(int team) const{
 
 int Team::get_winPercentage(int opponentID) const{
 	int winPct = (winsAgainst[opponentID] * 1000) /
-			(lossesAgainst[opponentID] + tiesAgainst[opponentID]);
+			(winsAgainst[opponentID] + lossesAgainst[opponentID] + tiesAgainst[opponentID]);
 	return winPct;
 }
 
@@ -190,7 +189,7 @@ int Team::get_winPercentage(const string& division) const{
 	}
 	else cerr << "ERROR: invalid division input in get_winPercentage()" << endl;
 	int divisionPct = (divisionWins * 1000) /
-			(divisionLosses + divisionTies);
+			(divisionWins + divisionLosses + divisionTies);
 	return divisionPct;
 }
 
@@ -233,12 +232,17 @@ int Team::get_netQuotient() const{
 		pointsFor += i;
 	for(auto j:pointsAllowedAgainst) // points allowed against all opponents
 		pointsAgainst += j;
+	if (pointsAgainst == 0)
+		pointsAgainst = 1; // avoid divide by zero
 	return (1000 * pointsFor) / pointsAgainst;
 }
 
 int Team::get_netQuotient(int opponent) const{
+	int pointsAllowed = pointsAllowedAgainst[opponent];
+	if (pointsAllowed == 0)
+		pointsAllowed = 1; // avoid divide by zero
 	return (1000 * pointsScoredAgainst[opponent]) /
-			pointsAllowedAgainst[opponent];
+			pointsAllowed;
 }
 
 int Team::get_netQuotient(const string& division) const{
@@ -256,6 +260,8 @@ int Team::get_netQuotient(const string& division) const{
 			pointsAgainst += pointsAllowedAgainst[i];
 		}
 	}
+	if (pointsAgainst == 0)
+		pointsAgainst = 1; // avoid divide by zero
 	return (1000 * pointsFor) / pointsAgainst;
 }
 

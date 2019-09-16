@@ -12,6 +12,7 @@
 #include <fstream>
 #include <vector>
 #include <iomanip>
+#include <cassert>
 
 using namespace std;
 
@@ -288,11 +289,27 @@ vector<int> checkWinPctAgainstTied(const vector<int>& teams){
 vector<int> checkNetAggAgainstTied(const vector<int>& teams){
 	assert(teams.size() > 0);
 	vector<int> winners;
-	int winningValue = 0;
-	for(int i = 0; i < teams.size(); i++){ // for all teams in pctWinners
-		int pointsScored = 0;
-		int pointsAllowed = 0;
-		int netAggregate;
+	int winningValue;
+
+	int pointsScored = 0;
+	int pointsAllowed = 0;
+	int netAggregate;
+
+	// calculate default winningValue (first team's net aggregate)
+	for (int i = 1; i < teams.size(); i++) {
+		pointsScored += sim_league[teams[0]].get_pointsScoredAgainst(i);
+		pointsAllowed += sim_league[teams[0]].get_pointsAllowedAgainst(i);
+	}
+	Team thisTeam = sim_league[teams[0]];
+	netAggregate = pointsScored - pointsAllowed;
+	winners.resize(1); // resize winner array
+	winners[0] = thisTeam.get_teamID(); // place first team in winner vector
+
+	winningValue = netAggregate; // default winning score set
+
+	for(int i = 1; i < teams.size(); i++){ // for all teams in pctWinners except the first
+		pointsScored = 0;
+		pointsAllowed = 0;
 		Team thisTeam = sim_league[teams[i]];
 		for(int j = 0; j < teams.size(); j++){ // for all teams in pctWinners
 			if(i != j){ // team not being compared to itself?
@@ -328,7 +345,9 @@ vector<int> checkNetQuotAgainstTied(const vector<int>& teams){
 				pointsAllowed += thisTeam.get_pointsAllowedAgainst(teams[j]);
 			}
 		}
-		netQuotient = (1000 * pointsScored) - pointsAllowed;
+		if (pointsAllowed == 0)
+			pointsAllowed = 1; // avoid divide by zero
+		netQuotient = (1000 * pointsScored) / pointsAllowed;
 		if(netQuotient > winningValue){ // new winner?
 			winningValue = netQuotient; // set new winning value
 			winners.resize(1); // resize winner array
@@ -363,7 +382,13 @@ vector<int> checkWinPctAgainstDiv(const vector<int>& teams){
 vector<int> checkNetAggAgainstDiv(const vector<int>& teams){
 	assert(teams.size() > 0);
 	vector<int> winners;
-	int winningValue = 0;
+	int winningValue;
+
+	Team thisTeam = sim_league[teams[0]];
+	winningValue = thisTeam.get_netAggregate(thisTeam.get_division()); // set default value to first team
+	winners.resize(1);
+	winners[0] = 0; // first team is placed into winner vector
+
 	for(int i = 0; i < teams.size(); i++){
 		Team thisTeam = sim_league[teams[i]];
 		int netAggregate = thisTeam.get_netAggregate(thisTeam.get_division());
@@ -401,8 +426,15 @@ vector<int> checkNetQuotAgainstDiv(const vector<int>& teams){
 vector<int> checkNetAggTotal(const vector<int>& teams){
 	assert(teams.size() > 0);
 	vector<int> winners;
-	int winningValue = 0;
-	for(int i = 0; i < teams.size(); i++){
+	int winningValue;
+
+	// first team is winner by default
+	Team thisTeam = sim_league[teams[0]];
+	winningValue = thisTeam.get_netAggregate(); // get total net aggregate for first time
+	winners.resize(1);
+	winners[0] = 0;
+
+	for(int i = 1; i < teams.size(); i++){ // for every team after first
 		Team thisTeam = sim_league[teams[i]];
 		int netAggregate = thisTeam.get_netAggregate();
 		if(netAggregate > winningValue){ // new winner?
