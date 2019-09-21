@@ -227,14 +227,14 @@ int Team::get_netAggregate(const string& division) const{
 
 int Team::get_netQuotient() const{
 	int pointsFor = 0;
-	int pointsAgainst = 0;
+	int pointsAllowed = 0;
 	for(auto i:pointsScoredAgainst) // points scored against all opponents
 		pointsFor += i;
 	for(auto j:pointsAllowedAgainst) // points allowed against all opponents
-		pointsAgainst += j;
-	if (pointsAgainst == 0)
-		pointsAgainst = 1; // avoid divide by zero
-	return (1000 * pointsFor) / pointsAgainst;
+		pointsAllowed += j;
+	if (pointsAllowed == 0)
+		pointsAllowed = 1; // avoid divide by zero
+	return (1000 * pointsFor) / pointsAllowed;
 }
 
 int Team::get_netQuotient(int opponent) const{

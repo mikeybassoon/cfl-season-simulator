@@ -23,7 +23,6 @@ int main(){
 	cout << "Beginning simulation . . ." << endl;
 
 	for(int i = 0; i < NUMBER_OF_SIMULATIONS; i++){
-
 		copySchedule(); // copy season schedule to a new array
 
 		copyLeague(); // copy league array to new array

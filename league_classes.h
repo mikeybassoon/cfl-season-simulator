@@ -11,7 +11,7 @@
 #define NUMBER_OF_TEAMS 9
 #define MAX_GAMES_PER_WEEK 4 // maximum number of games possible in any one week
 #define NUMBER_OF_WEEKS 21 // weeks in season
-#define NUMBER_OF_SIMULATIONS 750 // number of simulations to run
+#define NUMBER_OF_SIMULATIONS 10000000 // number of simulations to run
 #define GAMES_PLAYED 18
 
 #include <iostream>

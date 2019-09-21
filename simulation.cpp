@@ -266,14 +266,18 @@ vector<int> checkWinPctAgainstTied(const vector<int>& teams){
 	for(int x = 0; x < teams.size(); x++){ // for every team in the winner vector
 		int wins = 0;
 		int losses = 0;
+		int ties = 0;
 		Team thisTeam = sim_league[teams[x]];
 		for(int y = 0; y < teams.size(); y++){ // for every team in the winner vector
 			if(x != y){ // team not compared against itself?
 				wins += thisTeam.get_winsAgainst(teams[y]);
 				losses += thisTeam.get_lossesAgainst(teams[y]);
+				ties += thisTeam.get_tiesAgainst(teams[y]);
 			}
 		}
-		int winPercentage = (wins * 1000) / (wins + losses);
+		assert(wins + losses + ties != 0);
+
+		int winPercentage = (wins * 1000) / (wins + losses + ties);
 		if(winPercentage > winningValue){ // new winner?
 			winningValue = winPercentage; // set new winning value
 			winners.resize(1); // set winners vector size to 1
