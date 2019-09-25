@@ -13,13 +13,9 @@
 
 using namespace std;
 
-int main(){
-	cout << "CFL Playoff Calculator" << endl;
+void runSimulation(){
 
-	srand(time(0)); // set random number seed
-	assignTeamNames(); // set names for all teams in league array
-	cout << "Reading schedule . . . " << endl;
-	readSchedule(); // read all game details into schedule array, update team statistics
+
 	cout << "Beginning simulation . . ." << endl;
 
 	for(int i = 0; i < NUMBER_OF_SIMULATIONS; i++){
@@ -38,7 +34,31 @@ int main(){
 	// print summary of simulation
 	print_report();
 
-	cout << "Report saved as seasonSchedule.txt. Ending program." << endl;
+	cout << "Report saved as seasonSchedule.txt. Returning to main menu." << endl;
+}
 
+int main(){
+	cout << "CFL Playoff Calculator" << endl;
+	srand(time(0)); // set random number seed
+	assignTeamNames(); // set names for all teams in league array
+	cout << "Reading schedule . . . " << endl;
+	readSchedule(); // read all game details into schedule array, update team statistics
+
+	// run main menu
+	int selection = -1;
+
+	cout << endl << "Main Menu" << endl;
+	cout << "1. Run Simulation" << endl;
+	cout << "9. End Program" << endl;
+
+	while(selection != 9){
+		cout << "Please enter a selection: ";
+		cin >> selection;
+		if(selection == 1)
+			runSimulation();
+		else
+			cout << "Invalid selection, please try again." << endl;
+	}
+	cout << "Ending program." << endl;
 	return 0;
 }

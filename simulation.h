@@ -1,16 +1,26 @@
 /*
  * simulation.h
  *
- *  Created on: Aug. 20, 2019
- *      Author: michaelmacaulay
+ * Contains function prototypes for functions used in the simulation of the season
+ *
+ * Contains external global array of teams used in the simulation process, as well as global 2-D array containing a copy of the
+ * 		schedule used for simulations
+ *
+ * Defines constant value of the number of simulations run
+ *
+ * Declares global output file stream used to print reports to file
  */
 
 #ifndef SIMULATION_H_
 #define SIMULATION_H_
 
+#define NUMBER_OF_SIMULATIONS 10000000 // number of simulations to run
+
 #include <iostream>
 #include <vector>
 #include <fstream>
+#include "league_classes.h"
+#include "initialize.h"
 
 using namespace std;
 
@@ -83,6 +93,25 @@ int coinFlip(const vector<int>&);
  * Side effect: generates output file "report.txt" with summaries of each team's performance
  */
 void print_report();
+
+
+/*	Order of teams in the league array:
+ *
+ * 	WEST DIVISION
+ * 	<0> Saskatchewan Roughriders
+ * 	<1> Edmonton Eskimos
+ * 	<2> Calgary Stampeders
+ * 	<3> Winnipeg Blue Bombers
+ * 	<4> BC Lions
+ *
+ * 	EAST DIVISION
+ * 	<5> Ottawa Redblacks
+ * 	<6> Toronto Argonauts
+ * 	<7> Montreal Alouettes
+ * 	<8> Hamilton Tiger Cats
+ */
+extern Team sim_league[]; // copy of league for simulations
+extern Game sim_seasonSchedule[NUMBER_OF_WEEKS][MAX_GAMES_PER_WEEK]; // copy of schedule for simulations
 
 extern ofstream log; // text file log of program runs
 

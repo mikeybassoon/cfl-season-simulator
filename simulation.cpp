@@ -221,18 +221,18 @@ int findWinner(const vector<int>& teams){
 }
 
 vector<int> checkPlayoffPoints(const vector<int>& teams){
-	vector<int> winners;
+	vector<int> winners(1);
 	int winningValue = 0;
 	for(int x = 0; x < teams.size(); x++){
-		Team thisTeam = sim_league[teams[x]];
-		if(thisTeam.is_ranked() == false){ // not yet ranked?
-			if(thisTeam.get_playoffPoints() > winningValue){ // new winner?
-				winningValue = thisTeam.get_playoffPoints(); // set new winning value
+		Team* thisTeam = &sim_league[teams[x]];
+		if(!thisTeam->is_ranked()){ // not yet ranked?
+			if(thisTeam->get_playoffPoints() > winningValue){ // new winner?
+				winningValue = thisTeam->get_playoffPoints(); // set new winning value
 				winners.resize(1); // set winners vector size to 1
-				winners[0] = thisTeam.get_teamID(); // place new winner in winners vector
+				winners[0] = thisTeam->get_teamID(); // place new winner in winners vector
 			}
-			else if(thisTeam.get_playoffPoints() == winningValue){ // tied with winner?
-				winners.push_back(thisTeam.get_teamID()); // add new winner to vector
+			else if(thisTeam->get_playoffPoints() == winningValue){ // tied with winner?
+				winners.push_back(thisTeam->get_teamID()); // add new winner to vector
 			}
 		}
 	}
@@ -241,18 +241,18 @@ vector<int> checkPlayoffPoints(const vector<int>& teams){
 
 vector<int> checkTotalWins(const vector<int>& teams){
 	assert(teams.size() > 0);
-	vector<int> winners;
+	vector<int> winners(1); // 1 winner by default
 	int winningValue = 0;
 	for(int x = 0; x < teams.size(); x++){ // for each tied team
-		Team thisTeam = sim_league[teams[x]];
-		if(thisTeam.is_ranked() == false){ // not yet ranked?
-			if(thisTeam.get_wins() > winningValue){ // new winner?
-				winningValue = thisTeam.get_wins(); // set new winning value
+		Team* thisTeam = &sim_league[teams[x]]; // pointer to team x in league array
+		if(thisTeam->is_ranked() == false){ // not yet ranked?
+			if(thisTeam->get_wins() > winningValue){ // new winner?
+				winningValue = thisTeam->get_wins(); // set new winning value
 				winners.resize(1); // set winners vector size to 1
-				winners[0] = thisTeam.get_teamID(); // place new winner in winners vector
+				winners[0] = thisTeam->get_teamID(); // place new winner in winners vector
 			}
-			else if(thisTeam.get_wins() == winningValue){ // tied with winner?
-				winners.push_back(thisTeam.get_teamID()); // add new winner to vector
+			else if(thisTeam->get_wins() == winningValue){ // tied with winner?
+				winners.push_back(thisTeam->get_teamID()); // add new winner to vector
 			}
 		}
 	}
@@ -261,30 +261,32 @@ vector<int> checkTotalWins(const vector<int>& teams){
 
 vector<int> checkWinPctAgainstTied(const vector<int>& teams){
 	assert(teams.size() > 0);
-	vector<int> winners;
+	vector<int> winners(1);
 	int winningValue = 0;
 	for(int x = 0; x < teams.size(); x++){ // for every team in the winner vector
 		int wins = 0;
 		int losses = 0;
 		int ties = 0;
-		Team thisTeam = sim_league[teams[x]];
+		Team* thisTeam = &sim_league[teams[x]];
 		for(int y = 0; y < teams.size(); y++){ // for every team in the winner vector
 			if(x != y){ // team not compared against itself?
-				wins += thisTeam.get_winsAgainst(teams[y]);
-				losses += thisTeam.get_lossesAgainst(teams[y]);
-				ties += thisTeam.get_tiesAgainst(teams[y]);
+				wins += thisTeam->get_winsAgainst(teams[y]);
+				losses += thisTeam->get_lossesAgainst(teams[y]);
+				ties += thisTeam->get_tiesAgainst(teams[y]);
 			}
 		}
-		assert(wins + losses + ties != 0);
+		if(wins + losses + ties == 0)
+			ties++; // avoid divide by zero issue
 
 		int winPercentage = (wins * 1000) / (wins + losses + ties);
 		if(winPercentage > winningValue){ // new winner?
 			winningValue = winPercentage; // set new winning value
-			winners.resize(1); // set winners vector size to 1
-			winners[0] = thisTeam.get_teamID(); // place new winner in winners vector
+			if(winners.size() != 1) // unless size already 1
+				winners.resize(1); // set winners vector size to 1
+			winners[0] = thisTeam->get_teamID(); // place new winner in winners vector
 		}
 		else if(winPercentage == winningValue){ // tie?
-			winners.push_back(thisTeam.get_teamID()); // add tied team to winners vector
+			winners.push_back(thisTeam->get_teamID()); // add tied team to winners vector
 		}
 	}
 	return winners;
@@ -299,36 +301,38 @@ vector<int> checkNetAggAgainstTied(const vector<int>& teams){
 	int pointsAllowed = 0;
 	int netAggregate;
 
+	Team* thisTeam = &sim_league[teams[0]];
 	// calculate default winningValue (first team's net aggregate)
 	for (int i = 1; i < teams.size(); i++) {
-		pointsScored += sim_league[teams[0]].get_pointsScoredAgainst(i);
-		pointsAllowed += sim_league[teams[0]].get_pointsAllowedAgainst(i);
+		pointsScored += thisTeam->get_pointsScoredAgainst(i);
+		pointsAllowed += thisTeam->get_pointsAllowedAgainst(i);
 	}
-	Team thisTeam = sim_league[teams[0]];
+
 	netAggregate = pointsScored - pointsAllowed;
 	winners.resize(1); // resize winner array
-	winners[0] = thisTeam.get_teamID(); // place first team in winner vector
+	winners[0] = thisTeam->get_teamID(); // place first team in winner vector
 
 	winningValue = netAggregate; // default winning score set
 
 	for(int i = 1; i < teams.size(); i++){ // for all teams in pctWinners except the first
+		thisTeam = &sim_league[teams[i]]; // point to team i
 		pointsScored = 0;
 		pointsAllowed = 0;
-		Team thisTeam = sim_league[teams[i]];
 		for(int j = 0; j < teams.size(); j++){ // for all teams in pctWinners
 			if(i != j){ // team not being compared to itself?
-				pointsScored += thisTeam.get_pointsScoredAgainst(teams[j]);
-				pointsAllowed += thisTeam.get_pointsAllowedAgainst(teams[j]);
+				pointsScored += thisTeam->get_pointsScoredAgainst(teams[j]);
+				pointsAllowed += thisTeam->get_pointsAllowedAgainst(teams[j]);
 			}
 		}
 		netAggregate = pointsScored - pointsAllowed;
 		if(netAggregate > winningValue){ // new winner?
 			winningValue = netAggregate; // set new winning value
-			winners.resize(1); // resize winner array
-			winners[0] = thisTeam.get_teamID(); // place new winner in winner vector
+			if(winners.size() != 1) // if array needs resetting
+				winners.resize(1); // resize winner array
+			winners[0] = thisTeam->get_teamID(); // place new winner in winner vector
 		}
 		else if(netAggregate == winningValue){ // tie?
-			winners.push_back(thisTeam.get_teamID()); // add to winner vector
+			winners.push_back(thisTeam->get_teamID()); // add to winner vector
 		}
 	}
 	return winners;
@@ -336,17 +340,17 @@ vector<int> checkNetAggAgainstTied(const vector<int>& teams){
 
 vector<int> checkNetQuotAgainstTied(const vector<int>& teams){
 	assert(teams.size() > 0);
-	vector<int> winners;
+	vector<int> winners(1); // winner vector default size 1
 	int winningValue = 0;
 	for(int i = 0; i < teams.size(); i++){ // for all teams in pctWinners
 		int pointsScored = 0;
 		int pointsAllowed = 0;
 		int netQuotient;
-		Team thisTeam = sim_league[teams[i]];
+		Team* thisTeam = &sim_league[teams[i]];
 		for(int j = 0; j < teams.size(); j++){ // for all teams in pctWinners
 			if(i != j){ // team not being compared to itself?
-				pointsScored += thisTeam.get_pointsScoredAgainst(teams[j]);
-				pointsAllowed += thisTeam.get_pointsAllowedAgainst(teams[j]);
+				pointsScored += thisTeam->get_pointsScoredAgainst(teams[j]);
+				pointsAllowed += thisTeam->get_pointsAllowedAgainst(teams[j]);
 			}
 		}
 		if (pointsAllowed == 0)
@@ -355,10 +359,10 @@ vector<int> checkNetQuotAgainstTied(const vector<int>& teams){
 		if(netQuotient > winningValue){ // new winner?
 			winningValue = netQuotient; // set new winning value
 			winners.resize(1); // resize winner array
-			winners[0] = thisTeam.get_teamID(); // place new winner in winner vector
+			winners[0] = thisTeam->get_teamID(); // place new winner in winner vector
 		}
 		else if(netQuotient == winningValue){ // tie?
-			winners.push_back(thisTeam.get_teamID()); // add to winner vector
+			winners.push_back(thisTeam->get_teamID()); // add to winner vector
 		}
 	}
 	return winners;
@@ -366,18 +370,18 @@ vector<int> checkNetQuotAgainstTied(const vector<int>& teams){
 
 vector<int> checkWinPctAgainstDiv(const vector<int>& teams){
 	assert(teams.size() > 0);
-	vector<int> winners;
+	vector<int> winners(1);
 	int winningValue = 0;
 	for(int i = 0; i < teams.size(); i++){ // for every team in the winner vector
-		Team thisTeam = sim_league[teams[i]];
-		int winPercentage = thisTeam.get_winPercentage(thisTeam.get_division());
+		Team* thisTeam = &sim_league[teams[i]];
+		int winPercentage = thisTeam->get_winPercentage(thisTeam->get_division());
 		if(winPercentage > winningValue){ // new winner?
 			winningValue = winPercentage; // set new winning value
 			winners.resize(1); // set winners vector size to 1
-			winners[0] = thisTeam.get_teamID(); // place new winner in winners vector
+			winners[0] = thisTeam->get_teamID(); // place new winner in winners vector
 		}
 		else if(winPercentage == winningValue){ // tie?
-			winners.push_back(thisTeam.get_teamID()); // add tied index to winners vector
+			winners.push_back(thisTeam->get_teamID()); // add tied index to winners vector
 		}
 	}
 	return winners;
@@ -385,24 +389,24 @@ vector<int> checkWinPctAgainstDiv(const vector<int>& teams){
 
 vector<int> checkNetAggAgainstDiv(const vector<int>& teams){
 	assert(teams.size() > 0);
-	vector<int> winners;
+	vector<int> winners(1);
 	int winningValue;
 
-	Team thisTeam = sim_league[teams[0]];
-	winningValue = thisTeam.get_netAggregate(thisTeam.get_division()); // set default value to first team
+	Team* thisTeam = &sim_league[teams[0]];
+	winningValue = thisTeam->get_netAggregate(thisTeam->get_division()); // set default value to first team
 	winners.resize(1);
 	winners[0] = 0; // first team is placed into winner vector
 
 	for(int i = 0; i < teams.size(); i++){
-		Team thisTeam = sim_league[teams[i]];
-		int netAggregate = thisTeam.get_netAggregate(thisTeam.get_division());
+		thisTeam = &sim_league[teams[i]]; // point to team i
+		int netAggregate = thisTeam->get_netAggregate(thisTeam->get_division());
 		if(netAggregate > winningValue){ // new winner?
 			winningValue = netAggregate;
 			winners.resize(1);
-			winners[0] = thisTeam.get_teamID();
+			winners[0] = thisTeam->get_teamID();
 		}
 		else if(netAggregate == winningValue){
-			winners.push_back(thisTeam.get_teamID());
+			winners.push_back(thisTeam->get_teamID());
 		}
 	}
 	return winners;
@@ -413,15 +417,15 @@ vector<int> checkNetQuotAgainstDiv(const vector<int>& teams){
 	vector<int> winners;
 	int winningValue = 0;
 	for(int i = 0; i < teams.size(); i++){
-		Team thisTeam = sim_league[teams[i]];
-		int netQuotient = thisTeam.get_netQuotient(thisTeam.get_division());
+		Team* thisTeam = &sim_league[teams[i]];
+		int netQuotient = thisTeam->get_netQuotient(thisTeam->get_division());
 		if(netQuotient > winningValue){ // new winner?
 			winningValue = netQuotient;
 			winners.resize(1);
-			winners[0] = thisTeam.get_teamID();
+			winners[0] = thisTeam->get_teamID();
 		}
 		else if(netQuotient == winningValue){
-			winners.push_back(thisTeam.get_teamID());
+			winners.push_back(thisTeam->get_teamID());
 		}
 	}
 	return winners;
@@ -429,25 +433,21 @@ vector<int> checkNetQuotAgainstDiv(const vector<int>& teams){
 
 vector<int> checkNetAggTotal(const vector<int>& teams){
 	assert(teams.size() > 0);
-	vector<int> winners;
-	int winningValue;
-
-	// first team is winner by default
-	Team thisTeam = sim_league[teams[0]];
-	winningValue = thisTeam.get_netAggregate(); // get total net aggregate for first time
-	winners.resize(1);
-	winners[0] = 0;
+	vector<int> winners(1);
+	Team* thisTeam = &sim_league[teams[0]]; // pointer to first team in league array
+	int winningValue = thisTeam->get_netAggregate(); // get net aggregate
+	winners[0] = 0; // first team now winner
 
 	for(int i = 1; i < teams.size(); i++){ // for every team after first
-		Team thisTeam = sim_league[teams[i]];
-		int netAggregate = thisTeam.get_netAggregate();
+		Team* thisTeam = &sim_league[teams[i]]; // thisTeam points to team at array index i
+		int netAggregate = thisTeam->get_netAggregate(); // get team i net aggregate
 		if(netAggregate > winningValue){ // new winner?
 			winningValue = netAggregate;
 			winners.resize(1);
-			winners[0] = thisTeam.get_teamID();
+			winners[0] = thisTeam->get_teamID();
 		}
-		else if(netAggregate == winningValue){
-			winners.push_back(thisTeam.get_teamID());
+		else if(netAggregate == winningValue){ // tie?
+			winners.push_back(thisTeam->get_teamID()); // add this team to winner array
 		}
 	}
 	return winners;
@@ -455,18 +455,18 @@ vector<int> checkNetAggTotal(const vector<int>& teams){
 
 vector<int> checkNetQuotTotal(const vector<int>& teams){
 	assert(teams.size() > 0);
-	vector<int> winners;
+	vector<int> winners(1); // winners vector default size 1
 	int winningValue = 0;
 	for(int i = 0; i < teams.size(); i++){
-		Team thisTeam = sim_league[teams[i]];
-		int netQuotient = thisTeam.get_netQuotient();
-		if(netQuotient > winningValue){
-			winningValue = netQuotient;
+		Team* thisTeam = &sim_league[teams[i]]; // points to team i
+		int nextNetQuotient = thisTeam->get_netQuotient();
+		if(nextNetQuotient > winningValue){ // new winner?
+			winningValue = nextNetQuotient;
 			winners.resize(1);
-			winners[0] = thisTeam.get_teamID();
+			winners[0] = thisTeam->get_teamID(); // put winning team id in first spot in winner vector
 		}
-		else if(netQuotient == winningValue){
-			winners.push_back(thisTeam.get_teamID());
+		else if(nextNetQuotient == winningValue){ // tied?
+			winners.push_back(thisTeam->get_teamID()); // add to list of tied winners
 		}
 	}
 	return winners;
