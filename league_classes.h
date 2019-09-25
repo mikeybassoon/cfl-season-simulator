@@ -1,8 +1,11 @@
-/*
- * league_classes.h
+/* league_classes.h
  *
- *  Created on: Jul. 30, 2019
- *      Author: michael
+ * Contains classes defining teams and games
+ *
+ * Contains global external structures including the league and the season schedule used throughout the program
+ *
+ * Defines global constants governing the league and the season as a whole
+ *
  */
 
 #ifndef LEAGUE_CLASSES_H_
@@ -11,7 +14,6 @@
 #define NUMBER_OF_TEAMS 9
 #define MAX_GAMES_PER_WEEK 4 // maximum number of games possible in any one week
 #define NUMBER_OF_WEEKS 21 // weeks in season
-#define NUMBER_OF_SIMULATIONS 10000000 // number of simulations to run
 #define GAMES_PLAYED 18
 
 #include <iostream>
@@ -165,9 +167,8 @@ public:
  * 	<8> Hamilton Tiger Cats
  */
 extern Team league[]; // array of teams in the league
-extern Team sim_league[]; // copy of league for simulations
 extern Game seasonSchedule[NUMBER_OF_WEEKS][MAX_GAMES_PER_WEEK]; // season schedule
-extern Game sim_seasonSchedule[NUMBER_OF_WEEKS][MAX_GAMES_PER_WEEK]; // copy of schedule for simulations
+
 
 #endif /* LEAGUE_CLASSES_H_ */
 
