@@ -47,15 +47,16 @@ int main(){
 	// run main menu
 	int selection = -1;
 
-	cout << endl << "Main Menu" << endl;
-	cout << "1. Run Simulation" << endl;
-	cout << "9. End Program" << endl;
-
 	while(selection != 9){
+		cout << endl << "Main Menu" << endl;
+		cout << "1. Run Simulation" << endl;
+		cout << "9. End Program" << endl;
 		cout << "Please enter a selection: ";
 		cin >> selection;
 		if(selection == 1)
 			runSimulation();
+		else if(selection == 9)
+			break;
 		else
 			cout << "Invalid selection, please try again." << endl;
 	}
