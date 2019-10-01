@@ -13,7 +13,6 @@
 
 using namespace std;
 
-
 /*	void assignTeamNames()
  * 	Purpose: sets name for all instances of Team
  * 	Preconditions:
@@ -31,13 +30,14 @@ void assignTeamNames();
  * 	<1> Input file properly formatted
  * 	<2> seasonSchedule 2-D array initialized
  * 	<3> league array initialized
- * Parameters: n/a
+ * Parameters:
+ * 	<1> int - number of weeks fully played in the season to date
  * No return
- * Side effect:
+ * Side effects:
  * 	<1> seasonSchedule array filled with scheduled game details
  * 	<2> league array updated with information from games previously played
  */
-void readSchedule();
+void readSchedule(int& weeksPlayed);
 
 /* int teamNameToID()
  * Purpose: takes team nickname (string), returns teamID (int)

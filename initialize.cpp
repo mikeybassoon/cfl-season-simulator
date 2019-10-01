@@ -29,7 +29,7 @@ void assignTeamNames(){
 	}
 }
 
-void readSchedule(){
+void readSchedule(int& weeksPlayed){
 	ifstream file; // input file
 	file.open("seasonSchedule.txt");
 	if(!file) // failed to open input file?
@@ -38,6 +38,7 @@ void readSchedule(){
 
 	int week, homeScore, awayScore;
 	bool scheduled, played;
+	bool allGamesPlayed = true; // becomes false if any scheduled game not yet played
 	string homeTeam, awayTeam;
 
 	for(int x = 0; x < NUMBER_OF_WEEKS; x++){ // for each week in season
@@ -78,9 +79,13 @@ void readSchedule(){
 					league[homeTeamID].add_tieAgainst(awayTeamID);
 				}
 			}
+			else if(scheduled){ // game not played, but game is scheduled?
+				allGamesPlayed = false;
+			}
 		} // end read game from schedule
+	if(allGamesPlayed)
+		weeksPlayed++;
 	} // end read week from schedule
-
 	file.close();
 }
 

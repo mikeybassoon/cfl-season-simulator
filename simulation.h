@@ -26,7 +26,16 @@ using namespace std;
 
 void copySchedule(); // copies 2-D season scheduled array so simulation will not modify original data
 void copyLeague(); // copies league array so simulation will not modify original data
-void simulateSeason(); // simulates all unplayed games in season
+/* void simulateSeason
+ *
+ * Purpose: Simulates all unplayed games in season
+ * Preconditions:
+ * 	<1> league[] array must be copied to sim_league[] prior to function call
+ * 	<2> seasonSchedule[][] array must be copied to sim_seasonSchedule[][] prior to function call
+ * Parameters:
+ * 	<1> int - the number of the week of the season that was most recently fully played
+ */
+void simulateSeason(int lastWeekPlayed);
 /* void crunchSeasonResults()
  * Purpose: determines final season rankings for a simulated season
  * Preconditions:
