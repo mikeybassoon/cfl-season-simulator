@@ -13,8 +13,7 @@
 
 using namespace std;
 
-void runSimulation(){
-
+void runSimulation(int& weeksPlayed){
 
 	cout << "Beginning simulation . . ." << endl;
 
@@ -23,13 +22,13 @@ void runSimulation(){
 
 		copyLeague(); // copy league array to new array
 
-		simulateSeason(); // simulate all unplayed games in season
+		simulateSeason(weeksPlayed); // simulate all unplayed games in season
 
 		crunchSeasonResults();// record results
 
 	}
 
-	cout << "100%! Simulation completed, printing report . . ." << endl;
+	cout << "Simulation completed, printing report . . ." << endl;
 
 	// print summary of simulation
 	print_report();
@@ -38,11 +37,14 @@ void runSimulation(){
 }
 
 int main(){
+	int weeksPlayed = 0;
+
+
 	cout << "CFL Playoff Calculator" << endl;
 	srand(time(0)); // set random number seed
 	assignTeamNames(); // set names for all teams in league array
 	cout << "Reading schedule . . . " << endl;
-	readSchedule(); // read all game details into schedule array, update team statistics
+	readSchedule(weeksPlayed); // read all game details into schedule array, update team statistics
 
 	// run main menu
 	int selection = -1;
@@ -54,7 +56,7 @@ int main(){
 		cout << "Please enter a selection: ";
 		cin >> selection;
 		if(selection == 1)
-			runSimulation();
+			runSimulation(weeksPlayed);
 		else if(selection == 9)
 			break;
 		else

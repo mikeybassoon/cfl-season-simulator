@@ -30,12 +30,12 @@ void copyLeague(){
 	}
 }
 
-void simulateSeason(){
+void simulateSeason(int lastWeekPlayed){
 	// set all teams "ranked" status to false
 	for(int x = 0; x < NUMBER_OF_TEAMS; x++){
 		sim_league[x].set_ranked(false);
 	}
-	for(int x = 0; x < NUMBER_OF_WEEKS; x++){ // for each week of season
+	for(int x = lastWeekPlayed - 1; x < NUMBER_OF_WEEKS; x++){ // for each week of season
 		for(int y = 0; y < MAX_GAMES_PER_WEEK; y++){ // for each game in week
 			if(sim_seasonSchedule[x][y].is_scheduled() // game scheduled?
 					and !sim_seasonSchedule[x][y].was_played()){ // game not yet played?
