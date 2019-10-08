@@ -135,20 +135,20 @@ void crunchSeasonResults(){
 
 int findWinner(const vector<int>& teams){
 
-	vector<int>&& playoffPoints = checkPlayoffPoints(teams);
-	assert(playoffPoints.size() > 0);
-	if(playoffPoints.size() == 1){
-		sim_league[playoffPoints[0]].set_ranked(true);
-		return playoffPoints[0];
+	// tiebreaker 1: compare playoff points
+	vector<int>&& winners = checkPlayoffPoints(teams);
+	assert(winners.size() > 0);
+	if(winners.size() == 1){
+		sim_league[winners[0]].set_ranked(true);
+		return winners[0];
 	}
 
-	vector<int>&& totalWins = checkTotalWins(playoffPoints);
+	vector<int>&& totalWins = checkTotalWins(winners);
 	assert(totalWins.size() > 0);
 	if(totalWins.size() == 1){
 		sim_league[totalWins[0]].set_ranked(true);
 		return totalWins[0];
 	}
-	playoffPoints.resize(0);
 
 	vector<int>&& winPctAgainstTied = checkWinPctAgainstTied(totalWins);
 	assert(winPctAgainstTied.size() > 0);
@@ -221,6 +221,28 @@ int findWinner(const vector<int>& teams){
 }
 
 vector<int> checkPlayoffPoints(const vector<int>& teams){
+	/*
+	// revised version
+	int winningValue = 0;
+	int loopCount = 0;
+	while(loopCount < teams.size()){ // for all teams in vector
+		Team* thisTeam = &sim_league[teams[loopCount]]; // get team information for this index
+		// if team already ranked, delete it from the vector
+			// do not increment the loop counter
+		// if not ranked
+			// if new winner
+				// delete all prior teams
+				// set winning value
+				// set loopCount to 0
+			// if worse than current winner
+			 	 //delete that team
+			 	 // do not increment loopcount
+			// if equal
+			 	 // add them to the array
+	return teams;
+	}
+	*/
+
 	vector<int> winners(1);
 	int winningValue = 0;
 	for(int x = 0; x < teams.size(); x++){
@@ -237,6 +259,7 @@ vector<int> checkPlayoffPoints(const vector<int>& teams){
 		}
 	}
 	return winners;
+
 }
 
 vector<int> checkTotalWins(const vector<int>& teams){
