@@ -73,8 +73,8 @@ FORMAT: int week / bool scheduled? / bool played game yet? / string hometeam / i
 18	1	1	esks 		19 	lions 		6
 19	1	1	als 		27 	argos 		24
 19	1	1	lions 		19 	riders 		27
-19	1	0	ticats 0 redblacks 0
-19	1	0	stamps 0 bombers 0
+19	1	1	ticats 		33 	redblacks 	12
+19	1	1	stamps 		37 	bombers 	33
 20	1	0	bombers 0 stamps 0
 20	1	0	als 0 ticats 0
 20	1	0	argos 0 redblacks 0
