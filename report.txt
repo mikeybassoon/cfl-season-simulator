@@ -7,8 +7,8 @@ TEAM RESULTS
 Saskatchewan Roughriders
 Division: west
 
-1st place finishes:           3231850   0.323     
-2nd place finishes:           6768150   0.677     
+1st place finishes:           5110288   0.511     
+2nd place finishes:           4889712   0.489     
 3rd place (made playoffs):    0         0.000     
 Crossovers:                   0         0.000     
 Times missed playoffs:        0         0.000     
@@ -27,9 +27,9 @@ Times missed playoffs:        0         0.000
 Calgary Stampeders
 Division: west
 
-1st place finishes:           6768150   0.677     
-2nd place finishes:           1395738   0.140     
-3rd place (made playoffs):    1836112   0.184     
+1st place finishes:           4889712   0.489     
+2nd place finishes:           1377848   0.138     
+3rd place (made playoffs):    3732440   0.373     
 Crossovers:                   0         0.000     
 Times missed playoffs:        0         0.000     
 % chance of making the playoffs: 1.000
@@ -38,8 +38,8 @@ Winnipeg Blue Bombers
 Division: west
 
 1st place finishes:           0         0.000     
-2nd place finishes:           1836112   0.184     
-3rd place (made playoffs):    8163888   0.816     
+2nd place finishes:           3732440   0.373     
+3rd place (made playoffs):    6267560   0.627     
 Crossovers:                   0         0.000     
 Times missed playoffs:        0         0.000     
 % chance of making the playoffs: 1.000
