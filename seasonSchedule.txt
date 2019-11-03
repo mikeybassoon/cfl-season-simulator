@@ -1,6 +1,6 @@
 FORMAT: int week / bool scheduled? / bool played game yet? / string hometeam / int homescore / string awayteam / int awayscore
 1	1	1	ticats		23	riders		17
-1	1	1	esks		32	als			25
+1	1	1	esks		32	als		25
 1	1	1	stamps		28	redblacks	32
 1	1	1	lions		23	bombers		33
 2	1	1	redblacks	44	riders		41
@@ -8,16 +8,16 @@ FORMAT: int week / bool scheduled? / bool played game yet? / string hometeam / i
 2	1	1	argos		14	ticats		64
 2	0	0	empty		0	empty		0
 3	1	1	bombers		28	esks		21
-3	1	1	ticats		41	als			10
+3	1	1	ticats		41	als		10
 3	1	1	stamps		36	lions		32
 3	1	1	riders		32	argos		7
-4	1	1	als			36	ticats		29
+4	1	1	als		36	ticats		29
 4	1	1	redblacks	14	bombers		29
 4	1	1	argos		17	lions		18
 4	1	1	riders		10	stamps		37
 5	1	1	lions		6	esks		33
 5	1	1	bombers		48	argos 		21
-5	1	1	redblacks	19	als			36
+5	1	1	redblacks	19	als		36
 5	1	1	ticats 		30	stamps 		23
 6	1	1	stamps 		26	argos 		16
 6	1	1	bombers 	31	redblacks 	1
@@ -79,7 +79,7 @@ FORMAT: int week / bool scheduled? / bool played game yet? / string hometeam / i
 20	1	1	als 		26 	ticats 		38
 20	1	1	argos 		39 	redblacks 	9
 20	1	1	esks 		24 	riders 		27
-21	1	0	redblacks 0 als 0
-21	1	0	riders 0 esks 0
-21	1	0	ticats 0 argos 0
-21	1	0	lions 0 stamps 0
+21	1	1	redblacks 	32 	als 		42
+21	1	1	riders 		23 	esks 		13
+21	1	0	ticats 		0 	argos 		0
+21	1	0	lions 		0 	stamps 		0
