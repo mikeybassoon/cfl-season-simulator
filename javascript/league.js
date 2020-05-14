@@ -1,19 +1,19 @@
 /* league.js
 	Contains class definitions for the league as a whole, and for teams within it
+	Contains information on the current season
 */
 
-const WEEKS_IN_SEASON = 21;
-const GAMES_IN_SEASON = 18;
+const CURRENT_SEASON = 2019;
 
 // class definition for CFL
 const CFL = {
 	team: [ 'CGY', 'EDM', 'SSK', 'BC', 'WPG', 'HAM', 'OTT', 'TOR', 'MTL' ],
-	schedule: [] // each unit in the schedule is an array of games for a particular week	
-	
+	schedule: [] // each unit in the schedule is an array of games for a particular week
+
 	// member functions
 	// initialize - set wins and losses to zero
 	// get and set functions for statistics
-	
+
 };
 
-// print out contents of team array to test
+// class definition for team
