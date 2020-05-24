@@ -1,0 +1,12 @@
+
+
+ALGORITHM
+
+for all weeks i in schedule with unplayed games{
+  print "Week #{i}"
+  for all games j in week not played{
+    Print radio button for "no selection made"
+    Print radio buttons for both teams
+    Assign ID "game#{j}"
+  }
+}

@@ -1,7 +1,12 @@
+<!DOCTYPE html>
+
 <html>
   <head>
     <title>CFL Season Simulator</title>
+    <link href="stylesheet.css" type="text/css" rel="stylesheet" />
   </head>
+
+
   <body>
     <h1>CFL Season Simulator</h1>
     <p>The CFL Season Simulator determines likely playoff outcomes through repeated simulations of unplayed CFL games.</p>
@@ -11,24 +16,49 @@
     <!-- statistics tables -->
     <h4>West Division</h4>
 
-    <table>
-      <tr class="tableheader">
-        <td>Rank</td>
-        <td>Team</td>
-        <td>Season Points</td>
-        <td>W</td>
-        <td>L</td>
-        <td>T</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>Name</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
+    <table id="westDivision">
+      <thead>
+        <tr>
+          <th scope="col">Team</th>
+          <th scope="col">Rank</th>
+          <th scope="col">Season Points</th>
+          <th scope="col">W</th>
+          <th scope="col">L</th>
+          <th scope="col">T</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
     </table>
 
     <h4>East Division</h4>
+
+    <table id="eastDivision">
+      <thead>
+        <tr>
+          <th scope="col">Team</th>
+          <th scope="col">Rank</th>
+          <th scope="col">Season Points</th>
+          <th scope="col">W</th>
+          <th scope="col">L</th>
+          <th scope="col">T</th>
+        </tr>
+      </thead>
+    </table>
+
+    <h3>"What If..."</h3>
+    <p>Choose the outcome of upcoming games - see how it affects the standings!</p>
+
+    <form action="server/league.js" method="get">
+      <p>Week 1
+        <br />
+        <input type="radio" name="team" value="noSelection" checked="checked" /> No Selection
+        <input type="radio" name="team" value="team1" /> Team 1
+        <input type="radio" name="team" value="team2" /> Team 2
+        <input type="radio" name="team" value="team3" /> Team 3
+        <input type="radio" name="team" value="team4" /> Team 4
+      </p>
+    </form>
+
   </body>
 </html>
