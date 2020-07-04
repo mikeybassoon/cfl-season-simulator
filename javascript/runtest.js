@@ -7,11 +7,12 @@ console.log('Initiating tests...');
 
 testResults = new Array(); // Boolean array of individual test results
 
+let testLeague = leagueFile.League;
 
-// 1
-// Test that declaration of league object works
+/*  Test 1
 
-var testLeague = leagueFile.League;
+    Fails if testLeague has undefined type
+*/
 
 if(typeof testLeague === undefined){
     testResults.push(false);
@@ -19,6 +20,24 @@ if(typeof testLeague === undefined){
 else{
     testResults.push(true);
 }
+
+/*  Test 2
+
+    Attempts to use the get/set functions of League to set the current season
+    to an arbitrary year. Fails unless the get_season() method returns the
+    same value that was set using the set_season() method.
+*/
+
+testLeague.set_season(2020);
+
+if(testLeague.get_season === 2020){
+    testResults.push(true);
+}
+else{
+    testResults.push(false);
+}
+
+
 
 // print results
 console.log('\nTEST\tRESULT');
